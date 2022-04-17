@@ -1,19 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .satellite {
+            background-color: rgba(255, 173, 152, 0.513);
+        }
+
+        .display-image {
+            /* width: 600px;
+    height: 400px; */
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-size: cover;
+        }
+
+        .dy1 {
+            font-size: 1.2em;
+        }
+    </style>
     <title>Mesoanalysis</title>
 </head>
+
 <body>
-<ul>
-    <li><a href="https://weather.cod.edu/satrad/?parms=continental-conus-truecolor-48-1-100-1&checked=map&colorbar=undefined">True color sat</a></li>
-    <li><a href="https://weather.cod.edu/satrad/?parms=continental-conus-sandwich-48-1-100-1&checked=map&colorbar=undefined">Sandwich</a></li>
-    <li><a href="https://weather.cod.edu/satrad/?parms=continental-conus-09-96-1-050-1&checked=map&colorbar=undefined">W/V</a></li>
-    <li><a href="https://weather.cod.edu/satrad/?parms=continental-conus-comp_radar-96-1-050-1&checked=map&colorbar=undefined">Radar Loop</a></li>
-    <li><a href="https://cimss.ssec.wisc.edu/severe_conv/psv3.html">ProbSevere v3</a></li>
-    <li><a href="https://mrms.nssl.noaa.gov/qvs/product_viewer/index.php?web_exec_mode=run&menu=menu_config.txt&time_mode=update&zoom=5&clon=-85.5634765625&clat=44.53131421045185&base=0&overlays=1&mping_mode=0&product_type=ralas&product=RALA&qpe_pal_option=0&opacity=0.7&looping_active=on&num_frames=24&frame_step=200&seconds_step=120">MRMS RALA</a></li>
-</ul>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Mesoanalysis</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Sat</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://www.spc.noaa.gov/exper/href/">SPC</a>
+                  </li>
+
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </div>
+    <div class="container">
+        <div class="row spc">
+            <div class="col-sm image" id="dy1">Day1</div>
+            <div class="col-sm image" id="dy2">Day2</div>
+            <div class="col-sm image" id="dy3">Day3</div>
+            <div class="col-sm image" id="s-watch">Watches</div>
+            <div class="col-sm image" id="s-mds">MDs</div>            
+        </div>     
+
+        <div class="align-items-center">
+            <img id="display-image" class="img-fluid display-image"
+                src="https://www.spc.noaa.gov/products/outlook/day1otlk.gif">
+        </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <script>
+
+const spc_prods = 'https://www.spc.noaa.gov/products/'
+const urls = {'dy1':spc_prods + 'outlook/day1otlk.gif',
+              'dy2':spc_prods + 'outlook/day2otlk.gif',
+              'dy3':spc_prods + 'outlook/day3otlk.gif',
+              's-watch':spc_prods + 'watch/validww.png',
+              's-mds':spc_prods + 'md/validmd.gif',
+            }
+            https://www.spc.noaa.gov/products/watch/validww.png
+
+function hi(e){
+   reference_id = e.target.id
+   //console.log(urls[reference_id])
+   imgURL = urls[reference_id]
+   document.getElementById('display-image').src=imgURL;
+   
+}
+
+const images = document.querySelectorAll("div.image");
+
+        images.forEach(image => {
+            image.addEventListener('mouseenter', e => {
+             hi(e);
+            })
+
+        });
+
+
+
+    </script>
+    <!--       <ul>
+            <li><a
+                    href="https://weather.cod.edu/satrad/?parms=continental-conus-truecolor-48-1-100-1&checked=map&colorbar=undefined">True
+                    color sat</a></li>
+            <li><a
+                    href="https://weather.cod.edu/satrad/?parms=continental-conus-sandwich-48-1-100-1&checked=map&colorbar=undefined">Sandwich</a>
+            </li>
+            <li><a
+                    href="https://weather.cod.edu/satrad/?parms=continental-conus-09-96-1-050-1&checked=map&colorbar=undefined">W/V</a>
+            </li>
+            <li><a
+                    href="https://weather.cod.edu/satrad/?parms=continental-conus-comp_radar-96-1-050-1&checked=map&colorbar=undefined">Radar
+                    Loop</a></li>
+            <li><a href="https://cimss.ssec.wisc.edu/severe_conv/psv3.html">ProbSevere v3</a></li>
+            <li><a
+                    href="https://mrms.nssl.noaa.gov/qvs/product_viewer/index.php?web_exec_mode=run&menu=menu_config.txt&time_mode=update&zoom=5&clon=-85.5634765625&clat=44.53131421045185&base=0&overlays=1&mping_mode=0&product_type=ralas&product=RALA&qpe_pal_option=0&opacity=0.7&looping_active=on&num_frames=24&frame_step=200&seconds_step=120">MRMS
+                    RALA</a></li>
+        </ul>
+        -->
 </body>
+
 </html>
