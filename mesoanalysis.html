@@ -21,9 +21,13 @@
             background-size: cover;
         }
 
-        .dy1 {
-            font-size: 1.2em;
-        }
+    .display-image {
+    width: 90%;
+    height: 90%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+  }
     </style>
     <title>Mesoanalysis</title>
 </head>
@@ -58,6 +62,13 @@
             <div class="col-sm image" id="s-watch">Watches</div>
             <div class="col-sm image" id="s-mds">MDs</div>            
         </div>     
+        <div class="row satc">
+            <div class="col-sm image" id="ch02">Vis</div>
+            <div class="col-sm image" id="ch08">hi-wv</div>
+            <div class="col-sm image" id="geoc">geoclr</div>            
+            <div class="col-sm image" id="sand">sandwich</div>
+            <div class="col-sm image" id="airm">airmass</div>
+        </div>     
 
         <div class="align-items-center">
             <img id="display-image" class="img-fluid display-image"
@@ -70,20 +81,55 @@
     </script>
     <script>
 
+function refreshImage(imgURL){    
+    // create a new timestamp 
+    var timestamp = new Date().getTime();
+    var queryString = "?t=" + timestamp;  
+    newSrc = imgURL + queryString;
+    return newSrc
+}
+
 const spc_prods = 'https://www.spc.noaa.gov/products/'
+const sat = 'https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/CGL'
 const urls = {'dy1':spc_prods + 'outlook/day1otlk.gif',
               'dy2':spc_prods + 'outlook/day2otlk.gif',
               'dy3':spc_prods + 'outlook/day3otlk.gif',
               's-watch':spc_prods + 'watch/validww.png',
               's-mds':spc_prods + 'md/validmd.gif',
+              'ch02':sat + '/02/GOES16-CGL-02-600x600.gif',
+              'ch08':sat + '/08/GOES16-CGL-08-600x600.gif',
+              'ch13':sat + '/13/GOES16-CGL-13-600x600.gif',
+              'geoc':sat + '/GEOCOLOR/GOES16-CGL-GEOCOLOR-600x600.gif',
+              'airm':sat + '/AirMass/GOES16-CGL-AirMass-600x600.gif',
+              'sand':sat + '/Sandwich/GOES16-CGL-Sandwich-600x600.gif'
+
             }
-            https://www.spc.noaa.gov/products/watch/validww.png
+//vis1:sat + '/01/600x600.jpg';
+
+veg3:sat + '/03/600x600.jpg'
+cir4:sat + '/04/600x600.jpg'
+ice5:sat + '/05/600x600.jpg'
+nearir6:sat + '/06/600x600.jpg'
+shrtir7:sat + '/07/GOES16-CGL-07-600x600.gif'
+
+//'mlwv9':sat + '/09/600x600.jpg'
+//llwv10:sat + '/10/600x600.jpg';
+//ctir11:sat + '/11/600x600.jpg';
+//ozir12:sat + '/12/600x600.jpg';
+
+lwir14:sat + '/14/600x600.jpg'
+dlwir15:sat + '/15/600x600.jpg'
+co2ir16:sat + '/16/600x600.jpg'
+
+dcp20:sat + '/DayCloudPhase/600x600.jpg'
+nmp21:sat + '/NightMicrophysics/600x600.jpg'
 
 function hi(e){
    reference_id = e.target.id
    //console.log(urls[reference_id])
    imgURL = urls[reference_id]
-   document.getElementById('display-image').src=imgURL;
+   newURL = refreshImage(imgURL);
+   document.getElementById('display-image').src=newURL;
    
 }
 
