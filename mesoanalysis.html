@@ -34,6 +34,7 @@
             <button type="button" class="btn btn-primary" id="swody1">swody1</button>
             <button type="button" class="btn btn-primary" id="swody2">swody2</button>
             <!-- <button type="button" class="btn btn-primary" id="swody3">swody3</button> -->
+            <button type="button" class="btn btn-primary" id="wpc">WPC</button>
             <button type="button" class="btn btn-primary" id="satellite">sat</button>
             <button type="button" class="btn btn-primary" id="satellite-rgb">sat derived</button>
             <button type="button" class="btn btn-primary" id="ma-stability">stability</button>
@@ -97,6 +98,24 @@
                             <div class="col-sm image" id="dy2_hail">Hail</div>
                             <div class="col-sm image" id="dy2_wind">Wind</div>
                             <div class="col-sm image" id="dy2_torn">Tornado</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="divider" id="section_wpc">
+                    <div class="row">
+                        <div class="col-sm image" id="wpc">
+                            <h4>WPC QPF</h4>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm image" id="dy1_qpf">Day 1</div>
+                            <div class="col-sm image" id="dy2_qpf">Day 2</div>
+                            <div class="col-sm image" id="dy3_qpf">Day 3</div>
+                            <div class="col-sm image" id="dy45_qpf">Day 4-5</div>
+                            <div class="col-sm image" id="dy67_qpf">Day 6-7</div>
+                            <div class="col-sm image" id="dy12_qpf">Day 1-2</div>
+                            <div class="col-sm image" id="dy13_qpf">Day 1-3</div>
+                            <div class="col-sm image" id="dy15_qpf">Day 1-5</div>
+                            <div class="col-sm image" id="dy17_qpf">Day 1-7</div>
                         </div>
                     </div>
                 </div>
@@ -194,6 +213,7 @@
             const day2prob = spc_out + 'day2probotlk_'
             const sat = 'https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/'
             const ma = 'http://www.spc.noaa.gov/exper/mesoanalysis/s16/'
+            const wpc_qpf = 'http://www.wpc.ncep.noaa.gov/qpf/'
             var urls = {
                 'dy1': spc_out + 'day1otlk.gif',
                 'dy2': spc_out + 'day2otlk.gif',
@@ -223,10 +243,15 @@
                 'dy2_torn': spc_out + 'day2probotlk_torn.gif',
                 'dy2_hail': spc_out + 'day2probotlk_hail.gif',
                 'dy2_wind': spc_out + 'day2probotlk_wind.gif',
-
-                //'dy2_1730_torn': day2prob + 'day2probotlk_1730_torn.gif',
-                //'dy2_1730_hail': day2prob + 'day2probotlk_1730_hail.gif',
-                //'dy2_1730_wind': day2prob + 'day2probotlk_1730_wind.gif',
+                'dy1_qpf': wpc_qpf + 'fill_94qwbg.gif',
+                'dy2_qpf': wpc_qpf + 'fill_98qwbg.gif',
+                'dy3_qpf': wpc_qpf + 'fill_99qwbg.gif',
+                'dy45_qpf': wpc_qpf + '95ep48iwbg_fill.gif',
+                'dy67_qpf': wpc_qpf + '97ep48iwbg_fill.gif',
+                'dy12_qpf': wpc_qpf + 'd12_fill.gif',
+                'dy13_qpf': wpc_qpf + 'd13_fill.gif',
+                'dy15_qpf': wpc_qpf + 'p120i.gif',
+                'dy17_qpf': wpc_qpf + 'p168i.gif',     
                 's-watch': spc_prods + 'watch/validww.png',
                 's-mds': spc_prods + 'md/validmd.gif',
                 'ch02': sat + 'CGL/02/GOES16-CGL-02-600x600.gif',
