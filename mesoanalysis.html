@@ -9,15 +9,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
-        .display-image {
-            /* width: 600px;
-    height: 400px; */
-            background-repeat: no-repeat;
-            background-position: 50% 50%;
-            background-size: cover;
+        .highlight {
+            font-weight: bold;
+            background-color: aqua;
+            color: crimson;
         }
 
         .display-image {
+            align-self: center;
             width: 80%;
             height: 80%;
             background-repeat: no-repeat;
@@ -29,222 +28,259 @@
 </head>
 
 <body>
-    <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Mesoanalysis</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Sat</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://www.spc.noaa.gov/exper/href/">SPC</a>
-                        </li>
 
-                    </ul>
-                </div>
-            </div>
-        </nav>
+    <div class="container">
+        <div class="d-flex justify-content-center">
+            <button type="button" class="btn btn-primary" id="swody1">swody1</button>
+            <button type="button" class="btn btn-primary" id="swody2">swody2</button>
+            <!-- <button type="button" class="btn btn-primary" id="swody3">swody3</button> -->
+            <button type="button" class="btn btn-primary" id="satellite">sat</button>
+            <button type="button" class="btn btn-primary" id="satellite-rgb">sat derived</button>
+            <button type="button" class="btn btn-primary" id="ma-stability">stability</button>
+        </div>
     </div>
     <div class="container">
-        <div class="row">
-            <div class="col-sm image" id="dy1">Day1</div>
+        <div class="d-flex justify-content-center text-center">
+            <div class="row">
+                <!--  <div class="col-sm image" id="dy1">Day1</div>
             <div class="col-sm image" id="dy2">Day2</div>
             <div class="col-sm image" id="dy3">Day3</div>
             <div class="col-sm image" id="s-watch">Watches</div>
             <div class="col-sm image" id="s-mds">MDs</div>
-        </div>
-        <div class="row">
-            <div class="col-sm image" id="dy1">
-                <h4>SWODY1</h4>
+        </div> -->
+                <div class="divider" id="section_swody1">
+                    <div class="row">
+                        <div class="col-sm image" id="dy1">
+                            <h4>SWODY1</h4>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm">0100 UTC</div>
+                        <div class="col-sm image" id="dy1_0100_otlk">Outlook</div>
+                        <div class="col-sm image" id="dy1_0100_hail">Hail</div>
+                        <div class="col-sm image" id="dy1_0100_wind">Wind</div>
+                        <div class="col-sm image" id="dy1_0100_torn">Tornado</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm">0600 UTC</div>
+                        <div class="col-sm image" id="dy1_0600_otlk">Outlook</div>
+                        <div class="col-sm image" id="dy1_0600_hail">Hail</div>
+                        <div class="col-sm image" id="dy1_0600_wind">Wind</div>
+                        <div class="col-sm image" id="dy1_0600_torn">Tornado</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm">1300 UTC</div>
+                        <div class="col-sm image" id="dy1_1300_otlk">Outlook</div>
+                        <div class="col-sm image" id="dy1_1300_hail">Hail</div>
+                        <div class="col-sm image" id="dy1_1300_wind">Wind</div>
+                        <div class="col-sm image" id="dy1_1300_torn">Tornado</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm">1630 UTC</div>
+                        <div class="col-sm image" id="dy1_1630_otlk">Outlook</div>
+                        <div class="col-sm image" id="dy1_1630_hail">Hail</div>
+                        <div class="col-sm image" id="dy1_1630_wind">Wind</div>
+                        <div class="col-sm image" id="dy1_1630_torn">Tornado</div>
+                    </div>
+                </div>
+                <div class="divider" id="section_swody2">
+                    <div class="row">
+                        <div class="col-sm image" id="dy2">
+                            <h4>SWODY2</h4>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm">0700 UTC</div>
+                            <div class="col-sm image" id="dy2_0700_otlk">Outlook</div>
+                            <div class="col-sm image" id="dy2_0700_hail">Hail</div>
+                            <div class="col-sm image" id="dy2_0700_wind">Wind</div>
+                            <div class="col-sm image" id="dy2_0700_torn">Tornado</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm">1730 UTC</div>
+                            <div class="col-sm image" id="dy2_1730_otlk">Outlook</div>
+                            <div class="col-sm image" id="dy2_1730_hail">Hail</div>
+                            <div class="col-sm image" id="dy2_1730_wind">Wind</div>
+                            <div class="col-sm image" id="dy2_1730_torn">Tornado</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="divider" id="section_satellite">
+                    <div class="row">
+
+                        <div class="col-sm">
+                            <h4>Satellite</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm image" id="ch02">Vis</div>
+                        <div class="col-sm image" id="ch08">CH08</div>
+                        <div class="col-sm image" id="ch13">CH13</div>
+                        <div class="col-sm image" id="ch14">CH14</div>
+                        <div class="col-sm image" id="nrir">NRIR</div>
+                    </div>
+                </div>
+                <div class="divider" id="section_satellite-rgb">
+                    <div class="row">
+                        <div class="col-sm">
+                            <h4>Satellite Derived</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm image" id="geoc">Geo C</div>
+                        <div class="col-sm image" id="dayp">Day micro</div>
+                        <div class="col-sm image" id="ngtp">Night micro</div>
+                        <div class="col-sm image" id="sand">Sand</div>
+                        <div class="col-sm image" id="airm">Airmass</div>
+                    </div>
+                </div>
+                <div class="divider" id="section_ma-stability">
+                    <div class="row">
+                        <div class="col-sm">
+                            <h4>SPC Instab</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm image" id="sbcp">SBcp</div>
+                        <div class="col-sm image" id="mlcp">MLcp</div>
+                        <div class="col-sm image" id="mucp">MUcp</div>
+                        <div class="col-sm image" id="dcape">Dncp</div>
+                        <div class="col-sm image" id="laps">midLR</div>
+                        <div class="col-sm image" id="lllr">loLR</div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <img id="display-image" class="img-fluid display-image"
+                        src="https://www.spc.noaa.gov/products/outlook/day1otlk.gif">
+                </div>
+
             </div>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+        </script>
+        <script>
+            const spc_prods = 'https://www.spc.noaa.gov/products/'
+            const spc_out = spc_prods + 'outlook/'
+            const sat = 'https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/'
+            const ma = 'http://www.spc.noaa.gov/exper/mesoanalysis/s16/'
+            var urls = {
+                'dy1': spc_out + 'day1otlk.gif',
+                'dy2': spc_out + 'day2otlk.gif',
+                'dy3': spc_out + 'day3otlk.gif',
+                'dy1_0100_otlk': spc_out + 'day1otlk_0100.gif',
+                'dy1_0100_torn': spc_out + 'day1probotlk_0100_torn.gif',
+                'dy1_0100_hail': spc_out + 'day1probotlk_0100_hail.gif',
+                'dy1_0100_wind': spc_out + 'day1probotlk_0100_wind.gif',
+                'dy1_0600_otlk': spc_out + 'day1otlk_1200.gif',
+                'dy1_0600_torn': spc_out + 'day1probotlk_1200_torn.gif',
+                'dy1_0600_hail': spc_out + 'day1probotlk_1200_hail.gif',
+                'dy1_0600_wind': spc_out + 'day1probotlk_1200_wind.gif',
+                'dy1_1300_otlk': spc_out + 'day1otlk_1300.gif',
+                'dy1_1300_torn': spc_out + 'day1probotlk_1300_torn.gif',
+                'dy1_1300_hail': spc_out + 'day1probotlk_1300_hail.gif',
+                'dy1_1300_wind': spc_out + 'day1probotlk_1300_wind.gif',
+                'dy1_1630_otlk': spc_out + 'day1otlk_1630.gif',
+                'dy1_1630_torn': spc_out + 'day1probotlk_1630_torn.gif',
+                'dy1_1630_hail': spc_out + 'day1probotlk_1630_hail.gif',
+                'dy1_1630_wind': spc_out + 'day1probotlk_1630_wind.gif',
+                'dy1_2000_otlk': spc_out + 'day1otlk_2000.gif',
+                'dy1_2000_torn': spc_out + 'day1probotlk_2000_torn.gif',
+                'dy1_2000_hail': spc_out + 'day1probotlk_2000_hail.gif',
+                'dy1_2000_wind': spc_out + 'day1probotlk_2000_wind.gif',
+                'dy2_0700_otlk': spc_out + 'day2otlk_0700.gif',
+                'dy2_0700_torn': spc_out + 'day2probotlk_0700_torn.gif',
+                'dy2_0700_hail': spc_out + 'day2probotlk_0700_hail.gif',
+                'dy2_0700_wind': spc_out + 'day2probotlk_0700_wind.gif',
+                'dy2_1730_otlk': spc_out + 'day2otlk_1730.gif',
+                'dy2_1730_torn': spc_out + 'day2probotlk_1730_torn.gif',
+                'dy2_1730_hail': spc_out + 'day2probotlk_1730_hail.gif',
+                'dy2_1730_wind': spc_out + 'day2probotlk_1730_wind.gif',
+                's-watch': spc_prods + 'watch/validww.png',
+                's-mds': spc_prods + 'md/validmd.gif',
+                'ch02': sat + 'CGL/02/GOES16-CGL-02-600x600.gif',
+                'ch08': sat + 'CGL/08/GOES16-CGL-08-600x600.gif',
+                'ch13': sat + 'CGL/13/GOES16-CGL-13-600x600.gif',
+                'ch14': sat + 'cgl/14/GOES16-CGL-14-600x600.gif',
+                'nrir': sat + 'cgl/07/GOES16-CGL-07-600x600.gif',
+                'geoc': sat + 'CGL/GEOCOLOR/GOES16-CGL-GEOCOLOR-600x600.gif',
+                'airm': sat + 'CGL/AirMass/GOES16-CGL-AirMass-600x600.gif',
+                'sand': sat + 'CGL/Sandwich/GOES16-CGL-Sandwich-600x600.gif',
+                'dayp': sat + 'CGL/DayCloudPhase/GOES16-ABI-CGL-DayCloudPhase-600x600.gif',
+                'ngtp': sat + 'cgl/NightMicrophysics/GOES16-CGL-NightMicrophysics-600x600.gif',
+                'sbcp': ma + 'sbcp/sbcp.gif',
+                'mlcp': ma + 'mlcp/mlcp.gif',
+                'mucp': ma + 'mucp/mucp.gif',
+                'dcape': ma + 'dcape/dcape.gif',
+                'laps': ma + 'laps/laps.gif',
+                'lllr': ma + 'lllr/lllr.gif',
+                'lclh': ma + 'lclh/lclh.gif',
+            }
 
-        <div class="row">
-            <div class="col-sm">0100 UTC</div>
-            <div class="col-sm image" id="dy1_0100_otlk">Outlook</div>
-            <div class="col-sm image" id="dy1_0100_hail">Hail</div>
-            <div class="col-sm image" id="dy1_0100_wind">Wind</div>
-            <div class="col-sm image" id="dy1_0100_torn">Tornado</div>
-        </div>
-        <div class="row">
-            <div class="col-sm">0600 UTC</div>
-            <div class="col-sm image" id="dy1_0600_otlk">Outlook</div>
-            <div class="col-sm image" id="dy1_0600_hail">Hail</div>
-            <div class="col-sm image" id="dy1_0600_wind">Wind</div>
-            <div class="col-sm image" id="dy1_0600_torn">Tornado</div>
-        </div>
-        <div class="row">
-            <div class="col-sm">1300 UTC</div>
-            <div class="col-sm image" id="dy1_1300_otlk">Outlook</div>
-            <div class="col-sm image" id="dy1_1300_hail">Hail</div>
-            <div class="col-sm image" id="dy1_1300_wind">Wind</div>
-            <div class="col-sm image" id="dy1_1300_torn">Tornado</div>
-        </div>
-        <div class="row">
-            <div class="col-sm">1630 UTC</div>
-            <div class="col-sm image" id="dy1_1630_otlk">Outlook</div>
-            <div class="col-sm image" id="dy1_1630_hail">Hail</div>
-            <div class="col-sm image" id="dy1_1630_wind">Wind</div>
-            <div class="col-sm image" id="dy1_1630_torn">Tornado</div>
-        </div>
-        <div class="row">
-            <div class="col-sm image" id="dy2">
-                <h4>SWODY2</h4>
-            </div>
-            <div class="row">
-                <div class="col-sm">0700 UTC</div>
-                <div class="col-sm image" id="dy2_0700_otlk">Outlook</div>
-                <div class="col-sm image" id="dy2_0700_hail">Hail</div>
-                <div class="col-sm image" id="dy2_0700_wind">Wind</div>
-                <div class="col-sm image" id="dy2_0700_torn">Tornado</div>
-            </div>
-            <div class="row">
-                <div class="col-sm">1730 UTC</div>
-                <div class="col-sm image" id="dy2_1730_otlk">Outlook</div>
-                <div class="col-sm image" id="dy2_1730_hail">Hail</div>
-                <div class="col-sm image" id="dy2_1730_wind">Wind</div>
-                <div class="col-sm image" id="dy2_1730_torn">Tornado</div>
-            </div>
-            <div class="row">
-            <div class="col-sm">
-                <h4>Satellite</h4>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm image" id="ch02">Vis</div>
-            <div class="col-sm image" id="ch08">CH08</div>
-            <div class="col-sm image" id="ch13">CH13</div>
-            <div class="col-sm image" id="ch14">CH14</div>
-            <div class="col-sm image" id="nrir">NRIR</div>
-        </div>
-        <div class="row">
-            <div class="col-sm">
-                <h4>Satellite Derived</h4>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm image" id="geoc">Geo C</div>
-            <div class="col-sm image" id="dayp">Day micro</div>
-            <div class="col-sm image" id="ngtp">Night micro</div>
-            <div class="col-sm image" id="sand">Sand</div>
-            <div class="col-sm image" id="airm">Airmass</div>
-        </div>
-        <div class="row">
-            <div class="col-sm">
-                <h4>SPC Instab</h4>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm image" id="sbcp">SBcp</div>
-            <div class="col-sm image" id="mlcp">MLcp</div>
-            <div class="col-sm image" id="mucp">MUcp</div>
-            <div class="col-sm image" id="dcape">Dncp</div>
-            <div class="col-sm image" id="laps">midLR</div>
-            <div class="col-sm image" id="lllr">loLR</div>
-        </div>
-    </div>
-    <div class="align-items-center">
-        <img id="display-image" class="img-fluid display-image"
-            src="https://www.spc.noaa.gov/products/outlook/day1otlk.gif">
-    </div>
+            function getImage(e) {
+                reference_id = e.target.id
+                //console.log(urls[reference_id])
+                imgURL = urls[reference_id]
+                newURL = refreshImage(imgURL);
+                document.getElementById(reference_id).classList.add('highlight');
+                document.getElementById('display-image').src = newURL;
+
+            }
+
+            function removeHighlight(e) {
+                reference_id = e.target.id
+                document.getElementById(e.target.id).classList.remove('highlight');
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
-    <script>
-        function refreshImage(imgURL) {
-            // create a new timestamp 
-            var timestamp = new Date().getTime();
-            var queryString = "?t=" + timestamp;
-            newSrc = imgURL + queryString;
-            //console.log(newSrc)
-            return newSrc
-        }
+            }
 
-        const spc_prods = 'https://www.spc.noaa.gov/products/'
-        const spc_out = spc_prods + 'outlook/'
-        const sat = 'https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/'
-        const ma = 'http://www.spc.noaa.gov/exper/mesoanalysis/s16/'
-        var urls = {
-            'dy1': spc_out + 'day1otlk.gif',
-            'dy2': spc_out + 'day2otlk.gif',
-            'dy3': spc_out + 'day3otlk.gif',
-            'dy1_0100_otlk': spc_out + 'day1otlk_0100.gif',
-            'dy1_0100_torn': spc_out + 'day1probotlk_0100_torn.gif',
-            'dy1_0100_hail': spc_out + 'day1probotlk_0100_hail.gif',
-            'dy1_0100_wind': spc_out + 'day1probotlk_0100_wind.gif',
-            'dy1_0600_otlk': spc_out + 'day1otlk_1200.gif',
-            'dy1_0600_torn': spc_out + 'day1probotlk_1200_torn.gif',
-            'dy1_0600_hail': spc_out + 'day1probotlk_1200_hail.gif',
-            'dy1_0600_wind': spc_out + 'day1probotlk_1200_wind.gif',
-            'dy1_1300_otlk': spc_out + 'day1otlk_1300.gif',
-            'dy1_1300_torn': spc_out + 'day1probotlk_1300_torn.gif',
-            'dy1_1300_hail': spc_out + 'day1probotlk_1300_hail.gif',
-            'dy1_1300_wind': spc_out + 'day1probotlk_1300_wind.gif',
-            'dy1_1630_otlk': spc_out + 'day1otlk_1630.gif',
-            'dy1_1630_torn': spc_out + 'day1probotlk_1630_torn.gif',
-            'dy1_1630_hail': spc_out + 'day1probotlk_1630_hail.gif',
-            'dy1_1630_wind': spc_out + 'day1probotlk_1630_wind.gif',
-            'dy1_2000_otlk': spc_out + 'day1otlk_2000.gif',
-            'dy1_2000_torn': spc_out + 'day1probotlk_2000_torn.gif',
-            'dy1_2000_hail': spc_out + 'day1probotlk_2000_hail.gif',
-            'dy1_2000_wind': spc_out + 'day1probotlk_2000_wind.gif',
-            'dy2_0700_otlk': spc_out + 'day2otlk_0700.gif',
-            'dy2_0700_torn': spc_out + 'day2probotlk_0700_torn.gif',
-            'dy2_0700_hail': spc_out + 'day2probotlk_0700_hail.gif',
-            'dy2_0700_wind': spc_out + 'day2probotlk_0700_wind.gif',
-            'dy2_1730_otlk': spc_out + 'day2otlk_1730.gif',
-            'dy2_1730_torn': spc_out + 'day2probotlk_1730_torn.gif',
-            'dy2_1730_hail': spc_out + 'day2probotlk_1730_hail.gif',
-            'dy2_1730_wind': spc_out + 'day2probotlk_1730_wind.gif',         
-            's-watch': spc_prods + 'watch/validww.png',
-            's-mds': spc_prods + 'md/validmd.gif',
-            'ch02': sat + 'CGL/02/GOES16-CGL-02-600x600.gif',
-            'ch08': sat + 'CGL/08/GOES16-CGL-08-600x600.gif',
-            'ch13': sat + 'CGL/13/GOES16-CGL-13-600x600.gif',
-            'ch14': sat + 'cgl/14/GOES16-CGL-14-600x600.gif',
-            'nrir': sat + 'cgl/07/GOES16-CGL-07-600x600.gif',
-            'geoc': sat + 'CGL/GEOCOLOR/GOES16-CGL-GEOCOLOR-600x600.gif',
-            'airm': sat + 'CGL/AirMass/GOES16-CGL-AirMass-600x600.gif',
-            'sand': sat + 'CGL/Sandwich/GOES16-CGL-Sandwich-600x600.gif',
-            'dayp': sat + 'CGL/DayCloudPhase/GOES16-ABI-CGL-DayCloudPhase-600x600.gif',
-            'ngtp': sat + 'cgl/NightMicrophysics/GOES16-CGL-NightMicrophysics-600x600.gif',
-            'sbcp': ma + 'sbcp/sbcp.gif',
-            'mlcp': ma + 'mlcp/mlcp.gif',
-            'mucp': ma + 'mucp/mucp.gif',
-            'dcape': ma + 'dcape/dcape.gif',
-            'laps': ma + 'laps/laps.gif',
-            'lllr': ma + 'lllr/lllr.gif',
-            'lclh': ma + 'lclh/lclh.gif',
-        }
+            function refreshImage(imgURL) {
+                // create a new timestamp 
+                var timestamp = new Date().getTime();
+                var queryString = "?t=" + timestamp;
+                newSrc = imgURL + queryString;
+                //console.log(newSrc)
+                return newSrc
+            }
 
-        function hi(e) {
-            reference_id = e.target.id
-            //console.log(urls[reference_id])
-            imgURL = urls[reference_id]
-            newURL = refreshImage(imgURL);
-            document.getElementById('display-image').src = newURL;
 
-        }
+            function adjustDividers(b) {
+                dividers.forEach(divider => {
+                    divider.style.display = 'none';
+                });
+                new_reference_id = "section_" + b.target.id
+                console.log(new_reference_id)
 
-        const images = document.querySelectorAll("div.image");
+                document.getElementById(new_reference_id).style.display = 'block';
 
-        images.forEach(image => {
-            image.addEventListener('mouseenter', e => {
-                hi(e);
-            })
+            }
 
-        });
-    </script>
-    <!--       <ul>
+            const images = document.querySelectorAll("div.image");
+            const buttons = document.querySelectorAll("button");
+            const dividers = document.querySelectorAll(".divider");
+
+            images.forEach(image => {
+                image.addEventListener('mouseenter', e => {
+                    getImage(e);
+                })
+
+            });
+
+            images.forEach(image => {
+                image.addEventListener('mouseleave', l => {
+                    removeHighlight(l);
+                })
+
+            });
+
+            buttons.forEach(btn => {
+                btn.addEventListener('click', b => {
+                    adjustDividers(b);
+                })
+
+            });
+        </script>
+        <!--       <ul>
             <li><a
                     href="https://weather.cod.edu/satrad/?parms=continental-conus-truecolor-48-1-100-1&checked=map&colorbar=undefined">True
                     color sat</a></li>
