@@ -193,14 +193,19 @@
                             <div class="col-sm image" id="dy17_qpf">Days 1-7</div>
                         </div>
                         <div class="row">
-                            <div class="col-sm image" id="dy1_exp">1 exp</div>
-                            <div class="col-sm image" id="dy2_exp">2 exp</div>
-                            <div class="col-sm image" id="dy3_exp">3 exp</div>
-                            <div class="col-sm image" id="hr61_qpf">6hr 1</div>
-                            <div class="col-sm image" id="hr62_qpf">6hr 2</div>
-                            <div class="col-sm image" id="hr63_qpf">6hr 3</div>
-                            <div class="col-sm image" id="hr64_qpf">6hr 4</div>
-                            <div class="col-sm image" id="hr65_qpf">6hr 5</div>
+                            <div class="col-sm time">Outlooks</div>
+                            <div class="col-sm image" id="dy1_exp">Day 1</div>
+                            <div class="col-sm image" id="dy2_exp">Day 2</div>
+                            <div class="col-sm image" id="dy3_exp">Day 3</div>
+                            <div class="col-sm image" id="md_exp">MD</div>
+                        </div>
+                            <div class="row">
+                                <div class="col-sm time">6 Hrly</div>
+                                <div class="col-sm image" id="hr61_qpf">t1</div>
+                            <div class="col-sm image" id="hr62_qpf">t2</div>
+                            <div class="col-sm image" id="hr63_qpf">t3</div>
+                            <div class="col-sm image" id="hr64_qpf">t4</div>
+                            <div class="col-sm image" id="hr65_qpf">t5</div>
                         </div>
                     </div>
                 </div>
@@ -240,9 +245,9 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm image" id="geoc">Geo C</div>
-                        <div class="col-sm image" id="ngtp">Night micro</div>
-                        <div class="col-sm image" id="sand">Sand</div>
+                        <div class="col-sm image" id="geoc">GeoColor</div>
+                        <div class="col-sm image" id="ngtp">Night Micro</div>
+                        <div class="col-sm image" id="sand">Sandwich</div>
                         <div class="col-sm image" id="airm">Airmass</div>
                     </div>
                 </div>
@@ -253,11 +258,11 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm image" id="sbcp">SBcp</div>
-                        <div class="col-sm image" id="mlcp">MLcp</div>
-                        <div class="col-sm image" id="mucp">MUcp</div>
-                        <div class="col-sm image" id="dcape">Dncp</div>
-                        <div class="col-sm image" id="laps">midLR</div>
+                        <div class="col-sm image" id="sbcp">SBCAPE</div>
+                        <div class="col-sm image" id="mlcp">MLCAPE</div>
+                        <div class="col-sm image" id="mucp">MUCAPE</div>
+                        <div class="col-sm image" id="dcape">DCAPE</div>
+                        <div class="col-sm image" id="laps">H7-H5 LR</div>
                         <div class="col-sm image" id="lllr">0-3km LR</div>
                     </div>
                 </div>
@@ -268,10 +273,10 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm image" id="eshr">Eff Shear</div>
-                        <div class="col-sm image" id="shr1">0-1km shear</div>
-                        <div class="col-sm image" id="shr3">0-3km shear</div>
-                        <div class="col-sm image" id="shr6">0-6km shear</div>
+                        <div class="col-sm image" id="eshr">Eff Bulk</div>
+                        <div class="col-sm image" id="shr1">0-1km Bulk</div>
+                        <div class="col-sm image" id="shr3">0-3km Bulk</div>
+                        <div class="col-sm image" id="shr6">0-6km Bulk</div>
                         <div class="col-sm image" id="effh">Eff SRH</div>
                         <div class="col-sm image" id="llsr">0-1 SRH</div>
                     </div>
@@ -286,11 +291,11 @@
                         <div class="col-sm image" id="scp">SCP</div>
                         <div class="col-sm image" id="stor">Sig Tor</div>
                         <div class="col-sm image" id="sigh">Sig Hail</div>
-                        <div class="col-sm image" id="cbsig">CravenBrooks</div>
+                        <div class="col-sm image" id="cbsig">Craven SigSvr</div>
                         <div class="col-sm image" id="cpsh">Cape/Shear</div>
                         <div class="col-sm image" id="lcls">LCLS</div>
-                        <div class="col-sm image" id="lr3c">0-3 LR</div>
-                        <div class="col-sm image" id="3cape_shr3">0-3 CAPE</div>
+                        <div class="col-sm image" id="lr3c">0-3km LR</div>
+                        <div class="col-sm image" id="3cape_shr3">0-3km CAPE</div>
 
                     </div>
                 </div>
@@ -357,6 +362,7 @@
                 'dy1_exp': wpc_qpf + '94ewbg.gif',
                 'dy2_exp': wpc_qpf + '98ewbg.gif',
                 'dy3_exp': wpc_qpf + '99ewbg.gif',
+                'md_exp': 'https://www.wpc.ncep.noaa.gov/metwatch/latest_mdmap.gif',
                 'hr61_qpf': wpc_qpf + 'fill_91ewbg.gif',
                 'hr62_qpf': wpc_qpf + 'fill_92ewbg.gif',
                 'hr63_qpf': wpc_qpf + 'fill_93ewbg.gif',
@@ -396,14 +402,11 @@
                 newURL = refreshImage(imgURL);
                 document.getElementById(reference_id).classList.add('highlight');
                 document.getElementById('display-image').src = newURL;
-
             }
 
             function removeHighlight(e) {
                 reference_id = e.target.id
                 document.getElementById(e.target.id).classList.remove('highlight');
-
-
             }
 
             function refreshImage(imgURL) {
@@ -422,7 +425,6 @@
                 });
                 new_reference_id = "section_" + b.target.id
                 document.getElementById(new_reference_id).style.display = 'block';
-
             }
 
             const images = document.querySelectorAll("div.image");
