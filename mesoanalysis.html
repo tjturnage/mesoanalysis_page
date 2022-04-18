@@ -12,7 +12,7 @@
         .highlight {
             font-weight: bold;
             background-color: aqua;
-            color: crimson;
+         /* color: crimson; */
         }
 
         .display-image {
@@ -37,6 +37,8 @@
             <button type="button" class="btn btn-primary" id="satellite">sat</button>
             <button type="button" class="btn btn-primary" id="satellite-rgb">sat derived</button>
             <button type="button" class="btn btn-primary" id="ma-stability">stability</button>
+            <button type="button" class="btn btn-primary" id="ma-shear">shear</button>
+            <button type="button" class="btn btn-primary" id="ma-composite">composite</button>
         </div>
     </div>
     <div class="container">
@@ -90,18 +92,11 @@
                             <h4>SWODY2</h4>
                         </div>
                         <div class="row">
-                            <div class="col-sm">0700 UTC</div>
-                            <div class="col-sm image" id="dy2_0700_otlk">Outlook</div>
-                            <div class="col-sm image" id="dy2_0700_hail">Hail</div>
-                            <div class="col-sm image" id="dy2_0700_wind">Wind</div>
-                            <div class="col-sm image" id="dy2_0700_torn">Tornado</div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm">1730 UTC</div>
-                            <div class="col-sm image" id="dy2_1730_otlk">Outlook</div>
-                            <div class="col-sm image" id="dy2_1730_hail">Hail</div>
-                            <div class="col-sm image" id="dy2_1730_wind">Wind</div>
-                            <div class="col-sm image" id="dy2_1730_torn">Tornado</div>
+                            <div class="col-sm image" id="dy2_0700_otlk">0700 Outlook</div>
+                            <div class="col-sm image" id="dy2_1730_otlk">1730 Outlook</div>
+                            <div class="col-sm image" id="dy2_hail">Hail</div>
+                            <div class="col-sm image" id="dy2_wind">Wind</div>
+                            <div class="col-sm image" id="dy2_torn">Tornado</div>
                         </div>
                     </div>
                 </div>
@@ -137,7 +132,7 @@
                 <div class="divider" id="section_ma-stability">
                     <div class="row">
                         <div class="col-sm">
-                            <h4>SPC Instab</h4>
+                            <h4>Mesoanalysis Instability</h4>
                         </div>
                     </div>
                     <div class="row">
@@ -147,6 +142,39 @@
                         <div class="col-sm image" id="dcape">Dncp</div>
                         <div class="col-sm image" id="laps">midLR</div>
                         <div class="col-sm image" id="lllr">loLR</div>
+                    </div>
+                </div>
+                <div class="divider" id="section_ma-shear">
+                    <div class="row">
+                        <div class="col-sm">
+                            <h4>Mesoanalysis Shear</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm image" id="eshr">Eff Shear</div>
+                        <div class="col-sm image" id="shr1">0-1km shear</div>
+                        <div class="col-sm image" id="shr3">0-3km shear</div>
+                        <div class="col-sm image" id="shr6">0-6km shear</div>
+                        <div class="col-sm image" id="effh">Eff SRH</div>
+                        <div class="col-sm image" id="llsr">0-1 SRH</div>
+                    </div>
+                </div>
+                <div class="divider" id="section_ma-composite">
+                    <div class="row">
+                        <div class="col-sm">
+                            <h4>Mesoanalysis Composite</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm image" id="scp">SCP</div>
+                        <div class="col-sm image" id="stor">Sig Tor</div>
+                        <div class="col-sm image" id="sigh">Sig Hail</div>
+                        <div class="col-sm image" id="cbsig">CravenBrooks</div>
+                        <div class="col-sm image" id="cpsh">Cape/Shear</div>
+                        <div class="col-sm image" id="lcls">LCLS</div>
+                        <div class="col-sm image" id="lr3c">0-3 LR</div>
+                        <div class="col-sm image" id="3cape_shr3">0-3 CAPE</div>
+
                     </div>
                 </div>
                 <div class="row justify-content-center">
@@ -162,6 +190,8 @@
         <script>
             const spc_prods = 'https://www.spc.noaa.gov/products/'
             const spc_out = spc_prods + 'outlook/'
+            const day1prob = spc_out + 'day1probotlk_'
+            const day2prob = spc_out + 'day2probotlk_'
             const sat = 'https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/'
             const ma = 'http://www.spc.noaa.gov/exper/mesoanalysis/s16/'
             var urls = {
@@ -169,33 +199,34 @@
                 'dy2': spc_out + 'day2otlk.gif',
                 'dy3': spc_out + 'day3otlk.gif',
                 'dy1_0100_otlk': spc_out + 'day1otlk_0100.gif',
-                'dy1_0100_torn': spc_out + 'day1probotlk_0100_torn.gif',
-                'dy1_0100_hail': spc_out + 'day1probotlk_0100_hail.gif',
-                'dy1_0100_wind': spc_out + 'day1probotlk_0100_wind.gif',
+                'dy1_0100_torn': day1prob + '0100_torn.gif',
+                'dy1_0100_hail': day1prob + '0100_hail.gif',
+                'dy1_0100_wind': day1prob + '0100_wind.gif',
                 'dy1_0600_otlk': spc_out + 'day1otlk_1200.gif',
-                'dy1_0600_torn': spc_out + 'day1probotlk_1200_torn.gif',
-                'dy1_0600_hail': spc_out + 'day1probotlk_1200_hail.gif',
-                'dy1_0600_wind': spc_out + 'day1probotlk_1200_wind.gif',
+                'dy1_0600_torn': day1prob + '1200_torn.gif',
+                'dy1_0600_hail': day1prob + '1200_hail.gif',
+                'dy1_0600_wind': day1prob + '1200_wind.gif',
                 'dy1_1300_otlk': spc_out + 'day1otlk_1300.gif',
-                'dy1_1300_torn': spc_out + 'day1probotlk_1300_torn.gif',
-                'dy1_1300_hail': spc_out + 'day1probotlk_1300_hail.gif',
-                'dy1_1300_wind': spc_out + 'day1probotlk_1300_wind.gif',
+                'dy1_1300_torn': day1prob + '1300_torn.gif',
+                'dy1_1300_hail': day1prob + '1300_hail.gif',
+                'dy1_1300_wind': day1prob + '1300_wind.gif',
                 'dy1_1630_otlk': spc_out + 'day1otlk_1630.gif',
-                'dy1_1630_torn': spc_out + 'day1probotlk_1630_torn.gif',
-                'dy1_1630_hail': spc_out + 'day1probotlk_1630_hail.gif',
-                'dy1_1630_wind': spc_out + 'day1probotlk_1630_wind.gif',
+                'dy1_1630_torn': day1prob + '1630_torn.gif',
+                'dy1_1630_hail': day1prob + '1630_hail.gif',
+                'dy1_1630_wind': day1prob + '1630_wind.gif',
                 'dy1_2000_otlk': spc_out + 'day1otlk_2000.gif',
-                'dy1_2000_torn': spc_out + 'day1probotlk_2000_torn.gif',
-                'dy1_2000_hail': spc_out + 'day1probotlk_2000_hail.gif',
-                'dy1_2000_wind': spc_out + 'day1probotlk_2000_wind.gif',
+                'dy1_2000_torn': day1prob + '2000_torn.gif',
+                'dy1_2000_hail': day1prob + '2000_hail.gif',
+                'dy1_2000_wind': day1prob + '2000_wind.gif',
                 'dy2_0700_otlk': spc_out + 'day2otlk_0700.gif',
-                'dy2_0700_torn': spc_out + 'day2probotlk_0700_torn.gif',
-                'dy2_0700_hail': spc_out + 'day2probotlk_0700_hail.gif',
-                'dy2_0700_wind': spc_out + 'day2probotlk_0700_wind.gif',
                 'dy2_1730_otlk': spc_out + 'day2otlk_1730.gif',
-                'dy2_1730_torn': spc_out + 'day2probotlk_1730_torn.gif',
-                'dy2_1730_hail': spc_out + 'day2probotlk_1730_hail.gif',
-                'dy2_1730_wind': spc_out + 'day2probotlk_1730_wind.gif',
+                'dy2_torn': spc_out + 'day2probotlk_torn.gif',
+                'dy2_hail': spc_out + 'day2probotlk_hail.gif',
+                'dy2_wind': spc_out + 'day2probotlk_wind.gif',
+
+                //'dy2_1730_torn': day2prob + 'day2probotlk_1730_torn.gif',
+                //'dy2_1730_hail': day2prob + 'day2probotlk_1730_hail.gif',
+                //'dy2_1730_wind': day2prob + 'day2probotlk_1730_wind.gif',
                 's-watch': spc_prods + 'watch/validww.png',
                 's-mds': spc_prods + 'md/validmd.gif',
                 'ch02': sat + 'CGL/02/GOES16-CGL-02-600x600.gif',
@@ -208,14 +239,14 @@
                 'sand': sat + 'CGL/Sandwich/GOES16-CGL-Sandwich-600x600.gif',
                 'dayp': sat + 'CGL/DayCloudPhase/GOES16-ABI-CGL-DayCloudPhase-600x600.gif',
                 'ngtp': sat + 'cgl/NightMicrophysics/GOES16-CGL-NightMicrophysics-600x600.gif',
-                'sbcp': ma + 'sbcp/sbcp.gif',
-                'mlcp': ma + 'mlcp/mlcp.gif',
-                'mucp': ma + 'mucp/mucp.gif',
-                'dcape': ma + 'dcape/dcape.gif',
-                'laps': ma + 'laps/laps.gif',
-                'lllr': ma + 'lllr/lllr.gif',
-                'lclh': ma + 'lclh/lclh.gif',
             }
+            // append spc mesoanalysis products to dictionary since url structure is systematic
+            spc_items = ['sbcp', 'mlcp', 'mucp', 'dcape', 'laps', 'lllr', 'lclh', 'eshr', 'shr1', 'shr3', 'shr6',
+                'effh', 'srh1', 'srh3', 'llsr','scp','stor','sigh','cbsig','cpsh','vgp3','lcls','lr3c','3cape_shr3'
+            ]
+            spc_items.forEach(s => {
+                urls[s] = ma + s + '/' + s + '.gif'
+            });
 
             function getImage(e) {
                 reference_id = e.target.id
@@ -249,8 +280,6 @@
                     divider.style.display = 'none';
                 });
                 new_reference_id = "section_" + b.target.id
-                console.log(new_reference_id)
-
                 document.getElementById(new_reference_id).style.display = 'block';
 
             }
@@ -279,6 +308,10 @@
                 })
 
             });
+
+            dividers.forEach(divider => {
+                    divider.style.display = 'none';
+                });
         </script>
         <!--       <ul>
             <li><a
