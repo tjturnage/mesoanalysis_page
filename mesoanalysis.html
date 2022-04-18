@@ -9,8 +9,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
+
+body {
+    background-color: rgb(240, 240
+    , 240);
+}
+
         h4 {
             padding: 0.5rem;
+            background-color: rgb(236, 236, 236);
             border: 2px solid black;
         }
 
@@ -18,28 +25,28 @@
 
         .image {
             /* font-weight: bold; */
-            padding: 0.5rem;
+            padding: 0.6rem;
             background-color: rgb(236, 236, 236);
             /* color: crimson; */
         }
 
         .time {
             /* font-weight: bold; */
-            padding: 0.3rem;
+            padding: 0.5rem;
             font-weight: bold;
             background-color: rgb(236, 236, 236);
             /* color: crimson; */
         }
 
         .highlight {
-            font-weight: bold;
-            background-color: aqua;
+            /* font-weight: bold; */
+            background-color: rgb(185, 185, 234);
             /* color: crimson; */
         }
 
         .stretch {
-            padding-top: 3rem;
-            padding-bottom: 1.5rem;
+            padding-top: 2.5rem;
+            padding-bottom: 0.5rem;
             /* color: crimson; */
         }
 
@@ -56,20 +63,18 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="d-flex justify-content-center stretch">
-            <button type="button" class="btn btn-outline-primary" id="swody1">swody1</button>
-            <button type="button" class="btn btn-outline-primary" id="swody2">swody2</button>
-            <button type="button" class="btn btn-outline-primary" id="ma-stability">stability</button>
-            <button type="button" class="btn btn-outline-primary" id="ma-shear">shear</button>
-            <button type="button" class="btn btn-outline-primary" id="ma-composite">composite</button>
+    <div class="container stretch">
+        <div class="justify-content-center text-center">
+            <button type="button" class="btn btn-outline-danger" id="swody1">swody1</button>
+            <button type="button" class="btn btn-outline-danger" id="swody2">swody2</button>
+            <button type="button" class="btn btn-outline-danger" id="ma-stability">stability</button>
+            <button type="button" class="btn btn-outline-danger" id="ma-shear">shear</button>
+            <button type="button" class="btn btn-outline-danger" id="ma-composite">composite</button>
             <!-- <button type="button" class="btn btn-primary" id="swody3">swody3</button> -->
-            <button type="button" class="btn btn-outline-primary" id="wpc">WPC</button>
-            <button type="button" class="btn btn-outline-primary" id="sounding">soundings</button>
-            <button type="button" class="btn btn-outline-primary" id="satellite">sat</button>
-
-            <button type="button" class="btn btn-outline-primary" id="satellite-rgb">sat rgb</button>
-
+            <button type="button" class="btn btn-outline-success" id="wpc">WPC</button>
+            <button type="button" class="btn btn-outline-info" id="sounding">soundings</button>
+            <button type="button" class="btn btn-outline-info" id="satellite">sat</button>
+            <button type="button" class="btn btn-outline-info" id="satellite-rgb">sat rgb</button>
             <button type="button" class="btn btn-outline-secondary" id="links">Links</button>
         </div>
     </div>
@@ -124,7 +129,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-sm time">Current Time</div>
+                        <div class="col-sm time">Current</div>
                         <div class="col-sm image" id="dy1_otlk">Outlook</div>
                         <div class="col-sm image" id="dy1_hail">Hail</div>
                         <div class="col-sm image" id="dy1_wind">Wind</div>
