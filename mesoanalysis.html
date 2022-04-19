@@ -9,11 +9,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
-
-body {
-    background-color: rgb(240, 240
-    , 240);
-}
+        body {
+            background-color: rgb(240, 240, 240);
+        }
 
         h4 {
             padding: 0.5rem;
@@ -25,8 +23,8 @@ body {
 
         .image {
             /* font-weight: bold; */
-            padding: 0.6rem;
-            background-color: rgb(236, 236, 236);
+            padding: 1.0rem;
+            background-color: rgb(240, 240, 240);
             /* color: crimson; */
         }
 
@@ -34,7 +32,7 @@ body {
             /* font-weight: bold; */
             padding: 0.5rem;
             font-weight: bold;
-            background-color: rgb(236, 236, 236);
+            background-color: rgb(240, 240, 240);
             /* color: crimson; */
         }
 
@@ -45,7 +43,7 @@ body {
         }
 
         .stretch {
-            padding-top: 2.5rem;
+            padding-top: 2.0rem;
             padding-bottom: 0.5rem;
             /* color: crimson; */
         }
@@ -65,19 +63,20 @@ body {
 <body>
     <div class="container stretch">
         <div class="justify-content-center text-center">
-            <button type="button" class="btn btn-outline-danger" id="swody1">swody1</button>
-            <button type="button" class="btn btn-outline-danger" id="swody2">swody2</button>
-            <button type="button" class="btn btn-outline-danger" id="ma-stability">stability</button>
-            <button type="button" class="btn btn-outline-danger" id="ma-shear">shear</button>
-            <button type="button" class="btn btn-outline-danger" id="ma-composite">composite</button>
+            <button type="button" class="btn btn-outline-danger" id="swody1">SWODY1</button>
+            <button type="button" class="btn btn-outline-danger" id="swody2">SWODY2</button>
+            <button type="button" class="btn btn-outline-danger" id="ma-stability">Thermodynamics</button>
+            <button type="button" class="btn btn-outline-danger" id="ma-shear">Kinematics</button>
+            <button type="button" class="btn btn-outline-danger" id="ma-composite">Composites</button>
             <!-- <button type="button" class="btn btn-primary" id="swody3">swody3</button> -->
             <button type="button" class="btn btn-outline-success" id="wpc">WPC</button>
-            <button type="button" class="btn btn-outline-info" id="sounding">soundings</button>
-            <button type="button" class="btn btn-outline-info" id="satellite">sat</button>
-            <button type="button" class="btn btn-outline-info" id="satellite-rgb">sat rgb</button>
+            <button type="button" class="btn btn-outline-info" id="sounding">Soundings</button>
+            <button type="button" class="btn btn-outline-info" id="satellite">Satellite</button>
+            <button type="button" class="btn btn-outline-info" id="satellite-rgb">Sat RGBs</button>
             <button type="button" class="btn btn-outline-secondary" id="links">Links</button>
         </div>
     </div>
+    <hr>
     <div class="container">
         <div class="d-flex justify-content-center text-center">
             <div class="row">
@@ -123,52 +122,45 @@ body {
                 </div>
                 <div class="divider" id="section_swody1">
                     <div class="row">
-                        <div class="col-sm" id="dy1">
-                            <h4>SWODY1</h4>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm time">Current</div>
-                        <div class="col-sm image" id="dy1_otlk">Outlook</div>
-                        <div class="col-sm image" id="dy1_hail">Hail</div>
-                        <div class="col-sm image" id="dy1_wind">Wind</div>
-                        <div class="col-sm image" id="dy1_torn">Tornado</div>
-                    </div>
-                    <div class="row">
+                        <div class="col-sm time">Most Recent</div>
                         <div class="col-sm time">0100 UTC</div>
-                        <div class="col-sm image" id="dy1_0100_otlk">Outlook</div>
-                        <div class="col-sm image" id="dy1_0100_hail">Hail</div>
-                        <div class="col-sm image" id="dy1_0100_wind">Wind</div>
-                        <div class="col-sm image" id="dy1_0100_torn">Tornado</div>
-                    </div>
-                    <div class="row">
                         <div class="col-sm time">0600 UTC</div>
-                        <div class="col-sm image" id="dy1_0600_otlk">Outlook</div>
-                        <div class="col-sm image" id="dy1_0600_hail">Hail</div>
-                        <div class="col-sm image" id="dy1_0600_wind">Wind</div>
-                        <div class="col-sm image" id="dy1_0600_torn">Tornado</div>
-                    </div>
-                    <div class="row">
                         <div class="col-sm time">1300 UTC</div>
-                        <div class="col-sm image" id="dy1_1300_otlk">Outlook</div>
-                        <div class="col-sm image" id="dy1_1300_hail">Hail</div>
-                        <div class="col-sm image" id="dy1_1300_wind">Wind</div>
-                        <div class="col-sm image" id="dy1_1300_torn">Tornado</div>
+                        <div class="col-sm time">1630 UTC</div>
                     </div>
                     <div class="row">
-                        <div class="col-sm time">1630 UTC</div>
+                        <div class="col-sm image" id="dy1_otlk">Outlook</div>
+                        <div class="col-sm image" id="dy1_0100_otlk">Outlook</div>
+                        <div class="col-sm image" id="dy1_0600_otlk">Outlook</div>
+                        <div class="col-sm image" id="dy1_1300_otlk">Outlook</div>
                         <div class="col-sm image" id="dy1_1630_otlk">Outlook</div>
-                        <div class="col-sm image" id="dy1_1630_hail">Hail</div>
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col-sm image" id="dy1_hail">Hail</div>
+                        <div class="col-sm image" id="dy1_0100_hail">Hail</div>
+                        <div class="col-sm image" id="dy1_0600_hail">Hail</div>
+                        <div class="col-sm image" id="dy1_1300_hail">Hail</div>
+                        <div class="col-sm image" id="dy1_1630_hail">Hail</div>                        
+                    </div>
+                    <div class="row">                        
+                        <div class="col-sm image" id="dy1_wind">Wind</div>
+                        <div class="col-sm image" id="dy1_0100_wind">Wind</div>
+                        <div class="col-sm image" id="dy1_0600_wind">Wind</div>
+                        <div class="col-sm image" id="dy1_1300_wind">Wind</div>
                         <div class="col-sm image" id="dy1_1630_wind">Wind</div>
+                        
+                    </div>
+                    <div class="row">                       
+                        <div class="col-sm image" id="dy1_torn">Tornado</div>
+                        <div class="col-sm image" id="dy1_0100_torn">Tornado</div>
+                        <div class="col-sm image" id="dy1_0600_torn">Tornado</div>
+                        <div class="col-sm image" id="dy1_1300_torn">Tornado</div>
                         <div class="col-sm image" id="dy1_1630_torn">Tornado</div>
                     </div>
                 </div>
                 <div class="divider" id="section_swody2">
                     <div class="row">
-                        <div class="col-sm" id="dy2">
-                            <h4>SWODY2</h4>
-                        </div>
                         <div class="row">
                             <div class="col-sm image" id="dy2_otlk">Current</div>
                             <div class="col-sm image" id="dy2_0700_otlk">0700 Outlook</div>
@@ -181,9 +173,6 @@ body {
                 </div>
                 <div class="divider" id="section_wpc">
                     <div class="row">
-                        <div class="col-sm" id="wpc">
-                            <h4>WPC QPF</h4>
-                        </div>
                         <div class="row">
                             <div class="col-sm image" id="dy1_qpf">Day 1</div>
                             <div class="col-sm image" id="dy2_qpf">Day 2</div>
@@ -204,9 +193,9 @@ body {
                             <div class="col-sm image" id="dy3_exp">Day 3</div>
                             <div class="col-sm image" id="md_exp">MD</div>
                         </div>
-                            <div class="row">
-                                <div class="col-sm time">6 Hrly</div>
-                                <div class="col-sm image" id="hr61_qpf">t1</div>
+                        <div class="row">
+                            <div class="col-sm time">6 Hrly</div>
+                            <div class="col-sm image" id="hr61_qpf">t1</div>
                             <div class="col-sm image" id="hr62_qpf">t2</div>
                             <div class="col-sm image" id="hr63_qpf">t3</div>
                             <div class="col-sm image" id="hr64_qpf">t4</div>
@@ -215,11 +204,6 @@ body {
                     </div>
                 </div>
                 <div class="divider" id="section_sounding">
-                    <div class="row">
-                        <div class="col-sm">
-                            <h4>Soundings</h4>
-                        </div>
-                    </div>
                     <div class="row">
                         <div class="col-sm image" id="KDTX">KDTX</div>
                         <div class="col-sm image" id="KAPX">KAPX</div>
@@ -230,12 +214,6 @@ body {
                 </div>
                 <div class="divider" id="section_satellite">
                     <div class="row">
-
-                        <div class="col-sm">
-                            <h4>Satellite</h4>
-                        </div>
-                    </div>
-                    <div class="row">
                         <div class="col-sm image" id="ch02">Vis</div>
                         <div class="col-sm image" id="ch08">CH08</div>
                         <div class="col-sm image" id="ch13">CH13</div>
@@ -245,11 +223,6 @@ body {
                 </div>
                 <div class="divider" id="section_satellite-rgb">
                     <div class="row">
-                        <div class="col-sm">
-                            <h4>Satellite Derived</h4>
-                        </div>
-                    </div>
-                    <div class="row">
                         <div class="col-sm image" id="geoc">GeoColor</div>
                         <div class="col-sm image" id="ngtp">Night Micro</div>
                         <div class="col-sm image" id="sand">Sandwich</div>
@@ -257,11 +230,6 @@ body {
                     </div>
                 </div>
                 <div class="divider" id="section_ma-stability">
-                    <div class="row">
-                        <div class="col-sm">
-                            <h4>Mesoanalysis Instability</h4>
-                        </div>
-                    </div>
                     <div class="row">
                         <div class="col-sm image" id="sbcp">SBCAPE</div>
                         <div class="col-sm image" id="mlcp">MLCAPE</div>
@@ -273,11 +241,6 @@ body {
                 </div>
                 <div class="divider" id="section_ma-shear">
                     <div class="row">
-                        <div class="col-sm">
-                            <h4>Mesoanalysis Shear</h4>
-                        </div>
-                    </div>
-                    <div class="row">
                         <div class="col-sm image" id="eshr">Eff Bulk</div>
                         <div class="col-sm image" id="shr1">0-1km Bulk</div>
                         <div class="col-sm image" id="shr3">0-3km Bulk</div>
@@ -287,11 +250,6 @@ body {
                     </div>
                 </div>
                 <div class="divider" id="section_ma-composite">
-                    <div class="row">
-                        <div class="col-sm">
-                            <h4>Mesoanalysis Composite</h4>
-                        </div>
-                    </div>
                     <div class="row">
                         <div class="col-sm image" id="scp">SCP</div>
                         <div class="col-sm image" id="stor">Sig Tor</div>
