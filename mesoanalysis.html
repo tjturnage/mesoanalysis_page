@@ -45,7 +45,7 @@
         }
 
         .stretch {
-            padding-top: 2.0rem;
+            padding-top: 0.5rem;
             padding-bottom: 0.5rem;
         }
 
@@ -77,7 +77,6 @@
             <button type="button" class="btn btn-outline-secondary" id="links">Links</button>
         </div>
     </div>
-    <hr>
     <div class="container">
         <div class="d-flex justify-content-center text-center">
             <div class="row">
@@ -160,14 +159,30 @@
                 </div>
                 <div class="divider" id="section_swody2">
                     <div class="row">
-                        <div class="row">
-                            <div class="col-sm-2 image" id="dy2_otlk">Current</div>
-                            <div class="col-sm-2 image" id="dy2_0700_otlk">0700 Outlook</div>
-                            <div class="col-sm-2 image" id="dy2_1730_otlk">1730 Outlook</div>
-                            <div class="col-sm-2 image" id="dy2_hail">Hail</div>
-                            <div class="col-sm-2 image" id="dy2_wind">Wind</div>
-                            <div class="col-sm-2 image" id="dy2_torn">Tornado</div>
-                        </div>
+                        <div class="col-sm-2 time">Most Recent</div>
+                        <div class="col-sm-2 time">0600 UTC</div>
+                        <div class="col-sm-2 time">1730 UTC</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2 image" id="dy2_otlk">Outlook</div>
+                        <div class="col-sm-2 image" id="dy2_0600_otlk">Outlook</div>
+                        <div class="col-sm-2 image" id="dy2_1730_otlk">Outlook</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2 image" id="dy2_hail">Hail</div>
+                        <div class="col-sm-2 image" id="dy2_0600_hail">Hail</div>
+                        <div class="col-sm-2 image" id="dy2_1730_hail">Hail</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2 image" id="dy2_wind">Wind</div>
+                        <div class="col-sm-2 image" id="dy2_0600_wind">Wind</div>
+                        <div class="col-sm-2 image" id="dy2_1730_wind">Wind</div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2 image" id="dy2_torn">Tornado</div>
+                        <div class="col-sm-2 image" id="dy2_0600_torn">Tornado</div>
+                        <div class="col-sm-2 image" id="dy2_1730_torn">Tornado</div>
                     </div>
                 </div>
                 <div class="divider" id="section_wpc">
@@ -178,7 +193,6 @@
                             <div class="col-sm-2 image" id="dy2_qpf">Day 2</div>
                             <div class="col-sm-2 image" id="dy3_qpf">Day 3</div>
                             <div class="col-sm-2 image" id="dy45_qpf">Days 4-5</div>
-                            <!--<div class="col-sm image" id="dy67_qpf">6-7</div>-->
                         </div>
                         <div class="row">
                             <div class="col-sm-2 time">Combined QPF</div>
@@ -261,13 +275,11 @@
                         <div class="col-sm-2 image" id="shr1">0-1km Bulk</div>
                         <div class="col-sm-2 image" id="shr1_chg">0-1km change</div>
                         <div class="col-sm-2 image" id="shr3">0-3km Bulk</div>
-
                         <div class="col-sm-2 image" id="shr6">0-6km Bulk</div>
                         <div class="col-sm-2 image" id="shr6_chg">0-6km change</div>
                         <div class="col-sm-2 image" id="effh">Eff SRH</div>
                         <div class="col-sm-2 image" id="srh5">0-500m SRH</div>
                         <div class="col-sm-2 image" id="srh1">0-1km SRH</div>
-
                         <div class="col-sm-2 image" id="srh3">0-3km SRH</div>
                         <div class="col-sm-2 image" id="llsr">0-2km SR wind</div>
                         <div class="col-sm-2 image" id="mlsr">4-6km SR wind</div>
@@ -322,8 +334,7 @@
                         'dy1_hail': day1prob + 'hail.gif',
                         'dy1_wind': day1prob + 'wind.gif',
                         'dy1_torn': day1prob + 'torn.gif',
-                        'dy2': spc_out + 'day2otlk.gif',
-                        'dy3': spc_out + 'day3otlk.gif',
+                        'dy3_otlk': spc_out + 'day3otlk.gif',
                         'dy1_0100_otlk': spc_out + 'day1otlk_0100.gif',
                         'dy1_0100_torn': day1prob + '0100_torn.gif',
                         'dy1_0100_hail': day1prob + '0100_hail.gif',
@@ -345,9 +356,17 @@
                         'dy1_2000_hail': day1prob + '2000_hail.gif',
                         'dy1_2000_wind': day1prob + '2000_wind.gif',
                         'dy2_otlk': spc_out + 'day2otlk.gif',
-                        'dy2_0700_otlk': spc_out + 'day2otlk_0700.gif',
-                        'dy2_1730_otlk': spc_out + 'day2otlk_1730.gif',
                         'dy2_torn': spc_out + 'day2probotlk_torn.gif',
+                        'dy2_wind': spc_out + 'day2probotlk_wind.gif',
+                        'dy2_hail': spc_out + 'day2probotlk_hail.gif',
+                        'dy2_0600_otlk': spc_out + 'day2otlk_0600_prt.gif',
+                        'dy2_0600_torn': spc_out + 'day2probotlk_0600_torn_prt.gif',
+                        'dy2_0600_hail': spc_out + 'day2probotlk_0600_hail_prt.gif',
+                        'dy2_0600_wind': spc_out + 'day2probotlk_0600_wind_prt.gif',
+                        'dy2_1730_otlk': spc_out + 'day2otlk_1730_prt.gif',
+                        'dy2_1730_torn': spc_out + 'day2probotlk_1730_torn_prt.gif',
+                        'dy2_1730_hail': spc_out + 'day2probotlk_1730_hail_prt.gif',
+                        'dy2_1730_wind': spc_out + 'day2probotlk_1730_wind_prt.gif',
                         'dy2_hail': spc_out + 'day2probotlk_hail.gif',
                         'dy2_wind': spc_out + 'day2probotlk_wind.gif',
                         'dy1_qpf': wpc_qpf + 'fill_94qwbg.gif',
@@ -382,13 +401,6 @@
                         'ngtp': sat + 'cgl/NightMicrophysics/GOES16-CGL-NightMicrophysics-600x600.gif',
                     }
 
-                    // append spc mesoanalysis products to dictionary since url structure is systematic
-                    //spc_items = [ 'sars1', 'sars2', 'hail', 'dcp', 'mbcp', 'tdlr', 'qlcs1', 'qlcs2',
-                //'effh', 'srh5', 'srh1', 'srh3', 'llsr', 'mlsr', 'ulsr', 'alsr', 'scp', 'stor', 'sigh',
-                //'cbsig', 'cpsh', 'vgp3', 'lcls',
-                //'lr3c', '3cvr',
-                //'3cape_shr3'
-            //]
                     spc_items = ['sbcp', 'mlcp', 'mucp', 'dcape', 'laps', 'lllr', 'lclh', 'lfch', 'llrh', 'eshr',
                         'shr1', 'shr1_chg', 'shr3', 
                         'shr6', 'shr6_chg', 'hodo', 'sars1', 'sars2', 'hail', 'dcp', 'mbcp', 'tdlr', 'qlcs1', 'qlcs2',
@@ -447,6 +459,7 @@
                         //console.log(urls[reference_id])
                         imgURL = urls[reference_id]
                         newURL = refreshImage(imgURL);
+                        //console.log(newURL)
                         document.getElementById(reference_id).classList.add('highlight');
                         document.getElementById('display-image').src = newURL;
                     }
@@ -505,25 +518,6 @@
                         divider.style.display = 'none';
                     });
                 </script>
-                <!--       <ul>
-            <li><a
-                    href="https://weather.cod.edu/satrad/?parms=continental-conus-truecolor-48-1-100-1&checked=map&colorbar=undefined">True
-                    color sat</a></li>
-            <li><a
-                    href="https://weather.cod.edu/satrad/?parms=continental-conus-sandwich-48-1-100-1&checked=map&colorbar=undefined">Sandwich</a>
-            </li>
-            <li><a
-                    href="https://weather.cod.edu/satrad/?parms=continental-conus-09-96-1-050-1&checked=map&colorbar=undefined">W/V</a>
-            </li>
-            <li><a
-                    href="https://weather.cod.edu/satrad/?parms=continental-conus-comp_radar-96-1-050-1&checked=map&colorbar=undefined">Radar
-                    Loop</a></li>
-            <li><a href="https://cimss.ssec.wisc.edu/severe_conv/psv3.html">ProbSevere v3</a></li>
-            <li><a
-                    href="https://mrms.nssl.noaa.gov/qvs/product_viewer/index.php?web_exec_mode=run&menu=menu_config.txt&time_mode=update&zoom=5&clon=-85.5634765625&clat=44.53131421045185&base=0&overlays=1&mping_mode=0&product_type=ralas&product=RALA&qpe_pal_option=0&opacity=0.7&looping_active=on&num_frames=24&frame_step=200&seconds_step=120">MRMS
-                    RALA</a></li>
-        </ul>
-        -->
 </body>
 
 </html>
