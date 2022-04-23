@@ -20,8 +20,6 @@
             text-align: center;
         }
 
-
-
         .image {
             /* font-weight: bold; */
             padding: 0.2rem;
@@ -44,15 +42,11 @@
             min-height: 2rem;
             background-color: rgb(185, 185, 234);
             font-weight: bold;
-
-
-            /* color: crimson; */
         }
 
         .stretch {
             padding-top: 2.0rem;
             padding-bottom: 0.5rem;
-            /* color: crimson; */
         }
 
         .display-image {
@@ -72,7 +66,7 @@
         <div class="justify-content-center text-center">
             <button type="button" class="btn btn-outline-danger" id="swody1">SWODY1</button>
             <button type="button" class="btn btn-outline-danger" id="swody2">SWODY2</button>
-            <button type="button" class="btn btn-outline-danger" id="ma-stability">Thermodynamics</button>
+            <button type="button" class="btn btn-outline-danger" id="ma-stability">Thermo</button>
             <button type="button" class="btn btn-outline-danger" id="ma-shear">Kinematics</button>
             <button type="button" class="btn btn-outline-danger" id="ma-composite">Composites</button>
             <!-- <button type="button" class="btn btn-primary" id="swody3">swody3</button> -->
@@ -212,12 +206,23 @@
                 </div>
                 <div class="divider" id="section_sounding">
                     <div class="row">
+                        <div class="col-sm-2 image" id="DTX">DTX</div>
+                        <div class="col-sm-2 image" id="APX">APX</div>
+                        <div class="col-sm-2 image" id="GRB">GRB</div>
+                        <div class="col-sm-2 image" id="MPX">MPX</div>
+                        <div class="col-sm-2 image" id="ILX">ILX</div>
+                        <div class="col-sm-2 image" id="DVN">DVN</div>
+                        <div class="col-sm-2 image" id="OAX">OAX</div>
+                        <div class="col-sm-2 image" id="TOP">TOP</div>
+                    </div>
+                    <!--
+                    <div class="row">
                         <div class="col-sm-2 image" id="KDTX">KDTX</div>
                         <div class="col-sm-2 image" id="KAPX">KAPX</div>
                         <div class="col-sm-2 image" id="KGRB">KGRB</div>
                         <div class="col-sm-2 image" id="KDVN">KDVN</div>
                         <div class="col-sm-2 image" id="KILX">KILX</div>
-                    </div>
+                    </div>-->
                 </div>
                 <div class="divider" id="section_satellite">
                     <div class="row">
@@ -236,6 +241,7 @@
                         <div class="col-sm-2 image" id="airm">Airmass</div>
                     </div>
                 </div>
+
                 <div class="divider" id="section_ma-stability">
                     <div class="row">
                         <div class="col-sm-2 image" id="sbcp">SBCAPE</div>
@@ -244,28 +250,47 @@
                         <div class="col-sm-2 image" id="dcape">DCAPE</div>
                         <div class="col-sm-2 image" id="laps">H7-H5 LR</div>
                         <div class="col-sm-2 image" id="lllr">0-3km LR</div>
+                        <div class="col-sm-2 image" id="lclh">LCL hght</div>
+                        <div class="col-sm-2 image" id="lfch">LFC hght</div>
+                        <div class="col-sm-2 image" id="llrh">LCL-LFC RH</div>
                     </div>
                 </div>
                 <div class="divider" id="section_ma-shear">
                     <div class="row">
                         <div class="col-sm-2 image" id="eshr">Eff Bulk</div>
                         <div class="col-sm-2 image" id="shr1">0-1km Bulk</div>
+                        <div class="col-sm-2 image" id="shr1_chg">0-1km change</div>
                         <div class="col-sm-2 image" id="shr3">0-3km Bulk</div>
+
                         <div class="col-sm-2 image" id="shr6">0-6km Bulk</div>
+                        <div class="col-sm-2 image" id="shr6_chg">0-6km change</div>
                         <div class="col-sm-2 image" id="effh">Eff SRH</div>
-                        <div class="col-sm-2 image" id="llsr">0-1 SRH</div>
+                        <div class="col-sm-2 image" id="srh5">0-500m SRH</div>
+                        <div class="col-sm-2 image" id="srh1">0-1km SRH</div>
+
+                        <div class="col-sm-2 image" id="srh3">0-3km SRH</div>
+                        <div class="col-sm-2 image" id="llsr">0-2km SR wind</div>
+                        <div class="col-sm-2 image" id="mlsr">4-6km SR wind</div>
+                        <div class="col-sm-2 image" id="ulsr">9-11km SR wind</div>
+                        <div class="col-sm-2 image" id="alsr">Anvil SR wind</div>
+                        <div class="col-sm-2 image" id="hodo">Hodograph</div>
                     </div>
                 </div>
+
                 <div class="divider" id="section_ma-composite">
                     <div class="row">
                         <div class="col-sm-2 image" id="scp">SCP</div>
                         <div class="col-sm-2 image" id="stor">Sig Tor</div>
+                        <div class="col-sm-2 image" id="hail">Hail</div>
+                        <div class="col-sm-2 image" id="sars1">Cond Max Hail</div>
+                        <div class="col-sm-2 image" id="sars2">MaxH Expected</div>
                         <div class="col-sm-2 image" id="sigh">Sig Hail</div>
+                        <div class="col-sm-2 image" id="dcp">Derecho Comp</div>
                         <div class="col-sm-2 image" id="cbsig">Craven SigSvr</div>
                         <div class="col-sm-2 image" id="cpsh">Cape/Shear</div>
                         <div class="col-sm-2 image" id="lcls">LCLS</div>
                         <div class="col-sm-2 image" id="lr3c">0-3km LR</div>
-                        <div class="col-sm-2 image" id="3cape_shr3">0-3km CAPE</div>
+                        <div class="col-sm-2 image" id="3cape_shr3">0-3 cp/shr</div>
 
                     </div>
                 </div>
@@ -288,7 +313,9 @@
                     const day1prob = spc_out + 'day1probotlk_'
                     const day2prob = spc_out + 'day2probotlk_'
                     const sat = 'https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/'
-                    const ma = 'http://www.spc.noaa.gov/exper/mesoanalysis/s16/'
+                    const exper = 'http://www.spc.noaa.gov/exper/'
+                    const ma = exper + 'mesoanalysis/s16/'
+                    const sound = exper + 'soundings/'
                     const wpc_qpf = 'http://www.wpc.ncep.noaa.gov/qpf/'
                     var urls = {
                         'dy1_otlk': spc_out + 'day1otlk.gif',
@@ -353,22 +380,67 @@
                         'sand': sat + 'CGL/Sandwich/GOES16-CGL-Sandwich-600x600.gif',
                         'dayp': sat + 'CGL/DayCloudPhase/GOES16-ABI-CGL-DayCloudPhase-600x600.gif',
                         'ngtp': sat + 'cgl/NightMicrophysics/GOES16-CGL-NightMicrophysics-600x600.gif',
-                        'KDTX': 'http://weather.rap.ucar.edu/upper/displayUpper.php?img=KDTX.png&endDate=-1&endTime=-1&duration=0',
-                        'KAPX': 'http://weather.rap.ucar.edu/upper/displayUpper.php?img=KAPX.png&endDate=-1&endTime=-1&duration=0',
-                        'KGRB': 'http://weather.rap.ucar.edu/upper/displayUpper.php?img=KGRB.png&endDate=-1&endTime=-1&duration=0',
-                        'KILX': 'http://weather.rap.ucar.edu/upper/displayUpper.php?img=KILX.png&endDate=-1&endTime=-1&duration=0',
-                        'KDVN': 'http://weather.rap.ucar.edu/upper/displayUpper.php?img=KDTX.png&endDate=-1&endTime=-1&duration=0',
                     }
+
                     // append spc mesoanalysis products to dictionary since url structure is systematic
-                    spc_items = ['sbcp', 'mlcp', 'mucp', 'dcape', 'laps', 'lllr', 'lclh', 'eshr', 'shr1', 'shr3',
-                        'shr6',
-                        'effh', 'srh1', 'srh3', 'llsr', 'scp', 'stor', 'sigh', 'cbsig', 'cpsh', 'vgp3', 'lcls',
-                        'lr3c',
+                    //spc_items = [ 'sars1', 'sars2', 'hail', 'dcp', 'mbcp', 'tdlr', 'qlcs1', 'qlcs2',
+                //'effh', 'srh5', 'srh1', 'srh3', 'llsr', 'mlsr', 'ulsr', 'alsr', 'scp', 'stor', 'sigh',
+                //'cbsig', 'cpsh', 'vgp3', 'lcls',
+                //'lr3c', '3cvr',
+                //'3cape_shr3'
+            //]
+                    spc_items = ['sbcp', 'mlcp', 'mucp', 'dcape', 'laps', 'lllr', 'lclh', 'lfch', 'llrh', 'eshr',
+                        'shr1', 'shr1_chg', 'shr3', 
+                        'shr6', 'shr6_chg', 'hodo', 'sars1', 'sars2', 'hail', 'dcp', 'mbcp', 'tdlr', 'qlcs1', 'qlcs2',
+                        'effh', 'srh5', 'srh1', 'srh3', 'llsr', 'mlsr', 'ulsr', 'alsr', 'scp', 'stor', 'sigh',
+                        'cbsig', 'cpsh', 'vgp3', 'lcls',
+                        'lr3c', '3cvr',
                         '3cape_shr3'
                     ]
+
                     spc_items.forEach(s => {
                         urls[s] = ma + s + '/' + s + '.gif'
                     });
+
+                    sounding_items = ['KDTX', 'KAPX', 'KGRB', 'KILX', 'KDVN']
+                    sounding_items.forEach(so => {
+                        urls[so] = 'http://weather.rap.ucar.edu/upper/displayUpper.php?img=' + so +
+                            '.png&endDate=-1&endTime=-1&duration=0'
+                    });
+
+                    function soundingDate() {
+                        // create a new timestamp 
+                        var now = new Date();
+
+                        var year = now.getUTCFullYear().toString().slice(-2)
+                        var month = now.getUTCMonth() + 1;
+                        monstr = month.toString();
+                        if (monstr.length == 1) {
+                            monstr = '0' + monstr;
+                        }
+                        var date = now.getUTCDate().toString();
+                        if (date.length == 1) {
+                            date = '0' + date
+                        }
+                        var hour = now.getUTCHours();
+                        if (hour > 12) {
+                            var hr = '12'
+                        } else {
+                            var hr = '00'
+                        }
+                        //var queryString = "?t=" + timestamp;
+                        //newSrc = imgURL + queryString;
+                        let dateString = year + monstr + date + hr + '_OBS/';
+                        return dateString;
+                    }
+                    // 22042212_OBS/
+                    let soundDate = soundingDate();
+
+                    sound_items = ['DTX', 'APX', 'GRB', 'ILX', 'DVN', 'MPX', 'OAX', 'TOP']
+                    sound_items.forEach(soo => {
+                        urls[soo] = sound + soundDate + soo + '.gif'
+                        console.log(urls[soo])
+                    })
 
                     function getImage(e) {
                         reference_id = e.target.id
@@ -392,6 +464,8 @@
                         //console.log(newSrc)
                         return newSrc
                     }
+
+
 
 
                     function adjustDividers(b) {
