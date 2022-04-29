@@ -30,11 +30,9 @@
         }
 
         .time {
-            /* font-weight: bold; */
-            padding: 0.2rem;
+            min-height: 2rem;
             font-weight: bold;
             background-color: rgb(240, 240, 240);
-            /* color: crimson; */
         }
 
         .highlight {
@@ -44,18 +42,28 @@
             font-weight: bold;
         }
 
+        a:hover {
+            color: rgb(255, 255, 83);
+            background-color: rgb(185, 185, 234);
+            padding: 0.2rem;
+        }
+
         .stretch {
             padding-top: 0.5rem;
             padding-bottom: 0.5rem;
         }
 
         .display-image {
-            align-self: center;
-            width: 85%;
-            /* height: 80%; */
+            width: 900px;
+            height: 600px;
             background-repeat: no-repeat;
             background-position: 50% 50%;
             background-size: cover;
+            object-fit: contain;
+        }
+
+        a:link {
+            text-decoration: none;
         }
     </style>
     <title>Mesoanalysis</title>
@@ -77,7 +85,7 @@
             <button type="button" class="btn btn-outline-secondary" id="links">Links</button>
         </div>
     </div>
-    <div class="container">
+    <div class="container-fluid">
         <div class="d-flex justify-content-center text-center">
             <div class="row">
                 <!--  <div class="col-sm image" id="dy1">Day1</div>
@@ -120,7 +128,18 @@
                 </div>
                 <div class="divider" id="section_swody1">
                     <div class="row">
-                        <div class="col-sm-2 time"><a href="https://www.spc.noaa.gov/products/outlook/day1otlk.html" target="_blank">Most Recent</a></div>
+
+                        <div class="col-sm-2 time"><a href="https://www.spc.noaa.gov/products/md/"
+                                target="_blank">Watches page</a></div>
+
+                        <div class="col-sm-2 time"><a href="https://www.spc.noaa.gov/products/md/" target="_blank">MD
+                                page</a></div>
+                        <div class="col-sm-2 image" id="s-mds">Meso disc</div>
+                        <div class="col-sm-2 image" id="s-watch">Watches</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2 time"><a href="https://www.spc.noaa.gov/products/outlook/day1otlk.html"
+                                target="_blank">Most Recent</a></div>
                         <div class="col-sm-2 image" id="dy1_otlk">Outlook</div>
                         <div class="col-sm-2 image" id="dy1_hail">Hail</div>
                         <div class="col-sm-2 image" id="dy1_wind">Wind</div>
@@ -128,7 +147,9 @@
 
                     </div>
                     <div class="row">
-                        <div class="col-sm-2 time"><a href="https://www.spc.noaa.gov/products/outlook/day1otlk_0100.html" target="_blank">0100 UTC</a></div>
+                        <div class="col-sm-2 time"><a
+                                href="https://www.spc.noaa.gov/products/outlook/day1otlk_0100.html" target="_blank">0100
+                                UTC</a></div>
                         <div class="col-sm-2 image" id="dy1_0100_otlk">Outlook</div>
                         <div class="col-sm-2 image" id="dy1_0100_hail">Hail</div>
                         <div class="col-sm-2 image" id="dy1_0100_wind">Wind</div>
@@ -136,7 +157,9 @@
 
                     </div>
                     <div class="row">
-                        <div class="col-sm-2 time"><a href="https://www.spc.noaa.gov/products/outlook/day1otlk_0600.html" target="_blank">0600 UTC</a></div>
+                        <div class="col-sm-2 time"><a
+                                href="https://www.spc.noaa.gov/products/outlook/day1otlk_0600.html" target="_blank">0600
+                                UTC</a></div>
                         <div class="col-sm-2 image" id="dy1_0600_otlk">Outlook</div>
                         <div class="col-sm-2 image" id="dy1_0600_hail">Hail</div>
                         <div class="col-sm-2 image" id="dy1_0600_wind">Wind</div>
@@ -144,7 +167,9 @@
 
                     </div>
                     <div class="row">
-                        <div class="col-sm-2 time"><a href="https://www.spc.noaa.gov/products/outlook/day1otlk_1300.html" target="_blank">1300 UTC</a></div>
+                        <div class="col-sm-2 time"><a
+                                href="https://www.spc.noaa.gov/products/outlook/day1otlk_1300.html" target="_blank">1300
+                                UTC</a></div>
                         <div class="col-sm-2 image" id="dy1_1300_otlk">Outlook</div>
                         <div class="col-sm-2 image" id="dy1_1300_hail">Hail</div>
                         <div class="col-sm-2 image" id="dy1_1300_wind">Wind</div>
@@ -152,7 +177,9 @@
 
                     </div>
                     <div class="row">
-                        <div class="col-sm-2 time"><a href="https://www.spc.noaa.gov/products/outlook/day1otlk_1630.html" target="_blank">1630 UTC</a></div>
+                        <div class="col-sm-2 time"><a
+                                href="https://www.spc.noaa.gov/products/outlook/day1otlk_1630.html" target="_blank">1630
+                                UTC</a></div>
                         <div class="col-sm-2 image" id="dy1_1630_otlk">Outlook</div>
                         <div class="col-sm-2 image" id="dy1_1630_hail">Hail</div>
                         <div class="col-sm-2 image" id="dy1_1630_wind">Wind</div>
@@ -161,7 +188,8 @@
                 </div>
                 <div class="divider" id="section_swody2">
                     <div class="row">
-                        <div class="col-sm-2 time"><a href="https://www.spc.noaa.gov/products/outlook/day2otlk.html" target="_blank">Most Recent</a></div>
+                        <div class="col-sm-2 time"><a href="https://www.spc.noaa.gov/products/outlook/day2otlk.html"
+                                target="_blank">Most Recent</a></div>
                         <div class="col-sm-2 image" id="dy2_otlk">Outlook</div>
                         <div class="col-sm-2 image" id="dy2_hail">Hail</div>
                         <div class="col-sm-2 image" id="dy2_wind">Wind</div>
@@ -170,7 +198,9 @@
 
                     </div>
                     <div class="row">
-                        <div class="col-sm-2 time"><a href="https://www.spc.noaa.gov/products/outlook/day2otlk_0600.html" target="_blank">0600 UTC</a></div>
+                        <div class="col-sm-2 time"><a
+                                href="https://www.spc.noaa.gov/products/outlook/day2otlk_0600.html" target="_blank">0600
+                                UTC</a></div>
                         <div class="col-sm-2 image" id="dy2_0600_otlk">Outlook</div>
                         <div class="col-sm-2 image" id="dy2_0600_hail">Hail</div>
                         <div class="col-sm-2 image" id="dy2_0600_wind">Wind</div>
@@ -178,7 +208,9 @@
 
                     </div>
                     <div class="row">
-                        <div class="col-sm-2 time"><a href="https://www.spc.noaa.gov/products/outlook/day2otlk_1730.html" target="_blank">1730 UTC</a></div>
+                        <div class="col-sm-2 time"><a
+                                href="https://www.spc.noaa.gov/products/outlook/day2otlk_1730.html" target="_blank">1730
+                                UTC</a></div>
                         <div class="col-sm-2 image" id="dy2_1730_otlk">Outlook</div>
                         <div class="col-sm-2 image" id="dy2_1730_hail">Hail</div>
                         <div class="col-sm-2 image" id="dy2_1730_wind">Wind</div>
@@ -306,9 +338,9 @@
 
                     </div>
                 </div>
-                <div class="container">
+                <div class="container-fluid">
                     <div class="d-flex justify-content-center text-center">
-                        <div class="row">
+                        <div class="row fit">
                             <img id="display-image" class="img-fluid display-image"
                                 src="https://www.spc.noaa.gov/products/outlook/day1otlk.gif">
                         </div>
@@ -402,8 +434,9 @@
                     }
 
                     spc_items = ['sbcp', 'mlcp', 'mucp', 'dcape', 'laps', 'lllr', 'lclh', 'lfch', 'llrh', 'eshr',
-                        'shr1', 'shr1_chg', 'shr3', 
-                        'shr6', 'shr6_chg', 'hodo', 'sars1', 'sars2', 'hail', 'dcp', 'mbcp', 'tdlr', 'qlcs1', 'qlcs2',
+                        'shr1', 'shr1_chg', 'shr3',
+                        'shr6', 'shr6_chg', 'hodo', 'sars1', 'sars2', 'hail', 'dcp', 'mbcp', 'tdlr', 'qlcs1',
+                        'qlcs2',
                         'effh', 'srh5', 'srh1', 'srh3', 'llsr', 'mlsr', 'ulsr', 'alsr', 'scp', 'stor', 'sigh',
                         'cbsig', 'cpsh', 'vgp3', 'lcls',
                         'lr3c', '3cvr',
