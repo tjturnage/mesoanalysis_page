@@ -87,12 +87,15 @@
             <button type="button" class="btn btn-outline-danger" id="swody2">SWODY2</button>
             <button type="button" class="btn btn-outline-danger" id="spc_watch">Watches</button>
             <button type="button" class="btn btn-outline-danger" id="surface">Surface</button>
-            <button type="button" class="btn btn-outline-danger" id="upper">Upper Air</button>
+            <button type="button" class="btn btn-outline-danger" id="upper">Upper</button>
             <button type="button" class="btn btn-outline-danger" id="ma-stability">Thermo</button>
-            <button type="button" class="btn btn-outline-danger" id="ma-shear">Kinematics</button>
+            <button type="button" class="btn btn-outline-danger" id="ma-shear">Shear</button>
             <button type="button" class="btn btn-outline-danger" id="ma-composite">Composites</button>
+            <button type="button" class="btn btn-outline-danger" id="ma-multiparm">Multi Parm</button>
             <!-- <button type="button" class="btn btn-primary" id="swody3">swody3</button> -->
-            <button type="button" class="btn btn-outline-success" id="wpc">WPC</button>
+            <button type="button" class="btn btn-outline-success" id="wpc">Heavy Rain</button>
+            <button type="button" class="btn btn-outline-success" id="ma-fire">Fire</button>
+            <button type="button" class="btn btn-outline-success" id="ma-winter">Winter</button>
             <button type="button" class="btn btn-outline-info" id="sounding">Soundings</button>
             <button type="button" class="btn btn-outline-info" id="satellite">Satellite</button>
             <button type="button" class="btn btn-outline-secondary" id="links">Links</button>
@@ -291,6 +294,17 @@
                 </div>
             </div>
 
+            <div class="divider" id="section_ma-fire">
+                <div class="row">
+                    <div class="col-sm-2 image nr" id="sfir">Sfc RH / T / Wind</div>
+                    <div class="col-sm-2 image nr" id="fosb">Fosberg Index</div>
+                    <div class="col-sm-2 image nr" id="lhan">Low Haines Index</div>
+                    <div class="col-sm-2 image nr" id="mhan">Mid Haines Index</div>
+                    <div class="col-sm-2 image nr" id="hhan">High Haines Index</div>
+                    <div class="col-sm-2 image nr" id="lasi">Lower Atmos Severity Index</div>
+                </div>
+            </div>
+
             <div class="divider" id="section_ma-shear">
                 <div class="row">
                     <div class="col-sm-2 image nr" id="eshr">Eff Bulk</div>
@@ -313,63 +327,100 @@
 
             <div class="divider" id="section_ma-composite">
                 <div class="row">
-                    <div class="col-sm-2 image nr" id="scp">SCP</div>
-                    <div class="col-sm-2 image nr" id="stor">Sig Tor</div>
-                    <div class="col-sm-2 image nr" id="stpc">Eff Sig Tor</div>
-                    <div class="col-sm-2 image nr" id="stpc5">0-500m STP</div>
-                    <div class="col-sm-2 image nr" id="hail">Hail</div>
-                    <div class="col-sm-2 image nr" id="sars1">Cond Max Hail</div>
-                    <div class="col-sm-2 image nr" id="sars2">MaxH Expected</div>
-                    <div class="col-sm-2 image nr" id="sigh">Sig Hail</div>
+                    <div class="col-sm-2 image nr" id="scp">Supercell Composite</div>
+                    <div class="col-sm-2 image nr" id="stor">Sig Tor (fixed)</div>
+                    <div class="col-sm-2 image nr" id="stpc">Sig Tor (eff)</div>
+                    <div class="col-sm-2 image nr" id="stpc5">Sig Tor (0-500m SRH)</div>
+                    <div class="col-sm-2 image nr" id="sigt1">Cond Prob SigTor 1</div>
+                    <div class="col-sm-2 image nr" id="sigt2">Cond Prob SigTor 2</div>
+                    <div class="col-sm-2 image nr" id="nstp">Non-Supercell Tor</div>
+                    <div class="col-sm-2 image nr" id="vtp3">Violent Tor Parm</div>
+                    <div class="col-sm-2 image nr" id="sigh">Significant Hail</div>
+                    <div class="col-sm-2 image nr" id="sars1">SARS Hail Size</div>
+                    <div class="col-sm-2 image nr" id="sars2">SARS Hail %age</div>
+                    <div class="col-sm-2 image nr" id="lghl">Large Hail Parm</div>
                     <div class="col-sm-2 image nr" id="dcp">Derecho Comp</div>
-                    <div class="col-sm-2 image nr" id="cbsig">Craven SigSvr</div>
+                    <div class="col-sm-2 image nr" id="cbsig">Craven/Brooks SigSvr</div>
                     <div class="col-sm-2 image nr" id="brn">Bulk Ri Number</div>
-                    <div class="col-sm-2 image nr" id="cpsh">Cape/Shear</div>
-                    <div class="col-sm-2 image nr" id="lcls">LCLS</div>
-                    <div class="col-sm-2 image nr" id="lr3c">0-3km MLCAPE/LR</div>
-                    <div class="col-sm-2 image nr" id="3cvr">0-3km MLCAPE/sfc vort</div>
-                    <div class="col-sm-2 image nr" id="3cape_shr3">0-3km MLCAPE/shr</div>
-                    <div class="col-sm-2 image nr" id="desp">Enhanced Stretching Pot</div>
-                    
+                    <div class="col-sm-2 image nr" id="mcsm">MCS Maint</div>
+                    <div class="col-sm-2 image nr" id="mbcp">Microburst Composite</div>
+                    <div class="col-sm-2 image nr" id="desp">Enh Stretch Pot</div>
+                    <div class="col-sm-2 image nr" id="ehi1">EHI - Sfc-1km</div>
+                    <div class="col-sm-2 image nr" id="ehi3">EHI - Sfc-3km</div>
+                    <div class="col-sm-2 image nr" id="vgp3">VGP - Sfc-3km</div>
+                    <div class="col-sm-2 image nr" id="crit">Critical Angle</div>
+                </div>
+            </div>
+
+
+            <div class="divider" id="section_ma-multiparm">
+                <div class="row">
+                    <div class="col-sm-2 image nr" id="mlcp_eshr">MLCAPE / Eff Shear</div>
+                    <div class="col-sm-2 image nr" id="cpsh">MUCAPE / Eff Shear</div>
+                    <div class="col-sm-2 image nr" id="comp">MU LI / H8 & H5 Wind</div>
+                    <div class="col-sm-2 image nr" id="lcls">LCL Hgt / 0-1 SRH</div>
+                    <div class="col-sm-2 image nr" id="lr3c">0-3km Lapse Rate/MLCAPE</div>
+                    <div class="col-sm-2 image nr" id="3cape_shr3">0-3km Bulk Shear/MLCAPE</div>
+                    <div class="col-sm-2 image nr" id="3cvr">Sfc Vort / 0-3km MLCAPE</div>
+                    <div class="col-sm-2 image nr" id="tdlr">Sfc Dwpt / H7-H5 LapseR</div>
+                    <div class="col-sm-2 image nr" id="qlcs1">0-3km ThetaE diff/Shear Vec & MUCAPE</div>
+                    <div class="col-sm-2 image nr" id="qlcs2">>0-3km ThetaE diff/Shear Vec & MLCAPE</div>
+
                 </div>
             </div>
 
             <div class="divider" id="section_surface">
                 <div class="row">
-                    <div class="col-sm-2 image nr" id="bigsfc">Surface Plot</div>
+
                     <div class="col-sm-2 image nr" id="pmsl">Pressure and Wind</div>
-                    <div class="col-sm-2 image nr" id="ttd">Temp and dewpoint</div>
-                    <div class="col-sm-2 image nr" id="mcon">Moist Conv & MixR</div>
-                    <div class="col-sm-2 image nr" id="mxth">Mixr, Theta, Wind</div>
-                    <div class="col-sm-2 image nr" id="thea">Theta, Advection, Wind</div>
-                    <div class="col-sm-2 image nr" id="sfnt">Fgen</div>
+                    <div class="col-sm-2 image nr" id="bigsfc">Surface Plot</div>
+                    <div class="col-sm-2 image nr" id="ttd">Temp/Wind/Dwpt</div>
+                    <div class="col-sm-2 image nr" id="thet">MSL Press/Theta-e/Wind</div>
+                    <div class="col-sm-2 image nr" id="mcon">Moisture Convergence</div>
+                    <div class="col-sm-2 image nr" id="thea">Theta-E Advection</div>
+                    <div class="col-sm-2 image nr" id="mxth">Mixing Ratio / Theta</div>
+                    <div class="col-sm-2 image nr" id="icon">Inst Contraction Rate</div>
+                    <div class="col-sm-2 image nr" id="trap">Fluid Trapping</div>
+                    <div class="col-sm-2 image nr" id="vtm">Velocity Tensor Mag</div>
+                    <div class="col-sm-2 image nr" id="dvvr">Sfc Div and Vort</div>
+                    <div class="col-sm-2 image nr" id="def">Deformation / Axis of Dilitation</div>
+                    <div class="col-sm-2 image nr" id="pchg">2hr Press Change</div>
                     <div class="col-sm-2 image nr" id="temp_chg">3hr Temp Change</div>
                     <div class="col-sm-2 image nr" id="dwpt_chg">3hr Dewpoint Change</div>
+                    <div class="col-sm-2 image nr" id="mixr_chg">3hr 100mb MixR Change</div>
                     <div class="col-sm-2 image nr" id="thte_chg">3hr Thetae Change</div>
                 </div>
             </div>
 
             <div class="divider" id="section_upper">
                 <div class="row">
-                    <div class="col-sm-2 image nr" id="925mb">925 mb</div>
-                    <div class="col-sm-2 image nr" id="tadv_925">925 adv</div>
-                    <div class="col-sm-2 image nr" id="850mb">850 mb</div>
-                    <div class="col-sm-2 image nr" id="tadv">850 adv</div>
-                    <div class="col-sm-2 image nr" id="700mb">700 mb</div>
-                    <div class="col-sm-2 image nr" id="7tad">700 mb adv</div>
-                    <div class="col-sm-2 image nr" id="500mb">500 mb</div>
-                    <div class="col-sm-2 image nr" id="300mb">300 mb</div>
-                    <div class="col-sm-2 image nr" id="925f">sfc-925 fgen</div>
-                    <div class="col-sm-2 image nr" id="98ft">925-850 fgen</div>
-                    <div class="col-sm-2 image nr" id="857f">850-700 fgen</div>
-                    <div class="col-sm-2 image nr" id="75ft">700-500 fgen</div>
+                    <div class="col-sm-2 image nr" id="925mb">925mb Analysis</div>
+                    <div class="col-sm-2 image nr" id="850mb2">850mb Analysis</div>
+                    <div class="col-sm-2 image nr" id="850mb">850mb Analysis v2</div>
+                    <div class="col-sm-2 image nr" id="700mb">700mb Analysis</div>
+                    <div class="col-sm-2 image nr" id="500mb">500mb Analysis</div>
+                    <div class="col-sm-2 image nr" id="300mb">300mb Analysis</div>
+                    <div class="col-sm-2 image nr" id="dlcp">Deep Moist Conv</div>
+                    <div class="col-sm-2 image nr" id="tadv_925">925mb Temp Adv</div>
+                    <div class="col-sm-2 image nr" id="tadv">850mb Temp Adv</div>
+                    <div class="col-sm-2 image nr" id="7tad">700mb Temp Adv</div>
+                    <div class="col-sm-2 image nr" id="sfnt">Surface FGEN</div>
+                    <div class="col-sm-2 image nr" id="9fnt">925mb FGEN</div>
+                    <div class="col-sm-2 image nr" id="8fnt">850mb FGEN</div>
+                    <div class="col-sm-2 image nr" id="7fnt">700mb FGEN</div>
                     <div class="col-sm-2 image nr" id="epvl">850 fgen & EPV</div>
                     <div class="col-sm-2 image nr" id="epvm">700 fgen & EPV</div>
-                    <div class="col-sm-2 image nr" id="vadv">DCVA H500</div>
+                    <div class="col-sm-2 image nr" id="98ft">925-850mb FGEN</div>
+                    <div class="col-sm-2 image nr" id="857f">850-700mb FGEN</div>
+                    <div class="col-sm-2 image nr" id="75ft">700-500mb FGEN</div>
+                    <div class="col-sm-2 image nr" id="vadv">700-400mb Diff PVA</div>
+                    <div class="col-sm-2 image nr" id="padv">400-250mb Pot Vort Adv</div>
+                    <div class="col-sm-2 image nr" id="ddiv">850-250mb Diff Div</div>
+                    <div class="col-sm-2 image nr" id="ageo">300mb Jet Circ</div>
                     <div class="col-sm-2 image nr" id="500mb_chg">12hr H5 chg</div>
-                    <div class="col-sm-2 image nr" id="ageo">H3 jet / Ageo wind</div>
-                    <div class="col-sm-2 image nr" id="ddiv">Diff Divergence</div>
-                    <div class="col-sm-2 image nr" id="padv">Pot Vort Adv</div>
+                    <div class="col-sm-2 image nr" id="trap_500">Fluid Trapping (H500)</div>
+                    <div class="col-sm-2 image nr" id="trap_250">Fluid Trapping (H250)</div>
+
                 </div>
             </div>
 
@@ -385,10 +436,30 @@
                     <div class="col-sm-2 image" id="ngtp">Night Micro</div>
                     <div class="col-sm-2 image" id="sand">Sandwich</div>
                     <div class="col-sm-2 image" id="airm">Airmass</div>
+                    <div class="col-sm-2 image" id="ch01i">CH01</div>
+                    <div class="col-sm-2 image" id="ch02i">CH02</div>
+                    <div class="col-sm-2 image" id="ch03i">CH03</div>
+                    <div class="col-sm-2 image" id="ch04i">CH04</div>
+                    <div class="col-sm-2 image" id="ch05i">CH05</div>
+                    <div class="col-sm-2 image" id="ch06i">CH06</div>
+                    <div class="col-sm-2 image" id="ch07i">CH07</div>
+                    <div class="col-sm-2 image" id="ch08i">CH08</div>
+                    <div class="col-sm-2 image" id="ch09i">CH09</div>
+                    <div class="col-sm-2 image" id="ch10i">CH10</div>
+                    <div class="col-sm-2 image" id="ch11i">CH11</div>
+                    <div class="col-sm-2 image" id="ch12i">CH12</div>
+                    <div class="col-sm-2 image" id="ch13i">CH13</div>
+                    <div class="col-sm-2 image" id="ch14i">CH14</div>
+                    <div class="col-sm-2 image" id="ch15i">CH15</div>
+                    <div class="col-sm-2 image" id="ch16i">CH16</div>
+                    <div class="col-sm-2 image" id="geoci">GeoColor</div>
+                    <div class="col-sm-2 image" id="airmi">Airmass</div>
+                    <div class="col-sm-2 image" id="sandi">Sandwich</div>
+                    <div class="col-sm-2 image" id="dmici">Day Cloud Phase</div>
+                    <div class="col-sm-2 image" id="nmici">Night Micropysics</div>
                     <div class="col-sm-2 image" id="cint">Convective Init</div>
                 </div>
             </div>
-
 
             <div class="divider" id="section_spc_watch">
                 <div class="row">
@@ -433,9 +504,13 @@
         const spc_out = spc_prods + 'outlook/'
         const day1prob = spc_out + 'day1probotlk_'
         const day2prob = spc_out + 'day2probotlk_'
-        const sat = 'https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/'
+        const sat_sector = 'UMW'
+        const sat = 'https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/';
+        const sat2 = 'https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/' + sat_sector + '/'
+        const sat3 = 'https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/CGL/'
+        const ma_sector = 's14'
         const exper = 'http://www.spc.noaa.gov/exper/'
-        const ma = exper + 'mesoanalysis/s14/'
+        const ma = exper + 'mesoanalysis/' + sat_sector + '/'
         const sound = exper + 'soundings/'
         const wpc_qpf = 'http://www.wpc.ncep.noaa.gov/qpf/'
         var urls = {
@@ -509,19 +584,44 @@
             'sand': sat + 'CGL/Sandwich/GOES16-CGL-Sandwich-600x600.gif',
             'dayp': sat + 'CGL/DayCloudPhase/GOES16-ABI-CGL-DayCloudPhase-600x600.gif',
             'ngtp': sat + 'cgl/NightMicrophysics/GOES16-CGL-NightMicrophysics-600x600.gif',
+            'ch01i': sat3 + '01/600x600.jpg',
+            'ch02i': sat3 + '02/600x600.gif',
+            'ch03i': sat3 + '03/600x600.jpg',
+            'ch04i': sat3 + '04/600x600.jpg',
+            'ch05i': sat3 + '05/600x600.jpg',
+            'ch06i': sat3 + '06/600x600.jpg',
+            'ch07i': sat3 + '07/600x600.gif',
+            'ch08i': sat3 + '08/600x600.gif',
+            'ch09i': sat3 + '09/600x600.jpg',
+            'ch10i': sat3 + '10/600x600.jpg',
+            'ch11i': sat3 + '11/600x600.jpg',
+            'ch12i': sat3 + '12/600x600.jpg',
+            'ch13i': sat3 + '13/600x600.gif',
+            'ch14i': sat3 + '14/600x600.jpg',
+            'ch15i': sat3 + '15/600x600.jpg',
+            'ch16i': sat3 + '16/600x600.jpg',
+            'geoci': sat3 + 'GEOCOLOR/GOES16-UMV-GEOCOLOR-600x600.gif',
+            'airmi': sat3 + 'AirMass/GOES16-UMV-AirMass-600x600.gif',
+            'sandi': sat3 + 'Sandwich/GOES16-UMV-Sandwich-600x600.gif',
+            'dmici': sat3 + 'DayCloudPhase/600x600.jpg',
+            'nmici': sat3 + 'NightMicrophysics/600x600.jpg',
             'cint': 'https://www.nsstc.uah.edu/SATCAST/goes-east_fulldomain/UAH_SATCASTv3_CI_VIS.png'
         }
+        'https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/' + sat_sector + '/'
+        https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/UMV/03/600x600.jpg
 
         spc_items = ['sbcp', 'mlcp', 'mucp', 'dcape', 'laps', 'lllr', 'lclh', 'lcls', 'lfch', 'lfrh',
-            'eshr', 'shr1', 'shr1_chg', 'shr3', 'shr6', 'shr6_chg', 'hodo', 'sars1', 'sars2', 'hail',
-            'dcp', 'mbcp', 'tdlr', 'qlcs1', 'qlcs2', 'effh', 'srh5', 'srh1', 'srh3', 'llsr', 'mlsr',
-            'ulsr', 'alsr', 'scp', 'lscp', 'stpc', 'stpc5', 'stor', 'sigh', 'cbsig', 'cpsh', 'vgp3',
-            'lcls', 'lr3c', '3cvr', '3cape_shr3', '925mb', '850mb', '700mb', '500mb', '300mb', 'tran',
-            'dlcp', 'tadv_925', 'tadv', '7tad', '857f', '75ft', '98ft', 'vadv', 'ageo', 'epvl', 'epvm',
-            'sfnt', '925f', '500mb_chg', 'nstp', 'cpsh', 'ehi1', 'ehi3', 'lr3c', 'pwtr', 'tran', 'prop',
-            'peff', 'tran_925', 'tran_925-850', 'bigsfc', 'pmsl', 'ttd', 'mcon', 'mxth', 'thea', 'sfnt',
-            'temp_chg', 'dwpt_chg', 'thte_chg', '925mb', '850mb', '700mb', '500mb', '300mb', 'tadv_925',
-            'tadv', '7tad', 'ddiv', 'padv', 'brn', 'desp'
+            'eshr', 'shr1', 'shr1_chg', 'shr3', 'shr6', 'shr6_chg', 'hodo', 'hail', 'sars1', 'sars2', 'lghl',
+            'dcp', 'mbcp', 'qlcs1', 'qlcs2', 'effh', 'srh5', 'srh1', 'srh3', 'llsr', 'mlsr', 'ulsr', 'alsr', 'scp',
+            'lscp', 'stor', 'stpc', 'stpc5', 'sigt1', 'sigt1', 'nstp', 'vtp3', 'sigh', 'cbsig', 'cpsh', 'vgp3',
+            'lcls', 'lr3c', '3cvr', '3cape_shr3', '925mb', '850mb', '850mb2', '700mb', '500mb', '300mb', 'tran',
+            'dlcp', 'tadv_925', 'tadv', '7tad', '9fnt', '8fnt', '7fnt', '857f', '75ft', '98ft', 'vadv', 'ageo',
+            'epvl', 'epvm', 'sfnt', '925f', '500mb_chg', 'nstp', 'cpsh', 'lr3c', 'pwtr', 'tran', 'prop', 'peff',
+            'tran_925', 'tran_925-850', 'bigsfc', 'pmsl', 'ttd', 'mcon', 'mxth', 'thea', 'thet', 'icon', 'trap',
+            'vtm', 'dvvr', 'def', 'sfnt', 'pchg', 'temp_chg', 'dwpt_chg', 'mixr_chg', 'thte_chg', '925mb', '850mb',
+            '700mb', '500mb', '300mb', 'tadv_925', 'tadv', '7tad', 'ddiv', 'padv', 'brn', 'desp', 'ehi1', 'ehi3',
+            'vgp3', 'crit', 'mlcape_eshr', 'comp', 'lcls', 'tdlr', 'mcsm', 'mbcp', 'sfir', 'fosb', 'lhan', 'mhan',
+            'hhan', 'lasi', 'trap_500', 'trap_250'
         ]
 
 
@@ -564,7 +664,7 @@
             'epvm': "700 mb Frontogensis (solid red), 650-500 mb EPV (blue shading = stable; red/green shading = unstable), and Conditional Instability (solid black). Look for max 700 mb frontogenesis coincident with or just downstream from (-) EPV. Also consider 850 mb frontogenesis and frontal slope between the 2 levels. Frontogenesis and (-) EPV may extend or be located above 700 mb at times, especially in cool season.",
             'vadv': "700-400 mb Differential Vorticity Advection (DVA) and 500 mb Height (solid black) and Vorticity (shaded). (+) DVA = solid blue. (-) DVA = dashed red. (+) DVA promotes synoptic-scale (isentropic) lift, moisture and temperature advection and convergence, and destabilization.",
             'ageo': "300 mb Height (solid black), Isotachs (shaded), Ageostrophic Wind, and 700-500 mb Omega. Ascent = solid magenta. Descent = dashed red. Best locations for organized convection is anticyclonically-curved right entrance regions (QLCS/MCS) and exit regions of mid-to-upper jet streaks (supercells).",
-            'sbcp': "Surface-Based CAPE (contour), Surface-Based CIN (shaded), and Surface Wind. CAPE values can = 0 and still get elevated convection if elevated instability exists above frontal inversion or if upstream (warm sector) SBCAPE > 0. High values of CIN can cap convection despite high instability without sufficient forcing.",
+            'sbcp': '<p><font face="Arial, Helvetica, sans-serif" size="2"><b><font color="#990000">Surface-Based CAPE/CIN (J kg<sup>-1</sup>)</b></font></p><p><font face="Arial, Helvetica, sans-serif" size="2">SBCAPE (<u><b>S</b></u>urface-<u><b>B</b></u>ased <u><b>C</b></u>onvective<u><b>A</b></u>vailable <u><b>P</b></u>otential <u><b>E</b></u>nergy) is a measure of instability in the troposphere.  This value represents the total amount of potential energy available to a parcel of air originating at the surface and being lifted to its level of free convection (LFC). No parcel entrainment is considered. The CAPE and CIN calculations use the virtual temperature correction.</p><p>CIN (<u><b>C</b></u>onvective <u><b>IN</b></u>hibition) represents the "negative" area on a sounding that must be overcome before storm initiation can occur.</p></font>Surface-Based CAPE (contour), Surface-Based CIN (shaded), and Surface Wind. CAPE values can = 0 and still get elevated convection if elevated instability exists above frontal inversion or if upstream (warm sector) SBCAPE > 0. High values of CIN can cap convection despite high instability without sufficient forcing.',
             'mlcp': "Mixed-Layer CAPE (tan contour > 100 J/kg, red contour > 500 J/kg), Mixed-Layer CIN (shaded), and Surface Wind. More representative of updraft and storm intensity than surface-based, especially if low-level inversion present. Values: 0-1000 (weakly unstable); 1000-2500 (moderately unstable); 2500-3500 (very unstable); > 3500 (extremely unstable). High values of CIN can cap convection despite high instability without sufficient forcing.",
             'mucp': "Most Unstable CAPE (tan contour > 100 J/kg, red contour > 500 J/kg) and Lifted Parcel Level (AGL, shaded). Parcel lifted from most unstable level. Used to determine amount of elevated instability and elevated convection potential above frontal zone.",
             'dcape': "Downdraft CAPE > 500 J/kg (solid contour). Indicates potential to mix down momentum aloft in downdraft. High values associated with steep low-level and mid-level lapse rates, and dry air aloft (above low-level moisture). DCAPE > 800 (1200) J/kg is high (very high).",
@@ -589,7 +689,7 @@
             'ulsr': "The Anvil Level SR (Storm Relative) winds and SR winds from 9-11-km are meant to discriminate supercell type. In general, upper-level SR winds less than 40 knots correspond to high precipitation supercells, 40-60 knots SR winds denote classic supercells, while SR winds greater than 60 knots correspond to low precipitation supercells.",
             'alsr': "The Anvil Level SR (Storm Relative) winds and SR winds from 9-11-km are meant to discriminate supercell type. In general, upper-level SR winds less than 40 knots correspond to high precipitation supercells, 40-60 knots SR winds denote classic supercells, while SR winds greater than 60 knots correspond to low precipitation supercells.",
             'mnwd': "850-300 mb Mean Wind (kts; solid blue > 30 kts). Steering flow. Storms moving to right of mean wind may ingest better streamwise horizontal vorticity/SRH.",
-            'scp': " Supercell Composite Parameter (effective layer; blue contours > 0.5) and Bunkers Storm Motion (kts). Includes effective SRH, MUCAPE, and effective bulk wind shear. Larger values = greater overlap in the 3 supercell ingredients. Only (+) values displayed, corresponding to environments favoring right-moving supercells. Values > 1 for supercells, &lt; 1 for non-supercell storms.",
+            'scp': '<p><font face="Arial, Helvetica, sans-serif" size="2"><b><font color="#990000">Supercell Composite Parameter</font></b></font></p><p><font face="Arial, Helvetica, sans-serif" size="2">A multiple ingredient, composite index that includes effective storm-relative helicity (ESRH, based on Bunkers right supercell motion), most unstable parcel CAPE (muCAPE) and convective inhibition (muCIN), and effective bulk wind difference (EBWD). Each ingredient is normalized to supercell "threshold" values, and larger values of SCP denote greater "overlap" in the three supercell ingredients. Only positive values of SCP are displayed, which correspond to environments favoring right-moving (cyclonic) supercells.</p><p>This index is formulated as follows:</p><p>SCP = (muCAPE / 1000 J kg<sup>-1</sup>) * (ESRH / 50 m<sup>2</sup> s<sup>-2</sup>) * (EBWD / 20 m s<sup>-1</sup>) * (-40 J kg<sup>-1</sup> / muCIN)</p><p>EBWD is divided by 20 m s<sup>-1</sup> in the range of 10-20 m s<sup>-1</sup>. EBWD less than 10 m s<sup>-1</sup>is set to zero, and EBWD greater than 20 m s<sup>-1</sup> is set to one. The muCIN term is based on work by Gropp and Davenport (2018), August issue of <em>Weather and Forecasting</em>, and it is set to 1.0 when muCIN is greater than -40 kg<sup>-1</sup>.<br></p><p><font face="Arial, Helvetica, sans-serif" size="1">Additional information can be found <a href="https://www.spc.noaa.gov/publications/thompson/stp_scp.pdf" target_"blank">here</a>.</font></font></p></body></html><br>Supercell Composite Parameter (effective layer; blue contours > 0.5) and Bunkers Storm Motion (kts). Includes effective SRH, MUCAPE, and effective bulk wind shear. Larger values = greater overlap in the 3 supercell ingredients. Only (+) values displayed, corresponding to environments favoring right-moving supercells. Values > 1 for supercells, &lt; 1 for non-supercell storms.',
             'scpl': "A multiple ingredient, composite index that includes effective storm-relative helicity (ESRH, based on Bunkers left supercell motion), most unstable parcel CAPE (muCAPE) and convective inhibition (muCIN), and effective bulk wind difference (EBWD). Each ingredient is normalized to supercell threshold values, and larger values of SCP denote greater overlap in the three supercell ingredients. Only negative values of LSCP are displayed, which correspond to environments favoring left-moving (anticyclonic) supercells.",
             'stor': "Significant Tornado Parameter (fixed layer; orange contours > 0.5) and ML CIN (shaded at 25 and 100 J/kg). Includes 0-6 km bulk wind shear, 0-1 km SRH, CAPE, CIN, and surface parcel LCL height. Values > 1 associated with EF2 or greater tornadoes. Values &lt; 1 associated with non-tornadic supercells.",
             'store': "A multiple ingredient, composite index that includes effective bulk wind difference (EBWD), effective storm-relative helicity (ESRH), 100-mb mean parcel CAPE (mlCAPE), 100-mb mean parcel CIN (mlCIN), and 100-mb mean parcel LCL height (mlLCL). A majority of significant tornadoes (F2 or greater damage) have been associated with STP values greater than 1 within an hour of tornado occurrence, while most non-tornadic supercells have been associated with values less than 1 in a large sample of RAP analysis proximity soundings.",
@@ -619,14 +719,14 @@
             'geoc': "Geocolor RGB - Daytime- Identify smoke, blowing dust, smog, and anything that has a unique color property. Nighttime - Differentiate low liquid water clouds from higher ice clouds at night. Geo-Location: City lights aid georeferencing by helping determine whether clouds (such as fog) are affecting populated areas",
             'airm': "AIRMASS RGB - Can see important boundaries between air masses, such as tropical and polar, at a glance; these are often invisible on single channel images. Helps detect the position of jet streams and areas of dry, descending stratospheric air with high PV; these appear in red.",
             'sand': "Sandwich RGB - It combines two different image types, a high resolution visible band, and (most often) a colour-enhanced infrared window image. Such combination provides information on both cloud top ‘morphology’ and cloud top temperature. Mature thunderstorm cloud top features, such as overshooting tops, gravity waves, and above-anvil ice plumes are seen in solar channels due to the shadows these cast.",
-            'vis1': "Vis Channel 1 -Will provide nearly continuous daytime observations of dust, haze, smoke and clouds. The 0.47 µm band is more sensitive to aerosols / dust / smoke",
-            'veg3': "Veggie (3) - Can detect burn scars and thereby show land characteristics to determine fire and run-off potential. Vegetated land, in general, shows up brighter in this band than in visible bands. Landwater contrast is also large in this band.",
-            'cir4': "Cirrus Band 4 - It will detect very thin cirrus clouds during the day",
-            'ice5': "Snow & Ice (5) - Liquid water clouds are bright in this channel; ice clouds are darker. Thus you can infer cloud phase. Land/water contrast is great (lakes are readily apparent in the image) and shadows can be particularly striking. Fires can also be detected at night using this band",
-            'nearir6': "Near IR - Cloud Particle (6) - In conjunction with other bands, enables cloud particle size estimation. Cloud particle size changes can indicate cloud development. ",
-            'ch08': "Mid Level Water Vapor (9) - Can be used for tracking middle-tropospheric winds,identifying jet streams, forecasting hurricane track and mid-latitude storm motion, monitoring severe weather potential, estimating mid-level moisture (for legacy vertical moisture profiles) and identifying regions where turbulence might exist. Brightness Temperatures show cooling because of absorption of energy at 6.9 µm by water vapor.",
-            'mlsv9': "Mid Level Water Vapor (9) - Can be used for tracking middle-tropospheric winds,identifying jet streams, forecasting hurricane track and mid-latitude storm motion, monitoring severe weather potential, estimating mid-level moisture (for legacy vertical moisture profiles) and identifying regions where turbulence might exist. Brightness Temperatures show cooling because of absorption of energy at 6.9 µm by water vapor.",
-            'llwv10': "Low Level Water Vapor (10) - This band typically senses farthest down into the midtroposphere in cloud-free regions, to around 500-750 hPa. It is used to track lowertropospheric winds, identify jet streaks, monitor severe weather potential, estimate lower-level moisture (for legacy vertical moisture profiles), identify regions where the potential for turbulence exists, highlight volcanic plumes that are rich in sulphur dioxide (SO2) and track LakeEffect snow bands. "
+            'ch01i': "Vis Channel 1 -Will provide nearly continuous daytime observations of dust, haze, smoke and clouds. The 0.47 µm band is more sensitive to aerosols / dust / smoke",
+            'ch03i': "Veggie (3) - Can detect burn scars and thereby show land characteristics to determine fire and run-off potential. Vegetated land, in general, shows up brighter in this band than in visible bands. Landwater contrast is also large in this band.",
+            'ch04i': "Cirrus Band 4 - It will detect very thin cirrus clouds during the day",
+            'ch05i': "Snow & Ice (5) - Liquid water clouds are bright in this channel; ice clouds are darker. Thus you can infer cloud phase. Land/water contrast is great (lakes are readily apparent in the image) and shadows can be particularly striking. Fires can also be detected at night using this band",
+            'ch06i': "Near IR - Cloud Particle (6) - In conjunction with other bands, enables cloud particle size estimation. Cloud particle size changes can indicate cloud development. ",
+            'ch08i': "Upper Level Water Vapor (8) - Can be used for tracking middle-tropospheric winds,identifying jet streams, forecasting hurricane track and mid-latitude storm motion, monitoring severe weather potential, estimating mid-level moisture (for legacy vertical moisture profiles) and identifying regions where turbulence might exist. Brightness Temperatures show cooling because of absorption of energy at 6.9 µm by water vapor.",
+            'ch09i': "Mid Level Water Vapor (9) - Can be used for tracking middle-tropospheric winds,identifying jet streams, forecasting hurricane track and mid-latitude storm motion, monitoring severe weather potential, estimating mid-level moisture (for legacy vertical moisture profiles) and identifying regions where turbulence might exist. Brightness Temperatures show cooling because of absorption of energy at 6.9 µm by water vapor.",
+            'ch10i': "Low Level Water Vapor (10) - This band typically senses farthest down into the midtroposphere in cloud-free regions, to around 500-750 hPa. It is used to track lowertropospheric winds, identify jet streaks, monitor severe weather potential, estimate lower-level moisture (for legacy vertical moisture profiles), identify regions where the potential for turbulence exists, highlight volcanic plumes that are rich in sulphur dioxide (SO2) and track LakeEffect snow bands. "
         }
 
         function soundingDate() {
