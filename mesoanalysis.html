@@ -23,7 +23,7 @@
         .image {
             /* font-weight: bold; */
             padding: 0.2rem;
-            border-radius: 50px;
+            border-radius: 5px;
             /*background-color: rgb(210, 240, 12);*/
             min-height: 2rem;
             /* color: crimson; */
@@ -64,14 +64,15 @@
 
         .rd {
             background-image: url("http://www.spc.noaa.gov/exper/mesoanalysis/s14/rgnlrad/rgnlrad.gif?1278279059554");
-            width: 900px;
-            height: 600px;
+            width: 901px;
+            height: 601px;
             background-repeat: no-repeat;
             background-position: 50% 50%;
             background-size: cover;
             object-fit: contain;
 
-    }
+        }
+
         a:link {
             text-decoration: none;
         }
@@ -84,6 +85,8 @@
         <div class="justify-content-center text-center">
             <button type="button" class="btn btn-outline-danger" id="swody1">SWODY1</button>
             <button type="button" class="btn btn-outline-danger" id="swody2">SWODY2</button>
+            <button type="button" class="btn btn-outline-danger" id="spc_watch">Watches</button>
+            <button type="button" class="btn btn-outline-danger" id="surface">Surface</button>
             <button type="button" class="btn btn-outline-danger" id="ma-stability">Thermo</button>
             <button type="button" class="btn btn-outline-danger" id="ma-shear">Kinematics</button>
             <button type="button" class="btn btn-outline-danger" id="ma-composite">Composites</button>
@@ -98,12 +101,6 @@
     <div class="container-fluid">
         <div class="d-flex justify-content-center text-center">
             <div class="row">
-                <!--  <div class="col-sm image" id="dy1">Day1</div>
-            <div class="col-sm image" id="dy2">Day2</div>
-            <div class="col-sm image" id="dy3">Day3</div>
-            <div class="col-sm image" id="s-watch">Watches</div>
-            <div class="col-sm image" id="s-mds">MDs</div>
-        </div> -->
                 <div class="divider" id="section_links">
                     <div class="row justify-content-left text-center">
                         <div class="col-sm-2"><a href="http://autumnsky.us/vad/" target="_blank">VWP Hodographs</a>
@@ -136,17 +133,29 @@
                                 target="_blank">IDSS Dashboard</a></div>
                     </div>
                 </div>
-                <div class="divider" id="section_swody1">
+            </div>
+            <div class="divider" id="section_spc_watch">
+                <div class="row">
                     <div class="row">
-
-                        <div class="col-sm-2 time"><a href="https://www.spc.noaa.gov/products/md/"
-                                target="_blank">Watches page</a></div>
-
-                        <div class="col-sm-2 time"><a href="https://www.spc.noaa.gov/products/md/" target="_blank">MD
-                                page</a></div>
-                        <div class="col-sm-2 image" id="s-mds">Meso disc</div>
-                        <div class="col-sm-2 image" id="s-watch">Watches</div>
+                        <div class="col-md image" id="s-mds">Meso Disc</div>
+                        <div class="col image" id="s-watch">Watches</div>
+                        <div class="col image" id="rpts">Storm Reports</div>
                     </div>
+                    <div class="row">
+                        <div class="col time"><a href="https://www.spc.noaa.gov/products/md/" target="_blank">MD
+                                Page</a></div>
+                        <div class="col time"><a href="https://www.spc.noaa.gov/products/watch/" target="_blank">Watches
+                                Page</a></div>
+                        <div class="col time"><a href="https://www.spc.noaa.gov/climo/online/#reports"
+                                target="_blank">Reports
+                                Page</a></div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="divider" id="section_swody1">
+                <div class="row">
+
                     <div class="row">
                         <div class="col-sm-2 time"><a href="https://www.spc.noaa.gov/products/outlook/day1otlk.html"
                                 target="_blank">Most Recent</a></div>
@@ -196,7 +205,9 @@
                         <div class="col-sm-2 image" id="dy1_1630_torn">Tornado</div>
                     </div>
                 </div>
-                <div class="divider" id="section_swody2">
+            </div>
+            <div class="divider" id="section_swody2">
+                <div class="row">
                     <div class="row">
                         <div class="col-sm-2 time"><a href="https://www.spc.noaa.gov/products/outlook/day2otlk.html"
                                 target="_blank">Most Recent</a></div>
@@ -227,51 +238,63 @@
                         <div class="col-sm-2 image" id="dy2_1730_torn">Tornado</div>
                     </div>
                 </div>
-                <div class="divider" id="section_wpc">
+            </div>
+            <div class="divider" id="section_wpc">
+                <div class="row">
                     <div class="row">
-                        <div class="row">
-                            <div class="col-sm-2 time">Daily QPF</div>
-                            <div class="col-sm-2 image" id="dy1_qpf">Day 1</div>
-                            <div class="col-sm-2 image" id="dy2_qpf">Day 2</div>
-                            <div class="col-sm-2 image" id="dy3_qpf">Day 3</div>
-                            <div class="col-sm-2 image" id="dy45_qpf">Days 4-5</div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-2 time">Combined QPF</div>
-                            <div class="col-sm-2 image" id="dy12_qpf">Days 1-2</div>
-                            <div class="col-sm-2 image" id="dy13_qpf">Days 1-3</div>
-                            <div class="col-sm-2 image" id="dy15_qpf">Days 1-5</div>
-                            <div class="col-sm-2 image" id="dy17_qpf">Days 1-7</div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-2 time">Outlooks</div>
-                            <div class="col-sm-2 image" id="dy1_exp">Day 1</div>
-                            <div class="col-sm-2 image" id="dy2_exp">Day 2</div>
-                            <div class="col-sm-2 image" id="dy3_exp">Day 3</div>
-                            <div class="col-sm-2 image" id="md_exp">MD</div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-2 time">6 Hrly</div>
-                            <div class="col-sm-2 image" id="hr61_qpf">t1</div>
-                            <div class="col-sm-2 image" id="hr62_qpf">t2</div>
-                            <div class="col-sm-2 image" id="hr63_qpf">t3</div>
-                            <div class="col-sm-2 image" id="hr64_qpf">t4</div>
-                            <div class="col-sm-2 image" id="hr65_qpf">t5</div>
-                        </div>
+                        <div class="col-sm-2 image" id="pwtr">PWAT</div>
+                        <div class="col-sm-2 image" id="tran_925">925 Moist Trans</div>
+                        <div class="col-sm-2 image" id="tran">850 Moist Trans</div>
+                        <div class="col-sm-2 image" id="tran_925-850">925-850 Mtrans</div>
+                        <div class="col-sm-2 image" id="prop">Propagation Vec</div>
+                        <div class="col-sm-2 image" id="peff">Pcpn Potential</div>
                     </div>
+
+                    <div class="row">
+                        <div class="col-sm-2 time">6 Hrly</div>
+                        <div class="col-sm-2 image" id="hr61_qpf">t1</div>
+                        <div class="col-sm-2 image" id="hr62_qpf">t2</div>
+                        <div class="col-sm-2 image" id="hr63_qpf">t3</div>
+                        <div class="col-sm-2 image" id="hr64_qpf">t4</div>
+                        <div class="col-sm-2 image" id="hr65_qpf">t5</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2 time">Daily QPF</div>
+                        <div class="col-sm-2 image" id="dy1_qpf">Day 1</div>
+                        <div class="col-sm-2 image" id="dy2_qpf">Day 2</div>
+                        <div class="col-sm-2 image" id="dy3_qpf">Day 3</div>
+                        <div class="col-sm-2 image" id="dy45_qpf">Days 4-5</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2 time">Combined QPF</div>
+                        <div class="col-sm-2 image" id="dy12_qpf">Days 1-2</div>
+                        <div class="col-sm-2 image" id="dy13_qpf">Days 1-3</div>
+                        <div class="col-sm-2 image" id="dy15_qpf">Days 1-5</div>
+                        <div class="col-sm-2 image" id="dy17_qpf">Days 1-7</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2 time">Outlooks</div>
+                        <div class="col-sm-2 image" id="dy1_exp">Day 1</div>
+                        <div class="col-sm-2 image" id="dy2_exp">Day 2</div>
+                        <div class="col-sm-2 image" id="dy3_exp">Day 3</div>
+                        <div class="col-sm-2 image" id="md_exp">MD</div>
+                    </div>
+
                 </div>
-                <div class="divider" id="section_sounding">
-                    <div class="row">
-                        <div class="col-sm-2 image" id="DTX">DTX</div>
-                        <div class="col-sm-2 image" id="APX">APX</div>
-                        <div class="col-sm-2 image" id="GRB">GRB</div>
-                        <div class="col-sm-2 image" id="MPX">MPX</div>
-                        <div class="col-sm-2 image" id="ILX">ILX</div>
-                        <div class="col-sm-2 image" id="DVN">DVN</div>
-                        <div class="col-sm-2 image" id="OAX">OAX</div>
-                        <div class="col-sm-2 image" id="TOP">TOP</div>
-                    </div>
-                    <!--
+            </div>
+
+            <div class="divider" id="section_sounding">
+                <div class="row">
+                    <div class="col-sm-2 image" id="DTX">DTX</div>
+                    <div class="col-sm-2 image" id="APX">APX</div>
+                    <div class="col-sm-2 image" id="GRB">GRB</div>
+                    <div class="col-sm-2 image" id="MPX">MPX</div>
+                    <div class="col-sm-2 image" id="ILX">ILX</div>
+                    <div class="col-sm-2 image" id="DVN">DVN</div>
+                    <div class="col-sm-2 image" id="OAX">OAX</div>
+                    <div class="col-sm-2 image" id="TOP">TOP</div>
+                </div>
+                <!--
                     <div class="row">
                         <div class="col-sm-2 image" id="KDTX">KDTX</div>
                         <div class="col-sm-2 image" id="KAPX">KAPX</div>
@@ -279,292 +302,413 @@
                         <div class="col-sm-2 image" id="KDVN">KDVN</div>
                         <div class="col-sm-2 image" id="KILX">KILX</div>
                     </div>-->
+            </div>
+            <div class="divider" id="section_satellite">
+                <div class="row">
+                    <div class="col-sm-2 image" id="ch02">Vis</div>
+                    <div class="col-sm-2 image" id="ch08">CH08</div>
+                    <div class="col-sm-2 image" id="ch13">CH13</div>
+                    <div class="col-sm-2 image" id="ch14">CH14</div>
+                    <div class="col-sm-2 image" id="nrir">NRIR</div>
                 </div>
-                <div class="divider" id="section_satellite">
-                    <div class="row">
-                        <div class="col-sm-2 image" id="ch02">Vis</div>
-                        <div class="col-sm-2 image" id="ch08">CH08</div>
-                        <div class="col-sm-2 image" id="ch13">CH13</div>
-                        <div class="col-sm-2 image" id="ch14">CH14</div>
-                        <div class="col-sm-2 image" id="nrir">NRIR</div>
-                    </div>
+            </div>
+            <div class="divider" id="section_satellite-rgb">
+                <div class="row">
+                    <div class="col-sm-2 image" id="geoc">GeoColor</div>
+                    <div class="col-sm-2 image" id="ngtp">Night Micro</div>
+                    <div class="col-sm-2 image" id="sand">Sandwich</div>
+                    <div class="col-sm-2 image" id="airm">Airmass</div>
                 </div>
-                <div class="divider" id="section_satellite-rgb">
-                    <div class="row">
-                        <div class="col-sm-2 image" id="geoc">GeoColor</div>
-                        <div class="col-sm-2 image" id="ngtp">Night Micro</div>
-                        <div class="col-sm-2 image" id="sand">Sandwich</div>
-                        <div class="col-sm-2 image" id="airm">Airmass</div>
-                    </div>
+            </div>
+
+            <div class="divider" id="section_ma-stability">
+                <div class="row">
+                    <div class="col-sm-2 image nr" id="sbcp">SBCAPE</div>
+                    <div class="col-sm-2 image nr" id="mlcp">MLCAPE</div>
+                    <div class="col-sm-2 image nr" id="mucp">MUCAPE</div>
+                    <div class="col-sm-2 image nr" id="dcape">DCAPE</div>
+                    <div class="col-sm-2 image nr" id="laps">H7-H5 LR</div>
+                    <div class="col-sm-2 image nr" id="lllr">0-3km LR</div>
+                    <div class="col-sm-2 image nr" id="lclh">LCL hght</div>
+                    <div class="col-sm-2 image nr" id="lfch">LFC hght</div>
+                    <div class="col-sm-2 image nr" id="lfrh">LCL-LFC RH</div>
                 </div>
-
-                <div class="divider" id="section_ma-stability">
-                    <div class="row">
-                        <div class="col-sm-2 image nr" id="sbcp">SBCAPE</div>
-                        <div class="col-sm-2 image nr" id="mlcp">MLCAPE</div>
-                        <div class="col-sm-2 image nr" id="mucp">MUCAPE</div>
-                        <div class="col-sm-2 image nr" id="dcape">DCAPE</div>
-                        <div class="col-sm-2 image nr" id="laps">H7-H5 LR</div>
-                        <div class="col-sm-2 image nr" id="lllr">0-3km LR</div>
-                        <div class="col-sm-2 image nr" id="lclh">LCL hght</div>
-                        <div class="col-sm-2 image nr" id="lfch">LFC hght</div>
-                        <div class="col-sm-2 image nr" id="lfrh">LCL-LFC RH</div>
-                    </div>
+            </div>
+            <div class="divider" id="section_ma-shear">
+                <div class="row">
+                    <div class="col-sm-2 image nr" id="eshr">Eff Bulk</div>
+                    <div class="col-sm-2 image nr" id="shr1">0-1km Bulk</div>
+                    <div class="col-sm-2 image nr" id="shr1_chg">0-1km change</div>
+                    <div class="col-sm-2 image nr" id="shr3">0-3km Bulk</div>
+                    <div class="col-sm-2 image nr" id="shr6">0-6km Bulk</div>
+                    <div class="col-sm-2 image nr" id="shr6_chg">0-6km change</div>
+                    <div class="col-sm-2 image nr" id="effh">Eff SRH</div>
+                    <div class="col-sm-2 image nr" id="srh5">0-500m SRH</div>
+                    <div class="col-sm-2 image nr" id="srh1">0-1km SRH</div>
+                    <div class="col-sm-2 image nr" id="srh3">0-3km SRH</div>
+                    <div class="col-sm-2 image nr" id="llsr">0-2km SR wind</div>
+                    <div class="col-sm-2 image nr" id="mlsr">4-6km SR wind</div>
+                    <div class="col-sm-2 image nr" id="ulsr">9-11km SR wind</div>
+                    <div class="col-sm-2 image nr" id="alsr">Anvil SR wind</div>
+                    <div class="col-sm-2 image nr" id="hodo">Hodograph</div>
                 </div>
-                <div class="divider" id="section_ma-shear">
-                    <div class="row">
-                        <div class="col-sm-2 image nr" id="eshr">Eff Bulk</div>
-                        <div class="col-sm-2 image nr" id="shr1">0-1km Bulk</div>
-                        <div class="col-sm-2 image nr" id="shr1_chg">0-1km change</div>
-                        <div class="col-sm-2 image nr" id="shr3">0-3km Bulk</div>
-                        <div class="col-sm-2 image nr" id="shr6">0-6km Bulk</div>
-                        <div class="col-sm-2 image nr" id="shr6_chg">0-6km change</div>
-                        <div class="col-sm-2 image nr" id="effh">Eff SRH</div>
-                        <div class="col-sm-2 image nr" id="srh5">0-500m SRH</div>
-                        <div class="col-sm-2 image nr" id="srh1">0-1km SRH</div>
-                        <div class="col-sm-2 image nr" id="srh3">0-3km SRH</div>
-                        <div class="col-sm-2 image nr" id="llsr">0-2km SR wind</div>
-                        <div class="col-sm-2 image nr" id="mlsr">4-6km SR wind</div>
-                        <div class="col-sm-2 image nr" id="ulsr">9-11km SR wind</div>
-                        <div class="col-sm-2 image nr" id="alsr">Anvil SR wind</div>
-                        <div class="col-sm-2 image nr" id="hodo">Hodograph</div>
-                    </div>
+            </div>
+
+            <div class="divider" id="section_ma-composite">
+                <div class="row">
+                    <div class="col-sm-2 image nr" id="scp">SCP</div>
+                    <div class="col-sm-2 image nr" id="stor">Sig Tor</div>
+                    <div class="col-sm-2 image nr" id="hail">Hail</div>
+                    <div class="col-sm-2 image nr" id="sars1">Cond Max Hail</div>
+                    <div class="col-sm-2 image nr" id="sars2">MaxH Expected</div>
+                    <div class="col-sm-2 image nr" id="sigh">Sig Hail</div>
+                    <div class="col-sm-2 image nr" id="dcp">Derecho Comp</div>
+                    <div class="col-sm-2 image nr" id="cbsig">Craven SigSvr</div>
+                    <div class="col-sm-2 image nr" id="cpsh">Cape/Shear</div>
+                    <div class="col-sm-2 image nr" id="lcls">LCLS</div>
+                    <div class="col-sm-2 image nr" id="lr3c">0-3km LR</div>
+                    <div class="col-sm-2 image nr" id="3cape_shr3">0-3 cp/shr</div>
                 </div>
+            </div>
+            <div class="divider" id="section_surface">
+                <div class="row">
+                    <div class="col-sm-2 image nr" id="bigsfc">Surface Plot</div>
+                    <div class="col-sm-2 image nr" id="pmsl">Pressure and Wind</div>
+                    <div class="col-sm-2 image nr" id="ttd">Temp and dewpoint</div>
+                    <div class="col-sm-2 image nr" id="mcon">Moist Conv & MixR</div>
+                    <div class="col-sm-2 image nr" id="mxth">Mixr, Theta, Wind</div>
+                    <div class="col-sm-2 image nr" id="thea">Theta, Advection, Wind</div>
+                    <div class="col-sm-2 image nr" id="sfnt">Fgen</div>
+                    <div class="col-sm-2 image nr" id="temp_chg">3hr Temp Change</div>
+                    <div class="col-sm-2 image nr" id="dwpt_chg">3hr Dewpoint Change</div>
+                    <div class="col-sm-2 image nr" id="thte_chg">3hr Thetae Change</div>
 
-                <div class="divider" id="section_ma-composite">
-                    <div class="row">
-                        <div class="col-sm-2 image nr" id="scp">SCP</div>
-                        <div class="col-sm-2 image nr" id="stor">Sig Tor</div>
-                        <div class="col-sm-2 image nr" id="hail">Hail</div>
-                        <div class="col-sm-2 image nr" id="sars1">Cond Max Hail</div>
-                        <div class="col-sm-2 image nr" id="sars2">MaxH Expected</div>
-                        <div class="col-sm-2 image nr" id="sigh">Sig Hail</div>
-                        <div class="col-sm-2 image nr" id="dcp">Derecho Comp</div>
-                        <div class="col-sm-2 image nr" id="cbsig">Craven SigSvr</div>
-                        <div class="col-sm-2 image nr" id="cpsh">Cape/Shear</div>
-                        <div class="col-sm-2 image nr" id="lcls">LCLS</div>
-                        <div class="col-sm-2 image nr" id="lr3c">0-3km LR</div>
-                        <div class="col-sm-2 image nr" id="3cape_shr3">0-3 cp/shr</div>
-
-                    </div>
                 </div>
-                <div class="container-fluid">
-                    <div class="d-flex justify-content-center text-center">
-                        <div class="row fit">
-                            <img id="display-image" class="img-fluid display-image"
-                                src="https://www.spc.noaa.gov/products/outlook/day1otlk.gif">
-                        </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="container-fluid">
+        <div class="d-flex justify-content-center text-center">
+            <div class="row fit">
 
-                    </div>
+                <img id="display-image" class="img-fluid display-image"
+                    src="https://www.spc.noaa.gov/products/outlook/day1otlk.gif">
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="d-flex justify-content-center text-left">
+            <div class="row">
+                <div id="describe">
                 </div>
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-                    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-                    crossorigin="anonymous">
-                </script>
-                <script>
-                    const spc_prods = 'https://www.spc.noaa.gov/products/'
-                    const spc_out = spc_prods + 'outlook/'
-                    const day1prob = spc_out + 'day1probotlk_'
-                    const day2prob = spc_out + 'day2probotlk_'
-                    const sat = 'https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/'
-                    const exper = 'http://www.spc.noaa.gov/exper/'
-                    const ma = exper + 'mesoanalysis/s14/'
-                    const sound = exper + 'soundings/'
-                    const wpc_qpf = 'http://www.wpc.ncep.noaa.gov/qpf/'
-                    var urls = {
-                        'dy1_otlk': spc_out + 'day1otlk.gif',
-                        'dy1_hail': day1prob + 'hail.gif',
-                        'dy1_wind': day1prob + 'wind.gif',
-                        'dy1_torn': day1prob + 'torn.gif',
-                        'dy3_otlk': spc_out + 'day3otlk.gif',
-                        'dy1_0100_otlk': spc_out + 'day1otlk_0100.gif',
-                        'dy1_0100_torn': day1prob + '0100_torn.gif',
-                        'dy1_0100_hail': day1prob + '0100_hail.gif',
-                        'dy1_0100_wind': day1prob + '0100_wind.gif',
-                        'dy1_0600_otlk': spc_out + 'day1otlk_1200.gif',
-                        'dy1_0600_torn': day1prob + '1200_torn.gif',
-                        'dy1_0600_hail': day1prob + '1200_hail.gif',
-                        'dy1_0600_wind': day1prob + '1200_wind.gif',
-                        'dy1_1300_otlk': spc_out + 'day1otlk_1300.gif',
-                        'dy1_1300_torn': day1prob + '1300_torn.gif',
-                        'dy1_1300_hail': day1prob + '1300_hail.gif',
-                        'dy1_1300_wind': day1prob + '1300_wind.gif',
-                        'dy1_1630_otlk': spc_out + 'day1otlk_1630.gif',
-                        'dy1_1630_torn': day1prob + '1630_torn.gif',
-                        'dy1_1630_hail': day1prob + '1630_hail.gif',
-                        'dy1_1630_wind': day1prob + '1630_wind.gif',
-                        'dy1_2000_otlk': spc_out + 'day1otlk_2000.gif',
-                        'dy1_2000_torn': day1prob + '2000_torn.gif',
-                        'dy1_2000_hail': day1prob + '2000_hail.gif',
-                        'dy1_2000_wind': day1prob + '2000_wind.gif',
-                        'dy2_otlk': spc_out + 'day2otlk.gif',
-                        'dy2_torn': spc_out + 'day2probotlk_torn.gif',
-                        'dy2_wind': spc_out + 'day2probotlk_wind.gif',
-                        'dy2_hail': spc_out + 'day2probotlk_hail.gif',
-                        'dy2_0600_otlk': spc_out + 'day2otlk_0600_prt.gif',
-                        'dy2_0600_torn': spc_out + 'day2probotlk_0600_torn_prt.gif',
-                        'dy2_0600_hail': spc_out + 'day2probotlk_0600_hail_prt.gif',
-                        'dy2_0600_wind': spc_out + 'day2probotlk_0600_wind_prt.gif',
-                        'dy2_1730_otlk': spc_out + 'day2otlk_1730_prt.gif',
-                        'dy2_1730_torn': spc_out + 'day2probotlk_1730_torn_prt.gif',
-                        'dy2_1730_hail': spc_out + 'day2probotlk_1730_hail_prt.gif',
-                        'dy2_1730_wind': spc_out + 'day2probotlk_1730_wind_prt.gif',
-                        'dy2_hail': spc_out + 'day2probotlk_hail.gif',
-                        'dy2_wind': spc_out + 'day2probotlk_wind.gif',
-                        'dy1_qpf': wpc_qpf + 'fill_94qwbg.gif',
-                        'dy2_qpf': wpc_qpf + 'fill_98qwbg.gif',
-                        'dy3_qpf': wpc_qpf + 'fill_99qwbg.gif',
-                        'dy45_qpf': wpc_qpf + '95ep48iwbg_fill.gif',
-                        'dy67_qpf': wpc_qpf + '97ep48iwbg_fill.gif',
-                        'dy12_qpf': wpc_qpf + 'd12_fill.gif',
-                        'dy13_qpf': wpc_qpf + 'd13_fill.gif',
-                        'dy15_qpf': wpc_qpf + 'p120i.gif',
-                        'dy17_qpf': wpc_qpf + 'p168i.gif',
-                        'dy1_exp': wpc_qpf + '94ewbg.gif',
-                        'dy2_exp': wpc_qpf + '98ewbg.gif',
-                        'dy3_exp': wpc_qpf + '99ewbg.gif',
-                        'md_exp': 'https://www.wpc.ncep.noaa.gov/metwatch/latest_mdmap.gif',
-                        'hr61_qpf': wpc_qpf + 'fill_91ewbg.gif',
-                        'hr62_qpf': wpc_qpf + 'fill_92ewbg.gif',
-                        'hr63_qpf': wpc_qpf + 'fill_93ewbg.gif',
-                        'hr64_qpf': wpc_qpf + 'fill_9eewbg.gif',
-                        'hr65_qpf': wpc_qpf + 'fill_9fewbg.gif',
-                        's-watch': spc_prods + 'watch/validww.png',
-                        's-mds': spc_prods + 'md/validmd.gif',
-                        'ch02': sat + 'CGL/02/GOES16-CGL-02-600x600.gif',
-                        'ch08': sat + 'CGL/08/GOES16-CGL-08-600x600.gif',
-                        'ch13': sat + 'CGL/13/GOES16-CGL-13-600x600.gif',
-                        'ch14': sat + 'cgl/14/GOES16-CGL-14-600x600.gif',
-                        'nrir': sat + 'cgl/07/GOES16-CGL-07-600x600.gif',
-                        'geoc': sat + 'CGL/GEOCOLOR/GOES16-CGL-GEOCOLOR-600x600.gif',
-                        'airm': sat + 'CGL/AirMass/GOES16-CGL-AirMass-600x600.gif',
-                        'sand': sat + 'CGL/Sandwich/GOES16-CGL-Sandwich-600x600.gif',
-                        'dayp': sat + 'CGL/DayCloudPhase/GOES16-ABI-CGL-DayCloudPhase-600x600.gif',
-                        'ngtp': sat + 'cgl/NightMicrophysics/GOES16-CGL-NightMicrophysics-600x600.gif',
-                    }
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <script>
+        const spc_prods = 'https://www.spc.noaa.gov/products/'
+        const spc_out = spc_prods + 'outlook/'
+        const day1prob = spc_out + 'day1probotlk_'
+        const day2prob = spc_out + 'day2probotlk_'
+        const sat = 'https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/'
+        const exper = 'http://www.spc.noaa.gov/exper/'
+        const ma = exper + 'mesoanalysis/s14/'
+        const sound = exper + 'soundings/'
+        const wpc_qpf = 'http://www.wpc.ncep.noaa.gov/qpf/'
+        var urls = {
+            'rpts': 'https://www.spc.noaa.gov/climo/reports/today.gif',
+            'dy1_otlk': spc_out + 'day1otlk.gif',
+            'dy1_hail': day1prob + 'hail.gif',
+            'dy1_wind': day1prob + 'wind.gif',
+            'dy1_torn': day1prob + 'torn.gif',
+            'dy3_otlk': spc_out + 'day3otlk.gif',
+            'dy1_0100_otlk': spc_out + 'day1otlk_0100.gif',
+            'dy1_0100_torn': day1prob + '0100_torn.gif',
+            'dy1_0100_hail': day1prob + '0100_hail.gif',
+            'dy1_0100_wind': day1prob + '0100_wind.gif',
+            'dy1_0600_otlk': spc_out + 'day1otlk_1200.gif',
+            'dy1_0600_torn': day1prob + '1200_torn.gif',
+            'dy1_0600_hail': day1prob + '1200_hail.gif',
+            'dy1_0600_wind': day1prob + '1200_wind.gif',
+            'dy1_1300_otlk': spc_out + 'day1otlk_1300.gif',
+            'dy1_1300_torn': day1prob + '1300_torn.gif',
+            'dy1_1300_hail': day1prob + '1300_hail.gif',
+            'dy1_1300_wind': day1prob + '1300_wind.gif',
+            'dy1_1630_otlk': spc_out + 'day1otlk_1630.gif',
+            'dy1_1630_torn': day1prob + '1630_torn.gif',
+            'dy1_1630_hail': day1prob + '1630_hail.gif',
+            'dy1_1630_wind': day1prob + '1630_wind.gif',
+            'dy1_2000_otlk': spc_out + 'day1otlk_2000.gif',
+            'dy1_2000_torn': day1prob + '2000_torn.gif',
+            'dy1_2000_hail': day1prob + '2000_hail.gif',
+            'dy1_2000_wind': day1prob + '2000_wind.gif',
+            'dy2_otlk': spc_out + 'day2otlk.gif',
+            'dy2_torn': spc_out + 'day2probotlk_torn.gif',
+            'dy2_wind': spc_out + 'day2probotlk_wind.gif',
+            'dy2_hail': spc_out + 'day2probotlk_hail.gif',
+            'dy2_0600_otlk': spc_out + 'day2otlk_0600_prt.gif',
+            'dy2_0600_torn': spc_out + 'day2probotlk_0600_torn_prt.gif',
+            'dy2_0600_hail': spc_out + 'day2probotlk_0600_hail_prt.gif',
+            'dy2_0600_wind': spc_out + 'day2probotlk_0600_wind_prt.gif',
+            'dy2_1730_otlk': spc_out + 'day2otlk_1730_prt.gif',
+            'dy2_1730_torn': spc_out + 'day2probotlk_1730_torn_prt.gif',
+            'dy2_1730_hail': spc_out + 'day2probotlk_1730_hail_prt.gif',
+            'dy2_1730_wind': spc_out + 'day2probotlk_1730_wind_prt.gif',
+            'dy2_hail': spc_out + 'day2probotlk_hail.gif',
+            'dy2_wind': spc_out + 'day2probotlk_wind.gif',
+            'dy1_qpf': wpc_qpf + 'fill_94qwbg.gif',
+            'dy2_qpf': wpc_qpf + 'fill_98qwbg.gif',
+            'dy3_qpf': wpc_qpf + 'fill_99qwbg.gif',
+            'dy45_qpf': wpc_qpf + '95ep48iwbg_fill.gif',
+            'dy67_qpf': wpc_qpf + '97ep48iwbg_fill.gif',
+            'dy12_qpf': wpc_qpf + 'd12_fill.gif',
+            'dy13_qpf': wpc_qpf + 'd13_fill.gif',
+            'dy15_qpf': wpc_qpf + 'p120i.gif',
+            'dy17_qpf': wpc_qpf + 'p168i.gif',
+            'dy1_exp': wpc_qpf + '94ewbg.gif',
+            'dy2_exp': wpc_qpf + '98ewbg.gif',
+            'dy3_exp': wpc_qpf + '99ewbg.gif',
+            'md_exp': 'https://www.wpc.ncep.noaa.gov/metwatch/latest_mdmap.gif',
+            'hr61_qpf': wpc_qpf + 'fill_91ewbg.gif',
+            'hr62_qpf': wpc_qpf + 'fill_92ewbg.gif',
+            'hr63_qpf': wpc_qpf + 'fill_93ewbg.gif',
+            'hr64_qpf': wpc_qpf + 'fill_9eewbg.gif',
+            'hr65_qpf': wpc_qpf + 'fill_9fewbg.gif',
+            's-watch': spc_prods + 'watch/validww.png',
+            's-mds': spc_prods + 'md/validmd.gif',
+            'ch02': sat + 'CGL/02/GOES16-CGL-02-600x600.gif',
+            'ch08': sat + 'CGL/08/GOES16-CGL-08-600x600.gif',
+            'ch13': sat + 'CGL/13/GOES16-CGL-13-600x600.gif',
+            'ch14': sat + 'cgl/14/GOES16-CGL-14-600x600.gif',
+            'nrir': sat + 'cgl/07/GOES16-CGL-07-600x600.gif',
+            'geoc': sat + 'CGL/GEOCOLOR/GOES16-CGL-GEOCOLOR-600x600.gif',
+            'airm': sat + 'CGL/AirMass/GOES16-CGL-AirMass-600x600.gif',
+            'sand': sat + 'CGL/Sandwich/GOES16-CGL-Sandwich-600x600.gif',
+            'dayp': sat + 'CGL/DayCloudPhase/GOES16-ABI-CGL-DayCloudPhase-600x600.gif',
+            'ngtp': sat + 'cgl/NightMicrophysics/GOES16-CGL-NightMicrophysics-600x600.gif',
+        }
 
-                    spc_items = ['sbcp', 'mlcp', 'mucp', 'dcape', 'laps', 'lllr', 'lclh', 'lfch', 'lfrh', 'eshr',
-                        'shr1', 'shr1_chg', 'shr3',
-                        'shr6', 'shr6_chg', 'hodo', 'sars1', 'sars2', 'hail', 'dcp', 'mbcp', 'tdlr', 'qlcs1',
-                        'qlcs2',
-                        'effh', 'srh5', 'srh1', 'srh3', 'llsr', 'mlsr', 'ulsr', 'alsr', 'scp', 'stor', 'sigh',
-                        'cbsig', 'cpsh', 'vgp3', 'lcls',
-                        'lr3c', '3cvr',
-                        '3cape_shr3'
-                    ]
-
-                    spc_items.forEach(s => {
-                        urls[s] = ma + s + '/' + s + '.gif'
-                    });
-
-                    sounding_items = ['KDTX', 'KAPX', 'KGRB', 'KILX', 'KDVN']
-                    sounding_items.forEach(so => {
-                        urls[so] = 'http://weather.rap.ucar.edu/upper/displayUpper.php?img=' + so +
-                            '.png&endDate=-1&endTime=-1&duration=0'
-                    });
-
-                    function soundingDate() {
-                        // create a new timestamp 
-                        var now = new Date();
-
-                        var year = now.getUTCFullYear().toString().slice(-2)
-                        var month = now.getUTCMonth() + 1;
-                        monstr = month.toString();
-                        if (monstr.length == 1) {
-                            monstr = '0' + monstr;
-                        }
-                        var date = now.getUTCDate().toString();
-                        if (date.length == 1) {
-                            date = '0' + date
-                        }
-                        var hour = now.getUTCHours();
-                        if (hour > 12) {
-                            var hr = '12'
-                        } else {
-                            var hr = '00'
-                        }
-                        //var queryString = "?t=" + timestamp;
-                        //newSrc = imgURL + queryString;
-                        let dateString = year + monstr + date + hr + '_OBS/';
-                        return dateString;
-                    }
-                    // 22042212_OBS/
-                    let soundDate = soundingDate();
-
-                    sound_items = ['DTX', 'APX', 'GRB', 'ILX', 'DVN', 'MPX', 'OAX', 'TOP']
-                    sound_items.forEach(soo => {
-                        urls[soo] = sound + soundDate + soo + '.gif'
-                        console.log(urls[soo])
-                    })
-
-                    function getImage(e) {
-                        reference_id = e.target.id
-                        //console.log(urls[reference_id])
-                        imgURL = urls[reference_id]
-                        newURL = refreshImage(imgURL);
-                        //console.log(newURL)
-                        document.getElementById(reference_id).classList.add('highlight');
-                        document.getElementById('display-image').src = newURL;
-                        //if (document.getElementById(reference_id).classList.contains('nr')) {
-                        //    document.getElementById('display-image').classList.add('rd');
-
-                  //}                    
-                }
-
-                    function removeHighlight(e) {
-                        reference_id = e.target.id
-                        document.getElementById(e.target.id).classList.remove('highlight');
-                    }
-
-                    function refreshImage(imgURL) {
-                        // create a new timestamp 
-                        var timestamp = new Date().getTime();
-                        var queryString = "?t=" + timestamp;
-                        newSrc = imgURL + queryString;
-                        //console.log(newSrc)
-                        return newSrc
-                    }
+        spc_items = ['sbcp', 'mlcp', 'mucp', 'dcape', 'laps', 'lllr', 'lclh', 'lcls', 'lfch', 'lfrh',
+            'eshr', 'shr1', 'shr1_chg', 'shr3', 'shr6', 'shr6_chg', 'hodo', 'sars1', 'sars2', 'hail',
+            'dcp', 'mbcp', 'tdlr', 'qlcs1', 'qlcs2', 'effh', 'srh5', 'srh1', 'srh3', 'llsr', 'mlsr',
+            'ulsr', 'alsr', 'scp', 'lscp', 'stpc', 'stpc5', 'stor', 'sigh', 'cbsig', 'cpsh', 'vgp3',
+            'lcls', 'lr3c', '3cvr', '3cape_shr3', '925mb', '850mb', '700mb', '500mb', '300mb', 'tran',
+            'dlcp', 'tadv_925', 'tadv', '7tad', '857f', '75ft', '98ft', 'vadv', 'ageo', 'epvl', 'epvm',
+            'sfnt', '925f', '500mb_chg', 'nstp', 'cpsh', 'ehi1', 'ehi3', 'lr3c', 'pwtr', 'tran', 'prop',
+            'peff', 'tran_925', 'tran_925-850', 'bigsfc', 'pmsl', 'ttd', 'mcon', 'mxth', 'thea', 'sfnt',
+            'temp_chg', 'dwpt_chg', 'thte_chg'
+        ]
 
 
+        spc_items.forEach(s => {
+            urls[s] = ma + s + '/' + s + '.gif'
+        });
+
+        sounding_items = ['KDTX', 'KAPX', 'KGRB', 'KILX', 'KDVN']
+        sounding_items.forEach(so => {
+            urls[so] = 'http://weather.rap.ucar.edu/upper/displayUpper.php?img=' + so +
+                '.png&endDate=-1&endTime=-1&duration=0'
+        });
 
 
-                    function adjustDividers(b) {
-                        dividers.forEach(divider => {
-                            divider.style.display = 'none';
-                        });
-                        new_reference_id = "section_" + b.target.id
-                        document.getElementById(new_reference_id).style.display = 'block';
-                    }
+        var descriptions = {
+            'tran_925': "925 Moisture Transport(inches). Values > 1 inch shaded <b>green</b>. Consider values and anomalies for the time of year.",
+            'tran': "850 mb Moisture Transport (vectors and green shaded &gt; 10), Height (solid black), and Theta-e (dashed green in K). Moisture transport = product of wind speed (m/s) and mixing ratio. Values scaled by factor of 100, so a 20 m/s wind and 12 g/kg mixing ratio = transport of 24 m/s (1st pink shade in color fill).",
+            'h98mt': "850 mb Moisture Transport (vectors and green shaded &gt; 10), Height (solid black), and Theta-e (dashed green in K). Moisture transport = product of wind speed (m/s) and mixing ratio. Values scaled by factor of 100, so a 20 m/s wind and 12 g/kg mixing ratio = transport of 24 m/s (1st pink shade in color fill).",
+            'prop': "Upwind Propagation Vectors, Precipitable Water (dashed brown &lt; 0.50 inch, dashed green &gt; 0.75 inch), and 1000-500 mb Thickness (solid black). Combines PW and low-level mean RH to better place where rain will occur and move.",
+            'peff': "Precip Potential Placement (shaded), 0-2 km Moisture Convergence (solid red = CON, dashed blue = DIV), and Freezing Level (in meters AGL, solid purple). Max rain where best low-level CON and instability overlay with highest PPP values. Heavy rain risk increases as values increase. Also depends on temps. Onset of rain ranges from 0.3 inches with temps &lt; 30 F to 1.0 inch &gt; 80 F. Values &gt; 1.0-1.4 (1.6-2.0) inches with tempes below (above) 60 F increases risk for heavy rain.",
+            'td': "Surface Temperature (solid purple &lt; 32 F, solid brown &lt; 60 F, solid red &gt; 60 F), Dewpoint (dashed blue, values &gt; 56F shaded), and Pressure (solid black).",
+            'mc': "Surface Moisture Convergence (solid blue) and Mixing Ratio (solid green).",
+            'smr': "Surface Mixing Ratio (dashed blue &gt; 6 g/kg, values &gt; 9 shaded), Theta (solid red in K), and Wind.",
+            'thetae': "Surface Theta-e, Theta-e Advection (+ values solid purple), and Wind.",
+            'sfnt': "Surface Frontogenesis (solid red), Temperature (dashed blue in deg F), Pressure (solid black), and Wind.",
+            'stchg': "Surface 3-Hourly Temperature Change (solid black) and Wind. Values &gt; 4 C shaded red (warmer); &lt; -4 shaded blue (cooler).",
+            'stdchg': "Surface 3-Hourly Dewpoint Change (solid black) and Wind. Values &gt; 4 C shaded green (moister); &lt; -4 shaded orange/brown (drier).",
+            'sthchg': "Surface 3-Hourly Theta-e Change (solid black) and Wind. Values &gt; 4 shaded green (warmer and/or moister); &lt; -4 shaded blue (cooler and/or drier).",
+            'lower': "850 mb Height (solid black), Temperature (dashed red &gt; 0 C, dashed blue &lt; 0 C), Dewpoint (solid green &gt; 6 C), and Wind.",
+            'low': "700 mb Height (solid black), Temperature (dashed red &gt; 0 C, dashed blue &lt; 0 C), Wind, and 700-500 mb RH &gt; 70 Pct (shaded).",
+            'mid': "500 mb Height (solid black), Temperature (dashed red), Wind, and Isotachs (shaded &gt; 40 kts).",
+            'high': "300 mb Heights (solid black), Wind, Isotachs (shaded &gt; 60 kts), and Divergence (solid magenta).",
+            'dpmc': "Deep Layer Moisture Flux Convergence (solid red = CON; dashed blue = DIV) and 100 mb Mean Mixing Ratio (solid green &gt; 6). High values = good moisture supply/replenishment to MCS. New cell development may occur in/near max values associated with boundaries.",
+            'tadv9': "850 mb Temperature (dashed red), Temperature Advection (red shade = WAA; blue shade = CAA), Height (solid black), and Wind. 850 mb WAA = 850 mb (+) theta-e advection, if moisture is constant or increasing, i.e., favorable location for convection, especially elevated convection.",
+            'tadv': "850 mb Temperature (dashed red), Temperature Advection (red shade = WAA; blue shade = CAA), Height (solid black), and Wind. 850 mb WAA = 850 mb (+) theta-e advection, if moisture is constant or increasing, i.e., favorable location for convection, especially elevated convection.",
+            'tadv7': "700 mb Temperature (dashed red), Temperature Advection (red shade = WAA; blue shade = CAA), Height (solid black), and Wind. Elevated convection may be within/near max in 700 mb WAA/700 mb (+) theta-e advection.",
+            'fnt98': "925-850 mb Petterssen's Frontogenesis (solid purple), Height (solid black), Temperature (dashed red), and Wind. Note that label below graphic (925-700 mb) is wrong.",
+            'fnt': "850-700 mb Petterssen's Frontogenesis (solid purple), Height (solid black), Temperature (dashed red), and Wind. Compare 850-700 frontogenesis axis to 700-500 axis to determine depth and slope of frontogenetical surface. If they are nearly superimposed, then steep mesoscale lifting is likely to promote banded precip and convection.",
+            'fnt7': "700-500 mb Petterssen's Frontogenesis (solid purple), Height (solid black), Temperature (dashed blue), and Wind. Compare 700-500 frontogenesis axis to 850-700 axis to determine depth and slope of frontogenetical surface. If they are nearly superimposed, then steep mesoscale lifting is likely to promote banded precip and convection.",
+            'epvl': "850 mb Frontogenesis (solid red), 850-700 mb EPV (blue shading = stable; red/green/purple shading = unstable), and Conditional Instability (solid black). Look for max 850 mb frontogenesis coincident with or just downstream from (-) EPV. Also consider 700 mb frontogenesis and frontal slope between the 2 levels. It is likely that (-) EPV may only appear above 850 mb (even above 700 mb), especially in cool season and with a low-level frontal inversion.",
+            'epvm': "700 mb Frontogensis (solid red), 650-500 mb EPV (blue shading = stable; red/green shading = unstable), and Conditional Instability (solid black). Look for max 700 mb frontogenesis coincident with or just downstream from (-) EPV. Also consider 850 mb frontogenesis and frontal slope between the 2 levels. Frontogenesis and (-) EPV may extend or be located above 700 mb at times, especially in cool season.",
+            'vadv': "700-400 mb Differential Vorticity Advection (DVA) and 500 mb Height (solid black) and Vorticity (shaded). (+) DVA = solid blue. (-) DVA = dashed red. (+) DVA promotes synoptic-scale (isentropic) lift, moisture and temperature advection and convergence, and destabilization.",
+            'jet': "300 mb Height (solid black), Isotachs (shaded), Ageostrophic Wind, and 700-500 mb Omega. Ascent = solid magenta. Descent = dashed red. Best locations for organized convection is anticyclonically-curved right entrance regions (QLCS/MCS) and exit regions of mid-to-upper jet streaks (supercells).",
+            'sbcp': "Surface-Based CAPE (contour), Surface-Based CIN (shaded), and Surface Wind. CAPE values can = 0 and still get elevated convection if elevated instability exists above frontal inversion or if upstream (warm sector) SBCAPE &gt; 0. High values of CIN can cap convection despite high instability without sufficient forcing.",
+            'mlcp': "Mixed-Layer CAPE (tan contour &gt; 100 J/kg, red contour &gt; 500 J/kg), Mixed-Layer CIN (shaded), and Surface Wind. More representative of updraft and storm intensity than surface-based, especially if low-level inversion present. Values: 0-1000 (weakly unstable); 1000-2500 (moderately unstable); 2500-3500 (very unstable); &gt; 3500 (extremely unstable). High values of CIN can cap convection despite high instability without sufficient forcing.",
+            'mucp': "Most Unstable CAPE (tan contour &gt; 100 J/kg, red contour &gt; 500 J/kg) and Lifted Parcel Level (AGL, shaded). Parcel lifted from most unstable level. Used to determine amount of elevated instability and elevated convection potential above frontal zone.",
+            'dcape': "Downdraft CAPE &gt; 500 J/kg (solid contour). Indicates potential to mix down momentum aloft in downdraft. High values associated with steep low-level and mid-level lapse rates, and dry air aloft (above low-level moisture). DCAPE &gt; 800 (1200) J/kg is high (very high).",
+            'kind': "K Index (solid green &gt; 28) and 700 mb Temperatures (dashed red). K &gt; 30 = local heavy rain potential. K &gt; 35 = greater threat. Lower K values in severe storm environment due to drier air at 700 mb.",
+            'lllr': "Lapse Rates (0-3 km) (deg C/km). Values &gt; 5 displayed. Steep low-level lapse rates essential to mix down higher momentum air aloft to surface in downdraft. Low-level inversion may keep higher winds elevated off surface.",
+            'lclh': "LCL Height (in meters AGL). Values &gt; 2000 m shaded. Lower LCL = better chance for tornado touchdown. Want values &lt; 1500 m.",
+            'lfch': "LFC Height (in meters AGL). Warmer, moister low-level air contributes to lower LFC, and thus more CAPE and stronger updraft.",
+            'lfrh': "LCL to LFC mean RH (dashed black, shaded &gt; 60 pct) and MUCAPE &gt; 100 J/kg (red contour). High RH values in this layer promotes heavy rain potential and more efficient rainfall production.",
+            'eshr': "Effective Bulk Shear. Values &gt; 20 dashed, &gt; 25 solid, &gt; 40 bold. Similar to 0-6 km bulk shear, but accounts for storm depth (effective inflow base to EL). Identifies surface-based and elevated supercell environments. Supercells more probable as values increase thru range of 25-40 kts and greater.",
+            'shr1': "0-1 km Bulk Shear Vector (solid blue &gt; 10 kts). Values &gt; 20 kts promote good low-level horizontal vorticity that can be tilted and stretched into low-level updraft.",
+            'shr3': "0-3 km Bulk Shear Vector (kts), MLCAPE (solid red &gt; 100 J/kg), and 0-3 km Max Theta-e Difference (in deg C; shaded). Compare 0-3 bulk shear vector to refl/SRM. QLCS line-normal component of shear vector &gt; 30 kts along with a local line surge and balanced/shear-dominant QLCS favors mesovortex genesis and intensification.",
+            'shr6': "0-6 km Bulk Shear Vector (solid blue &gt; 30 kts). Deep layer shear facilitates organized, rotating updrafts. Values: 15-20 kts with mid-level winds &gt; 25 kts (organized convection); 30-40 kt (supercells possible if very unstable); &gt; 40 kts (supercells likely)",
+            'shr8': "The surface through 8 km agl shear vector denotes the change in wind throughout this height. Thunderstorms tend to become more organized and persistent as vertical shear increases. Bunkers et al. 2006 found that long-lived supercells occur in environments with much stronger 0-8-km bulk wind shear ( > 50 kt) than that observed with short-lived supercells.",
+            'brnshr': "BRN Shear (green &gt; 20) and Surface CAPE (orange &gt; 500 J/kg). Bulk Richardson Number shear (denominator of BRN) is similar to 0-6 km shear, except BRN shear uses a difference between low-level wind and density-weighted mean wind thru mid levels. Values of 35-40 m2/s2 or greater are associated with supercells.",
+            'brn': "Bulk Richardson Number (BRN), based on MLCAPE. Values &gt; 5 solid red, &gt; 10 shaded). Estimates balance between shear and buoyancy. Low BRN: shear &gt;&gt; buoyancy (weak updrafts can be sheared apart). Large BRN: buoyancy &gt;&gt; shear (multicells). Intermediate BRN values (10-45) favor supercells (balance between buoyancy and shear).",
+            'effh': "Effective SRH (solid blue &gt; 50 m2/s2), Effective Inflow Base (in meters AGL, shaded), and Storm Motion Vectors (kts). Confines SRH layer to part of sounding where lifted parcels are buoyant, but not strongly capped. Discriminates the best between significant tornadic and non-tornadic supercells. Useful in elevated situations where high SRH values (due to surface E or NE winds below frontal inversion) will not be realized in storm inflow, i.e., effective SRH values will be less.",
+            'srh5': "ESRH (Storm Relative Helicity) in the lowest 500 m AGL has been found by Coffer et al. (2019), October issue of Weather and Forecasting, to be a better discriminator than effective SRH between significant tornadoes and nontornadic supercells. This calculation of 0-500 m SRH is limited to within the effective inflow layer, as long as the inflow base is at the ground.",
+            'srh1': "0-1 km SRH (solid blue &gt; 50 m2/s2) and Storm Motion Vectors (kts). Amount of streamwise horizontal vorticity in 0-1 km layer, which when tilted/stretched into updraft provides very effective low-level vertical vorticity,i.e., low-level updraft rotation in right-moving supercells. If inversion present, then some/all of 0-1 km SRH may NOT be ingested into storm (i.e., elevated storm); consider effective SRH. RFD characteristics and local convergence often needed to enhance environmental low-level SRH to produce tornadoes. Greater deviation of storm motion from mean wind = greater SRH/streamwise vorticity. 0-1 km SRH &gt; 150 m2/s2 = increased threat of supercell tornadoes.",
+            'srh3': "0-3 km SRH (solid blue &gt; 100 m2/s2) and Storm Motion Vectors (kts). Amount of streamwise horizontal vorticity in 0-3 km layer, which when tilted/stretched into updraft provides very effective vertical vorticity, i.e., strong updraft rotation in right-moving supercells. If inversion present, then some of 0-3 km SRH may NOT be ingested into storm (i.e., elevated storm); consider effective SRH. Greater deviation of storm motion from mean wind = greater SRH/streamwise vorticity. 0-3 km SRH &gt; 250 m2/s2 = increased threat of supercell tornadoes. RFD characteristics and local low-level enhanced convergence important to tornadogenesis as well.",
+            'llsr': "Low-Level (0-2 km) Storm-Relative Winds (kts; solid blue &gt; 15 kts). SR winds represent low-level storm inflow. Very dependent on storm motion. Most supercells have 0-2 km SR inflow &gt; 15-20 kts. Overlay radar to see storm motion with SR inflow. Supercell moving directly toward enhanced SR inflow experiences better SRH and streamwise horizontal vorticity to effectively tilt and stretch to produce better low-level updraft rotation.",
+            'sr46': "Low-Level (0-2 km) Storm-Relative Winds (kts; solid blue &gt; 15 kts). SR winds represent low-level storm inflow. Very dependent on storm motion. Most supercells have 0-2 km SR inflow &gt; 15-20 kts. Overlay radar to see storm motion with SR inflow. Supercell moving directly toward enhanced SR inflow experiences better SRH and streamwise horizontal vorticity to effectively tilt and stretch to produce better low-level updraft rotation.",
+            'sr911': "The Anvil Level SR (Storm Relative) winds and SR winds from 9-11-km are meant to discriminate supercell type. In general, upper-level SR winds less than 40 knots correspond to high precipitation supercells, 40-60 knots SR winds denote classic supercells, while SR winds greater than 60 knots correspond to low precipitation supercells.",
+            'anvil': "The Anvil Level SR (Storm Relative) winds and SR winds from 9-11-km are meant to discriminate supercell type. In general, upper-level SR winds less than 40 knots correspond to high precipitation supercells, 40-60 knots SR winds denote classic supercells, while SR winds greater than 60 knots correspond to low precipitation supercells.",
+            'mnwd': "850-300 mb Mean Wind (kts; solid blue &gt; 30 kts). Steering flow. Storms moving to right of mean wind may ingest better streamwise horizontal vorticity/SRH.",
+            'scp': " Supercell Composite Parameter (effective layer; blue contours &gt; 0.5) and Bunkers Storm Motion (kts). Includes effective SRH, MUCAPE, and effective bulk wind shear. Larger values = greater overlap in the 3 supercell ingredients. Only (+) values displayed, corresponding to environments favoring right-moving supercells. Values &gt; 1 for supercells, &lt; 1 for non-supercell storms.",
+            'scpl': "A multiple ingredient, composite index that includes effective storm-relative helicity (ESRH, based on Bunkers left supercell motion), most unstable parcel CAPE (muCAPE) and convective inhibition (muCIN), and effective bulk wind difference (EBWD). Each ingredient is normalized to supercell threshold values, and larger values of SCP denote greater overlap in the three supercell ingredients. Only negative values of LSCP are displayed, which correspond to environments favoring left-moving (anticyclonic) supercells.",
+            'stor': "Significant Tornado Parameter (fixed layer; orange contours &gt; 0.5) and ML CIN (shaded at 25 and 100 J/kg). Includes 0-6 km bulk wind shear, 0-1 km SRH, CAPE, CIN, and surface parcel LCL height. Values &gt; 1 associated with EF2 or greater tornadoes. Values &lt; 1 associated with non-tornadic supercells.",
+            'store': "A multiple ingredient, composite index that includes effective bulk wind difference (EBWD), effective storm-relative helicity (ESRH), 100-mb mean parcel CAPE (mlCAPE), 100-mb mean parcel CIN (mlCIN), and 100-mb mean parcel LCL height (mlLCL). A majority of significant tornadoes (F2 or greater damage) have been associated with STP values greater than 1 within an hour of tornado occurrence, while most non-tornadic supercells have been associated with values less than 1 in a large sample of RAP analysis proximity soundings.",
+            'stor5': "A majority of significant tornadoes (F2 or greater damage) have been associated with STP values greater than 1 within an hour of tornado occurrence, while most non-tornadic supercells have been associated with values less than 1 in a large sample of RAP analysis proximity soundings. Replacing effective SRH with 0-500 m SRH improves discrimination between significant tornadoes and non-tornadic supercells, per work by Coffer et al. (2019), October issue of Weather and Forecasting.",
+            'sigh': "Significant Hail Parameter (contours &gt; 0.5). Delineates between SIG (&gt;= 2 inch) and NON-SIG (&lt;2 inch) hail environments. Values &gt; 1.0 = favorable environment for SIG hail. Values &gt; 4 are very high. Expect values = 1.5-2.0 or higher when significant hail is reported.",
+            'cbsig': "Craven Significant Severe Parameter (solid blue &gt; 5, solid pink &gt; 20 which means significant event possible). Assesses instability (100 mb MLCAPE) and 0-6 km shear magnitude. Most significant events (2+ inch hail, 65+kt wind, EF2+ tornadoes) occur when values &gt; 20,000 m3/s3. Units scaled to nearest 1000 (e.g., 20,000 = 20 on display).",
+            'maxhsz': "SARS Conditional Maximum Hail Size (values &gt; 1.00 shaded).",
+            'sighpct': "SARS Significant Hail Percentage (&gt; 50 pct shaded; contours = number of matches).",
+            'nonsuptor': "Non-Supercell Tornado Parameter.",
+            'vgp3': "Vorticity Generation Parameter (solid blue &gt; 0.1) and 0-3 km Bulk Shear Vectors. Estimates rate of tilting and stretching of horizontal vorticity by updraft. Values &gt; 0.2 m/s2 = increasing chance of tornadic storms.",
+            'cbsig': "Most Unstable CAPE (solid red &gt; 100 J/kg), MU CIN (dashed blue and blue shade), and Effective Bulk Shear (kts).",
+            'lclsrh': "100 mb Mean LCL Height (dashed green &lt; 1250 m, solid orange &gt; 1500 m, shaded &gt; 1750 m) and 0-1 km SRH (solid blue &gt; 50 m2/s2). Dashed green LCLs more favorable for tornadoes.",
+            'ehi1': "0-1 km Energy Helicity Index (green contours &gt; 0.5). Should have max updraft rotation when CAPE and SRH are large. 0-1 km values &gt; 1-2 associated with significant tornadoes in supercells.",
+            'ehi3': "0-3 km Energy Helicity Index (orange contours &gt; 0.5). Should have max updraft rotation when CAPE and SRH are large. 0-3 km values &gt; 1-2 associated with SIG tornadoes in supercells.",
+            'lrmlcape': "0-3 km Lapse Rate (&gt; 7 deg C/km shaded) and 0-3 km MLCAPE (solid red).",
+            'dcp': "Derecho Composite (contours &gt; 1). Identifies environments favorable for cold pool driven wind events thru 4 mechanisms: 1) Cold pool production (DCAPE), 2) Sustenance of strong storms along gust front (MUCAPE), 3) Organization potential (0-6 km shear), and 4) Sufficient flow to favor development along downstream portion of gust front (0-6 km mean wind).",
+            'mcp': "Microburst Composite (contours &gt; 1). Weighted sum of SB-CAPE, SB-LI, 0-3 km lapse rate, vertical totals (850-500 mb temperature diff), DCAPE, and PW. SB-CAPE: &lt;100=0; 3100-3999=1; &gt;4000=2. SB-LI: &gt;-8=0; &lt;-8=1; &lt;-9=2; &lt;-10=3. 0-3 km lapse rate: &lt;8.4=0; &gt;8.4=1. Vertical totals: &lt;27=0; &gt;27=1; &gt;28=2; &gt;29=3. DCAPE: &lt;900=0; &gt;900=1; &gt;1100=2; &gt;1300=3. PW: &lt;1.5=-5; &gt;1.5=0. All 6 terms are summed. Values of 3-4 = slight chance of microburst; 5-8 = chance of microburst; &gt;= 9 = microbursts likely given existence of a storm",
+            'qlcs1': "Most Unstable CAPE (solid red &gt; 100 J/kg), 0-3 km Theta-e Difference (shaded &gt; 15 C), and 0-3 km Buk Shear Vectors (kts). Highlights areas favorable for QLCS MV generation. High buoyancy and line-normal bulk shear (&gt; 30 kt) favors deep upright convection over QLCS gust front. Theta-e difference infers potential cold pool strength. Strong cold pool surge coincident with high buoyancy and strong line-normal shear favors MVs.",
+            'qlcs2': "Mixed layer CAPE (solid red &gt; 100 J/kg), 0-3 km Theta-e Difference (shaded &gt; 15 C), and 0-3 km Bulk Shear Vectors (kts). Highlights areas favorable for QLCS MV generation. High buoyancy and line-normal bulk shear (&gt; 30 kt) favors deep upright convection over QLCS gust front. Theta-e difference infers potential cold pool strength. Strong cold pool surge coincident with high buoyancy and strong line-normal shear favors MVs.",
+            'hail': "Hail Parameters:CAPE (solid red &gt; 100 J/kg) in the -10 to -30 C Layer Aloft, Freezing Level (solid blue in meters),and 0-6 km Bulk Shear Vectors (kts). Large CAPE in this layer favors rapid hail growth. 0-6 km shear &gt; 30-40 kts supports supercells with persistent updrafts to facilitate large hail. Lower freezing level suggests greater probability of hail reaching surface before melting.",
+            'tdlr': "Surface Dewpoint (solid light green &gt; 48 F, dark green &gt; 60 F) and 700-500 mb Lapse Rate (solid red &gt; 7 C/km).",
+            'vis2': "Vis Loop - Ideal to identify small-scale features such as river fogs and fog/clear air boundaries, or overshooting tops or cumulus clouds.",
+            'shrtir7': "Short Wave IR (7) - can be used to identify fog and low clouds at night, identify fire hot spots, detect volcanic ash, estimate sea-surface temperatures, and discriminate between ice crystal sizes during the day. Low-level atmospheric vector winds can be estimated with this band, and the band can be used to study urban heat islands",
+            'clir13': "Clean IR (13) - Infrared window band is less sensitive than other infrared window bands to water vapor absorption, and therefore improves atmospheric moisture corrections, aids in cloud and other atmospheric feature identification/classification, estimation of cloudtop brightness temperature and cloud particle size, and surface property characterization in derived products.",
+            'geo17': "Geocolor RGB - Daytime- Identify smoke, blowing dust, smog, and anything that has a unique color property. Nighttime - Differentiate low liquid water clouds from higher ice clouds at night. Geo-Location: City lights aid georeferencing by helping determine whether clouds (such as fog) are affecting populated areas",
+            'air18': "AIRMASS RGB - Can see important boundaries between air masses, such as tropical and polar, at a glance; these are often invisible on single channel images. Helps detect the position of jet streams and areas of dry, descending stratospheric air with high PV; these appear in red.",
+            'sand19': "Sandwich RGB - It combines two different image types, a high resolution visible band, and (most often) a colour-enhanced infrared window image. Such combination provides information on both cloud top ‘morphology’ and cloud top temperature. Mature thunderstorm cloud top features, such as overshooting tops, gravity waves, and above-anvil ice plumes are seen in solar channels due to the shadows these cast.",
+            'vis1': "Vis Channel 1 -Will provide nearly continuous daytime observations of dust, haze, smoke and clouds. The 0.47 µm band is more sensitive to aerosols / dust / smoke",
+            'veg3': "Veggie (3) - Can detect burn scars and thereby show land characteristics to determine fire and run-off potential. Vegetated land, in general, shows up brighter in this band than in visible bands. Landwater contrast is also large in this band.",
+            'cir4': "Cirrus Band 4 - It will detect very thin cirrus clouds during the day",
+            'ice5': "Snow & Ice (5) - Liquid water clouds are bright in this channel; ice clouds are darker. Thus you can infer cloud phase. Land/water contrast is great (lakes are readily apparent in the image) and shadows can be particularly striking. Fires can also be detected at night using this band",
+            'nearir6': "Near IR - Cloud Particle (6) - In conjunction with other bands, enables cloud particle size estimation. Cloud particle size changes can indicate cloud development. ",
+            'mlsv9': "Mid Level Water Vapor (9) - Can be used for tracking middle-tropospheric winds,identifying jet streams, forecasting hurricane track and mid-latitude storm motion, monitoring severe weather potential, estimating mid-level moisture (for legacy vertical moisture profiles) and identifying regions where turbulence might exist. Brightness Temperatures show cooling because of absorption of energy at 6.9 µm by water vapor.",
+            'llwv10': "Low Level Water Vapor (10) - This band typically senses farthest down into the midtroposphere in cloud-free regions, to around 500-750 hPa. It is used to track lowertropospheric winds, identify jet streaks, monitor severe weather potential, estimate lower-level moisture (for legacy vertical moisture profiles), identify regions where the potential for turbulence exists, highlight volcanic plumes that are rich in sulphur dioxide (SO2) and track LakeEffect snow bands. "
+        }
 
-                    const images = document.querySelectorAll("div.image");
-                    const buttons = document.querySelectorAll("button");
-                    const dividers = document.querySelectorAll(".divider");
+        function soundingDate() {
+            // create a new timestamp 
+            var now = new Date();
 
-                    images.forEach(image => {
-                        image.addEventListener('mouseenter', e => {
-                            getImage(e);
-                        })
+            var year = now.getUTCFullYear().toString().slice(-2)
+            var month = now.getUTCMonth() + 1;
+            monstr = month.toString();
+            if (monstr.length == 1) {
+                monstr = '0' + monstr;
+            }
+            var date = now.getUTCDate().toString();
+            if (date.length == 1) {
+                date = '0' + date
+            }
+            var hour = now.getUTCHours();
+            if (hour > 12) {
+                var hr = '12'
+            } else {
+                var hr = '00'
+            }
+            //var queryString = "?t=" + timestamp;
+            //newSrc = imgURL + queryString;
+            let dateString = year + monstr + date + hr + '_OBS/';
+            return dateString;
+        }
+        // 22042212_OBS/
+        let soundDate = soundingDate();
 
-                    });
+        sound_items = ['DTX', 'APX', 'GRB', 'ILX', 'DVN', 'MPX', 'OAX', 'TOP']
+        sound_items.forEach(soo => {
+            urls[soo] = sound + soundDate + soo + '.gif'
+            console.log(urls[soo])
+        })
 
-                    images.forEach(image => {
-                        image.addEventListener('mouseleave', l => {
-                            removeHighlight(l);
-                        })
+        function getImage(e) {
+            reference_id = e.target.id
+            //console.log(urls[reference_id])
+            imgURL = urls[reference_id]
+            desc = descriptions[reference_id]
+            newURL = refreshImage(imgURL);
+            //console.log(newURL)
+            document.getElementById(reference_id).classList.add('highlight');
+            document.getElementById('display-image').src = newURL;
+            document.getElementById('describe').innerHTML = desc;
+            //if (document.getElementById(reference_id).classList.contains('nr')) {
+            //    document.getElementById('display-image').classList.add('rd');
 
-                    });
+            //}                    
+        }
 
-                    buttons.forEach(btn => {
-                        btn.addEventListener('click', b => {
-                            adjustDividers(b);
-                        })
+        function removeHighlight(e) {
+            reference_id = e.target.id
+            document.getElementById(e.target.id).classList.remove('highlight');
+        }
 
-                    });
+        function refreshImage(imgURL) {
+            // create a new timestamp 
+            var timestamp = new Date().getTime();
+            var queryString = "?t=" + timestamp;
+            newSrc = imgURL + queryString;
+            //console.log(newSrc)
+            return newSrc
+        }
 
-                    dividers.forEach(divider => {
-                        divider.style.display = 'none';
-                    });
-                </script>
+
+
+
+        function adjustDividers(b) {
+            dividers.forEach(divider => {
+                divider.style.display = 'none';
+            });
+            new_reference_id = "section_" + b.target.id
+            document.getElementById(new_reference_id).style.display = 'block';
+        }
+
+        const images = document.querySelectorAll("div.image");
+        const buttons = document.querySelectorAll("button");
+        const dividers = document.querySelectorAll(".divider");
+
+        images.forEach(image => {
+            image.addEventListener('mouseenter', e => {
+                getImage(e);
+            })
+
+        });
+
+        images.forEach(image => {
+            image.addEventListener('mouseleave', l => {
+                removeHighlight(l);
+            })
+
+        });
+
+        buttons.forEach(btn => {
+            btn.addEventListener('click', b => {
+                adjustDividers(b);
+            })
+
+        });
+
+        dividers.forEach(divider => {
+            divider.style.display = 'none';
+        });
+    </script>
 </body>
 
 </html>
