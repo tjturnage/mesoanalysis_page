@@ -83,6 +83,41 @@
 <body>
     <div class="container stretch">
         <div class="justify-content-center text-center">
+            <span><b>Meso Sector:&nbsp;&nbsp;&nbsp;&nbsp;</b></span>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input radio" type="radio" name="mesoSector" id="s16" value="s16" checked>
+                <label class="form-check-label" for="greatlakes">NE</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input radio" type="radio" name="mesoSector" id="s17" value="s17">
+                <label class="form-check-label" for="greatlakes">Mid Atl</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input radio" type="radio" name="mesoSector" id="s18" value="s18">
+                <label class="form-check-label" for="greatlakes">SE</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input radio" type="radio" name="mesoSector" id="s13" value="s13">
+                <label class="form-check-label" for="greatlakes">N Plains</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input radio" type="radio" name="mesoSector" id="s14" value="s14">
+                <label class="form-check-label" for="greatlakes">S Plains</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input radio" type="radio" name="mesoSector" id="s15" value="s15">
+                <label class="form-check-label" for="greatlakes">TX</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input radio" type="radio" name="mesoSector" id="s11" value="s11">
+                <label class="form-check-label" for="greatlakes">NW</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input radio" type="radio" name="mesoSector" id="s12" value="s12">
+                <label class="form-check-label" for="greatlakes">SW</label>
+            </div>
+        </div>
+        <div class="justify-content-center text-center">
             <button type="button" class="btn btn-outline-danger" id="swody1">SWODY1</button>
             <button type="button" class="btn btn-outline-danger" id="swody2">SWODY2</button>
             <button type="button" class="btn btn-outline-danger" id="spc_watch">Watches</button>
@@ -90,16 +125,17 @@
             <button type="button" class="btn btn-outline-danger" id="upper">Upper</button>
             <button type="button" class="btn btn-outline-danger" id="ma-stability">Thermo</button>
             <button type="button" class="btn btn-outline-danger" id="ma-shear">Shear</button>
-            <button type="button" class="btn btn-outline-danger" id="ma-composite">Composites</button>
+            <button type="button" class="btn btn-outline-danger" id="ma-composite">Composite</button>
             <button type="button" class="btn btn-outline-danger" id="ma-multiparm">Multi Parm</button>
             <!-- <button type="button" class="btn btn-primary" id="swody3">swody3</button> -->
-            <button type="button" class="btn btn-outline-success" id="wpc">Heavy Rain</button>
+            <button type="button" class="btn btn-outline-success" id="wpc">Precip</button>
             <button type="button" class="btn btn-outline-success" id="ma-fire">Fire</button>
             <button type="button" class="btn btn-outline-success" id="ma-winter">Winter</button>
-            <button type="button" class="btn btn-outline-info" id="sounding">Soundings</button>
+            <button type="button" class="btn btn-outline-info" id="sounding">RAOB</button>
             <button type="button" class="btn btn-outline-info" id="satellite">Satellite</button>
             <button type="button" class="btn btn-outline-secondary" id="links">Links</button>
         </div>
+
     </div>
     <div class="container-fluid">
         <div class="d-flex justify-content-center text-center">
@@ -365,7 +401,6 @@
                     <div class="col-sm-2 image nr" id="tdlr">Sfc Dwpt / H7-H5 LapseR</div>
                     <div class="col-sm-2 image nr" id="qlcs1">0-3km ThetaE diff/Shear Vec & MUCAPE</div>
                     <div class="col-sm-2 image nr" id="qlcs2">>0-3km ThetaE diff/Shear Vec & MLCAPE</div>
-
                 </div>
             </div>
 
@@ -420,10 +455,8 @@
                     <div class="col-sm-2 image nr" id="500mb_chg">12hr H5 chg</div>
                     <div class="col-sm-2 image nr" id="trap_500">Fluid Trapping (H500)</div>
                     <div class="col-sm-2 image nr" id="trap_250">Fluid Trapping (H250)</div>
-
                 </div>
             </div>
-
 
             <div class="divider" id="section_satellite">
                 <div class="row">
@@ -474,8 +507,6 @@
                     <div class="col-sm-2 image" id="rpts">Storm Rpts</div>
                 </div>
             </div>
-
-
         </div>
     </div>
 
@@ -508,9 +539,11 @@
         const sat = 'https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/';
         const sat2 = 'https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/' + sat_sector + '/'
         const sat3 = 'https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/CGL/'
-        const ma_sector = 's14'
+        let ma_sector = 's16'
         const exper = 'http://www.spc.noaa.gov/exper/'
-        const ma = exper + 'mesoanalysis/' + sat_sector + '/'
+        let ma_base = exper + 'mesoanalysis/'
+        let ma = ma_base + ma_sector + '/'
+
         const sound = exper + 'soundings/'
         const wpc_qpf = 'http://www.wpc.ncep.noaa.gov/qpf/'
         var urls = {
@@ -608,21 +641,21 @@
             'cint': 'https://www.nsstc.uah.edu/SATCAST/goes-east_fulldomain/UAH_SATCASTv3_CI_VIS.png'
         }
         'https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/' + sat_sector + '/'
-        https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/UMV/03/600x600.jpg
+        //https: //cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/UMV/03/600x600.jpg
 
-        spc_items = ['sbcp', 'mlcp', 'mucp', 'dcape', 'laps', 'lllr', 'lclh', 'lcls', 'lfch', 'lfrh',
-            'eshr', 'shr1', 'shr1_chg', 'shr3', 'shr6', 'shr6_chg', 'hodo', 'hail', 'sars1', 'sars2', 'lghl',
-            'dcp', 'mbcp', 'qlcs1', 'qlcs2', 'effh', 'srh5', 'srh1', 'srh3', 'llsr', 'mlsr', 'ulsr', 'alsr', 'scp',
-            'lscp', 'stor', 'stpc', 'stpc5', 'sigt1', 'sigt1', 'nstp', 'vtp3', 'sigh', 'cbsig', 'cpsh', 'vgp3',
-            'lcls', 'lr3c', '3cvr', '3cape_shr3', '925mb', '850mb', '850mb2', '700mb', '500mb', '300mb', 'tran',
-            'dlcp', 'tadv_925', 'tadv', '7tad', '9fnt', '8fnt', '7fnt', '857f', '75ft', '98ft', 'vadv', 'ageo',
-            'epvl', 'epvm', 'sfnt', '925f', '500mb_chg', 'nstp', 'cpsh', 'lr3c', 'pwtr', 'tran', 'prop', 'peff',
-            'tran_925', 'tran_925-850', 'bigsfc', 'pmsl', 'ttd', 'mcon', 'mxth', 'thea', 'thet', 'icon', 'trap',
-            'vtm', 'dvvr', 'def', 'sfnt', 'pchg', 'temp_chg', 'dwpt_chg', 'mixr_chg', 'thte_chg', '925mb', '850mb',
-            '700mb', '500mb', '300mb', 'tadv_925', 'tadv', '7tad', 'ddiv', 'padv', 'brn', 'desp', 'ehi1', 'ehi3',
-            'vgp3', 'crit', 'mlcape_eshr', 'comp', 'lcls', 'tdlr', 'mcsm', 'mbcp', 'sfir', 'fosb', 'lhan', 'mhan',
-            'hhan', 'lasi', 'trap_500', 'trap_250'
-        ]
+            spc_items = ['sbcp', 'mlcp', 'mucp', 'dcape', 'laps', 'lllr', 'lclh', 'lcls', 'lfch', 'lfrh',
+                'eshr', 'shr1', 'shr1_chg', 'shr3', 'shr6', 'shr6_chg', 'hodo', 'hail', 'sars1', 'sars2', 'lghl',
+                'dcp', 'mbcp', 'qlcs1', 'qlcs2', 'effh', 'srh5', 'srh1', 'srh3', 'llsr', 'mlsr', 'ulsr', 'alsr', 'scp',
+                'lscp', 'stor', 'stpc', 'stpc5', 'sigt1', 'sigt1', 'nstp', 'vtp3', 'sigh', 'cbsig', 'cpsh', 'vgp3',
+                'lcls', 'lr3c', '3cvr', '3cape_shr3', '925mb', '850mb', '850mb2', '700mb', '500mb', '300mb', 'tran',
+                'dlcp', 'tadv_925', 'tadv', '7tad', '9fnt', '8fnt', '7fnt', '857f', '75ft', '98ft', 'vadv', 'ageo',
+                'epvl', 'epvm', 'sfnt', '925f', '500mb_chg', 'nstp', 'cpsh', 'lr3c', 'pwtr', 'tran', 'prop', 'peff',
+                'tran_925', 'tran_925-850', 'bigsfc', 'pmsl', 'ttd', 'mcon', 'mxth', 'thea', 'thet', 'icon', 'trap',
+                'vtm', 'dvvr', 'def', 'sfnt', 'pchg', 'temp_chg', 'dwpt_chg', 'mixr_chg', 'thte_chg', '925mb', '850mb',
+                '700mb', '500mb', '300mb', 'tadv_925', 'tadv', '7tad', 'ddiv', 'padv', 'brn', 'desp', 'ehi1', 'ehi3',
+                'vgp3', 'crit', 'mlcape_eshr', 'comp', 'lcls', 'tdlr', 'mcsm', 'mbcp', 'sfir', 'fosb', 'lhan', 'mhan',
+                'hhan', 'lasi', 'trap_500', 'trap_250'
+            ]
 
 
         spc_items.forEach(s => {
@@ -749,8 +782,7 @@
             } else {
                 var hr = '00'
             }
-            //var queryString = "?t=" + timestamp;
-            //newSrc = imgURL + queryString;
+
             let dateString = year + monstr + date + hr + '_OBS/';
             return dateString;
         }
@@ -765,18 +797,13 @@
 
         function getImage(e) {
             reference_id = e.target.id
-            //console.log(urls[reference_id])
             imgURL = urls[reference_id]
             desc = descriptions[reference_id]
             newURL = refreshImage(imgURL);
-            //console.log(newURL)
             document.getElementById(reference_id).classList.add('highlight');
             document.getElementById('display-image').src = newURL;
             document.getElementById('describe').innerHTML = desc;
-            //if (document.getElementById(reference_id).classList.contains('nr')) {
-            //    document.getElementById('display-image').classList.add('rd');
 
-            //}                    
         }
 
         function removeHighlight(e) {
@@ -789,11 +816,9 @@
             var timestamp = new Date().getTime();
             var queryString = "?t=" + timestamp;
             newSrc = imgURL + queryString;
-            //console.log(newSrc)
+
             return newSrc
         }
-
-
 
 
         function adjustDividers(b) {
@@ -807,6 +832,22 @@
         const images = document.querySelectorAll("div.image");
         const buttons = document.querySelectorAll("button");
         const dividers = document.querySelectorAll(".divider");
+        const radios = document.querySelectorAll(".radio");
+
+
+        function showSelected(e) {
+
+            reference_id = e.target.id
+            let m_sector = reference_id;
+            spc_items.forEach(s => {
+                urls[s] = ma_base + m_sector + '/' + s + '/' + s + '.gif'
+            });
+        };
+
+
+        for (const radio of radios) {
+            radio.addEventListener('change', showSelected);
+        };
 
         images.forEach(image => {
             image.addEventListener('mouseenter', e => {
