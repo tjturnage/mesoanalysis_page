@@ -460,40 +460,31 @@
 
             <div class="divider" id="section_satellite">
                 <div class="row">
-                    <div class="col-sm-2 image" id="ch02">Visible</div>
-                    <div class="col-sm-2 image" id="ch08">Upper WV</div>
-                    <div class="col-sm-2 image" id="ch13">Clean IR</div>
-                    <div class="col-sm-2 image" id="ch14">Dirty IR</div>
-                    <div class="col-sm-2 image" id="nrir">Near IR</div>
-                    <div class="col-sm-2 image" id="geoc">GeoColor</div>
-                    <div class="col-sm-2 image" id="ngtp">Night Micro</div>
-                    <div class="col-sm-2 image" id="sand">Sandwich</div>
-                    <div class="col-sm-2 image" id="airm">Airmass</div>
+                    <div class="col-sm-2 image" id="ch02i">Vis Loop</div>
+                    <div class="col-sm-2 image" id="ch07i">CH07 Loop</div>
+                    <div class="col-sm-2 image" id="ch08i">Upper WV Loop</div>
+                    <div class="col-sm-2 image" id="ch13i">Clean IR Loop</div>
+                    <div class="col-sm-2 image" id="geoc">GeoColor Loop</div>
+                    <div class="col-sm-2 image" id="airm">Airmass Loop</div>
+                    <div class="col-sm-2 image" id="sand">Sandwich Loop</div> 
+                    <div class="col-sm-2 image" id="dmici">Day Cloud Phase</div>
+                    <div class="col-sm-2 image" id="nmici">Night Micropysics</div>
+                    <div class="col-sm-2 image" id="cint">Convective Init</div>
                     <div class="col-sm-2 image" id="ch01i">CH01</div>
-                    <div class="col-sm-2 image" id="ch02i">CH02</div>
                     <div class="col-sm-2 image" id="ch03i">CH03</div>
                     <div class="col-sm-2 image" id="ch04i">CH04</div>
                     <div class="col-sm-2 image" id="ch05i">CH05</div>
                     <div class="col-sm-2 image" id="ch06i">CH06</div>
-                    <div class="col-sm-2 image" id="ch07i">CH07</div>
-                    <div class="col-sm-2 image" id="ch08i">CH08</div>
                     <div class="col-sm-2 image" id="ch09i">CH09</div>
                     <div class="col-sm-2 image" id="ch10i">CH10</div>
                     <div class="col-sm-2 image" id="ch11i">CH11</div>
                     <div class="col-sm-2 image" id="ch12i">CH12</div>
-                    <div class="col-sm-2 image" id="ch13i">CH13</div>
+                    <div class="col-sm-2 image" id="ch13">CH13</div>
                     <div class="col-sm-2 image" id="ch14i">CH14</div>
                     <div class="col-sm-2 image" id="ch15i">CH15</div>
                     <div class="col-sm-2 image" id="ch16i">CH16</div>
-                    <div class="col-sm-2 image" id="geoci">GeoColor</div>
-                    <div class="col-sm-2 image" id="airmi">Airmass</div>
-                    <div class="col-sm-2 image" id="sandi">Sandwich</div>
-                    <div class="col-sm-2 image" id="dmici">Day Cloud Phase</div>
-                    <div class="col-sm-2 image" id="nmici">Night Micropysics</div>
-                    <div class="col-sm-2 image" id="cint">Convective Init</div>
                 </div>
-            </div>
-
+            </div>           
             <div class="divider" id="section_spc_watch">
                 <div class="row">
                     <div class="col-sm-2 time"><a href="https://www.spc.noaa.gov/products/md/" target="_blank">Meso
@@ -539,6 +530,7 @@
         const sat = 'https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/';
         const sat2 = 'https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/' + sat_sector + '/'
         const sat3 = 'https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/CGL/'
+        //https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/CGL/09/600x600.jpg
         let ma_sector = 's16'
         const exper = 'http://www.spc.noaa.gov/exper/'
         let ma_base = exper + 'mesoanalysis/'
@@ -609,7 +601,7 @@
             's-mds': spc_prods + 'md/validmd.gif',
             'ch02': sat + 'CGL/02/GOES16-CGL-02-600x600.gif',
             'ch08': sat + 'CGL/08/GOES16-CGL-08-600x600.gif',
-            'ch13': sat + 'CGL/13/GOES16-CGL-13-600x600.gif',
+            'ch13': sat3 + '13/600x600.jpg',
             'ch14': sat + 'cgl/14/GOES16-CGL-14-600x600.gif',
             'nrir': sat + 'cgl/07/GOES16-CGL-07-600x600.gif',
             'geoc': sat + 'CGL/GEOCOLOR/GOES16-CGL-GEOCOLOR-600x600.gif',
@@ -618,30 +610,30 @@
             'dayp': sat + 'CGL/DayCloudPhase/GOES16-ABI-CGL-DayCloudPhase-600x600.gif',
             'ngtp': sat + 'cgl/NightMicrophysics/GOES16-CGL-NightMicrophysics-600x600.gif',
             'ch01i': sat3 + '01/600x600.jpg',
-            'ch02i': sat3 + '02/600x600.gif',
+            'ch02i': sat3 + '02/GOES16-CGL-02-600x600.gif',
             'ch03i': sat3 + '03/600x600.jpg',
             'ch04i': sat3 + '04/600x600.jpg',
             'ch05i': sat3 + '05/600x600.jpg',
             'ch06i': sat3 + '06/600x600.jpg',
-            'ch07i': sat3 + '07/600x600.gif',
-            'ch08i': sat3 + '08/600x600.gif',
+            'ch07i': sat3 + '07/GOES16-CGL-07-600x600.gif',
+            'ch08i': sat3 + '08/GOES16-CGL-08-600x600.gif',
             'ch09i': sat3 + '09/600x600.jpg',
             'ch10i': sat3 + '10/600x600.jpg',
             'ch11i': sat3 + '11/600x600.jpg',
             'ch12i': sat3 + '12/600x600.jpg',
-            'ch13i': sat3 + '13/600x600.gif',
+            'ch13i': sat3 + '13/GOES16-CGL-13-600x600.gif',
             'ch14i': sat3 + '14/600x600.jpg',
             'ch15i': sat3 + '15/600x600.jpg',
             'ch16i': sat3 + '16/600x600.jpg',
-            'geoci': sat3 + 'GEOCOLOR/GOES16-UMV-GEOCOLOR-600x600.gif',
-            'airmi': sat3 + 'AirMass/GOES16-UMV-AirMass-600x600.gif',
-            'sandi': sat3 + 'Sandwich/GOES16-UMV-Sandwich-600x600.gif',
+            'geoci': sat3 + 'GEOCOLOR/GOES16-CGL-GEOCOLOR-600x600.gif',
+            'airmi': sat3 + 'AirMass/GOES16-CGL-AirMass-600x600.gif',
+            'sandi': sat3 + 'Sandwich/GOES16-CGL-Sandwich-600x600.gif',
             'dmici': sat3 + 'DayCloudPhase/600x600.jpg',
             'nmici': sat3 + 'NightMicrophysics/600x600.jpg',
             'cint': 'https://www.nsstc.uah.edu/SATCAST/goes-east_fulldomain/UAH_SATCASTv3_CI_VIS.png'
         }
-        'https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/' + sat_sector + '/'
-        //https: //cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/UMV/03/600x600.jpg
+
+        https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/CGL/09/600x600.jpg
 
             spc_items = ['sbcp', 'mlcp', 'mucp', 'dcape', 'laps', 'lllr', 'lclh', 'lcls', 'lfch', 'lfrh',
                 'eshr', 'shr1', 'shr1_chg', 'shr3', 'shr6', 'shr6_chg', 'hodo', 'hail', 'sars1', 'sars2', 'lghl',
