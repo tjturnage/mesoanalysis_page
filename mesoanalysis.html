@@ -42,6 +42,11 @@
             font-weight: bold;
         }
 
+        .descriptor {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.9rem;
+        }
+
         a:hover {
             color: rgb(255, 255, 83);
             background-color: rgb(185, 185, 234);
@@ -460,31 +465,34 @@
 
             <div class="divider" id="section_satellite">
                 <div class="row">
-                    <div class="col-sm-2 image" id="ch02i">Vis Loop</div>
-                    <div class="col-sm-2 image" id="ch07i">CH07 Loop</div>
-                    <div class="col-sm-2 image" id="ch08i">Upper WV Loop</div>
-                    <div class="col-sm-2 image" id="ch13i">Clean IR Loop</div>
+                    <div class="col-sm-2 image" id="ch02">Vis Loop</div>
+                    <div class="col-sm-2 image" id="ch07">CH07 Loop</div>
+                    <div class="col-sm-2 image" id="ch08">Upper WV Loop</div>
+                    <div class="col-sm-2 image" id="ch13">Clean IR Loop</div>
                     <div class="col-sm-2 image" id="geoc">GeoColor Loop</div>
                     <div class="col-sm-2 image" id="airm">Airmass Loop</div>
-                    <div class="col-sm-2 image" id="sand">Sandwich Loop</div> 
+                    <div class="col-sm-2 image" id="sand">Sandwich Loop</div>
                     <div class="col-sm-2 image" id="dmici">Day Cloud Phase</div>
-                    <div class="col-sm-2 image" id="nmici">Night Micropysics</div>
+                    <div class="col-sm-2 image" id="nmic">Night Micropysics</div>
                     <div class="col-sm-2 image" id="cint">Convective Init</div>
                     <div class="col-sm-2 image" id="ch01i">CH01</div>
+                    <div class="col-sm-2 image" id="ch02i">CH02</div>
                     <div class="col-sm-2 image" id="ch03i">CH03</div>
                     <div class="col-sm-2 image" id="ch04i">CH04</div>
                     <div class="col-sm-2 image" id="ch05i">CH05</div>
                     <div class="col-sm-2 image" id="ch06i">CH06</div>
+                    <div class="col-sm-2 image" id="ch07i">CH07</div>
+                    <div class="col-sm-2 image" id="ch08i">CH08</div>
                     <div class="col-sm-2 image" id="ch09i">CH09</div>
                     <div class="col-sm-2 image" id="ch10i">CH10</div>
                     <div class="col-sm-2 image" id="ch11i">CH11</div>
                     <div class="col-sm-2 image" id="ch12i">CH12</div>
-                    <div class="col-sm-2 image" id="ch13">CH13</div>
+                    <div class="col-sm-2 image" id="ch13i">CH13</div>
                     <div class="col-sm-2 image" id="ch14i">CH14</div>
                     <div class="col-sm-2 image" id="ch15i">CH15</div>
                     <div class="col-sm-2 image" id="ch16i">CH16</div>
                 </div>
-            </div>           
+            </div>
             <div class="divider" id="section_spc_watch">
                 <div class="row">
                     <div class="col-sm-2 time"><a href="https://www.spc.noaa.gov/products/md/" target="_blank">Meso
@@ -526,19 +534,69 @@
         const spc_out = spc_prods + 'outlook/'
         const day1prob = spc_out + 'day1probotlk_'
         const day2prob = spc_out + 'day2probotlk_'
-        const sat_sector = 'UMW'
-        const sat = 'https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/';
-        const sat2 = 'https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/' + sat_sector + '/'
-        const sat3 = 'https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/CGL/'
+
         //https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/CGL/09/600x600.jpg
         let ma_sector = 's16'
         const exper = 'http://www.spc.noaa.gov/exper/'
         let ma_base = exper + 'mesoanalysis/'
         let ma = ma_base + ma_sector + '/'
 
+
+
+
+
+
+        //https://cdn.star.nesdis.noaa.gov/GOES17/ABI/CONUS/AirMass/GOES17-CONUS-AirMass-625x375.gif
+        //https://cdn.star.nesdis.noaa.gov/GOES16/GLM/CONUS/EXTENT3/GOES16-CONUS-EXTENT3-625x375.gif
+        //https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/nr/AirMass/20221211406-20221211801-GOES16-ABI-NR-AirMass-600x600.gif
+        //https://cdn.star.nesdis.noaa.gov/GOES16/GLM/SECTOR/sp/EXTENT3/20221211506-20221211901-GOES16-GLM-SP-EXTENT3-600x600.gif
+        //https://cdn.star.nesdis.noaa.gov/GOES16/GLM/SECTOR/sp/EXTENT3/GOES16-SP-EXTENT3-600x600.gif
+        //https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/se/AirMass/GOES16-SE-AirMass-600x600.gif
+        //https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/smv/AirMass/GOES16-SMV-AirMass-600x600.gif
+        //https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/smv/03/600x600.jpg
+        //https://cdn.star.nesdis.noaa.gov/GOES16/GLM/SECTOR/sr/EXTENT3/GOES16-SR-EXTENT3-600x600.gif
+        //https://cdn.star.nesdis.noaa.gov/GOES16/ABI/CONUS/AirMass/GOES16-CONUS-AirMass-625x375.gif
+
         const sound = exper + 'soundings/'
         const wpc_qpf = 'http://www.wpc.ncep.noaa.gov/qpf/'
-        var urls = {
+        const sat = 'https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/';
+        //var sat_sector = 'CGL/'
+        //const sat_sector = 'UMW'
+        //const sat2 = 'https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/' + sat_sector + '/'
+        const sat3 = 'https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/CGL/'
+        let urls = {
+            'ch02': sat + 'CGL/02/GOES16-CGL-02-600x600.gif',
+            'ch07': sat + 'CGL/07/GOES16-CGL-07-600x600.gif',
+            'ch08': sat + 'CGL/08/GOES16-CGL-08-600x600.gif',
+            'ch13': sat + 'CGL/13/GOES16-CGL-13-600x600.gif',
+            'ch14': sat + 'CGL/14/GOES16-CGL-14-600x600.gif',
+            'nrir': sat + 'cgl/07/GOES16-CGL-07-600x600.gif',
+            'geoc': sat + 'CGL/GEOCOLOR/GOES16-CGL-GEOCOLOR-600x600.gif',
+            'airm': sat + 'CGL/AirMass/GOES16-CGL-AirMass-600x600.gif',
+            'sand': sat + 'CGL/Sandwich/GOES16-CGL-Sandwich-600x600.gif',
+            'dayp': sat + 'CGL/DayCloudPhase/GOES16-ABI-CGL-DayCloudPhase-600x600.gif',
+            //'nmic': sat + 'cgl/NightMicrophysics/GOES16-CGL-NightMicrophysics-600x600.gif',
+            'ch01i': sat + 'CGL/01/600x600.jpg',
+            'ch02i': sat + 'CGL/02/600x600.jpg',
+            'ch03i': sat + 'CGL/03/600x600.jpg',
+            'ch04i': sat + 'CGL/04/600x600.jpg',
+            'ch05i': sat + 'CGL/05/600x600.jpg',
+            'ch06i': sat + 'CGL/06/600x600.jpg',
+            'ch07i': sat + 'CGL/07/600x600.jpg',
+            'ch08i': sat + 'CGL/08/600x600.jpg',
+            'ch09i': sat + 'CGL/09/600x600.jpg',
+            'ch10i': sat + 'CGL/10/600x600.jpg',
+            'ch11i': sat + 'CGL/11/600x600.jpg',
+            'ch12i': sat + 'CGL/12/600x600.jpg',
+            'ch13i': sat + 'CGL/13/600x600.jpg',
+            'ch14i': sat + 'CGL/14/600x600.jpg',
+            'ch15i': sat + 'CGL/15/600x600.jpg',
+            'ch16i': sat + 'CGL/16/600x600.jpg',
+            'geoci': sat + 'CGL/GEOCOLOR/GOES16-CGL-GEOCOLOR-600x600.gif',
+            'airmi': sat + 'CGL/AirMass/GOES16-CGL-AirMass-600x600.gif',
+            'sandi': sat + 'CGL/Sandwich/GOES16-CGL-Sandwich-600x600.gif',
+            'dmici': sat + 'CGL/DayCloudPhase/600x600.jpg',
+            'nmic': sat + 'CGL/NightMicrophysics/600x600.jpg',
             'rpts': 'https://www.spc.noaa.gov/climo/reports/today.gif',
             'dy1_otlk': spc_out + 'day1otlk.gif',
             'dy1_hail': day1prob + 'hail.gif',
@@ -599,55 +657,24 @@
             'hr65_qpf': wpc_qpf + 'fill_9fewbg.gif',
             's-watch': spc_prods + 'watch/validww.png',
             's-mds': spc_prods + 'md/validmd.gif',
-            'ch02': sat + 'CGL/02/GOES16-CGL-02-600x600.gif',
-            'ch08': sat + 'CGL/08/GOES16-CGL-08-600x600.gif',
-            'ch13': sat3 + '13/600x600.jpg',
-            'ch14': sat + 'cgl/14/GOES16-CGL-14-600x600.gif',
-            'nrir': sat + 'cgl/07/GOES16-CGL-07-600x600.gif',
-            'geoc': sat + 'CGL/GEOCOLOR/GOES16-CGL-GEOCOLOR-600x600.gif',
-            'airm': sat + 'CGL/AirMass/GOES16-CGL-AirMass-600x600.gif',
-            'sand': sat + 'CGL/Sandwich/GOES16-CGL-Sandwich-600x600.gif',
-            'dayp': sat + 'CGL/DayCloudPhase/GOES16-ABI-CGL-DayCloudPhase-600x600.gif',
-            'ngtp': sat + 'cgl/NightMicrophysics/GOES16-CGL-NightMicrophysics-600x600.gif',
-            'ch01i': sat3 + '01/600x600.jpg',
-            'ch02i': sat3 + '02/GOES16-CGL-02-600x600.gif',
-            'ch03i': sat3 + '03/600x600.jpg',
-            'ch04i': sat3 + '04/600x600.jpg',
-            'ch05i': sat3 + '05/600x600.jpg',
-            'ch06i': sat3 + '06/600x600.jpg',
-            'ch07i': sat3 + '07/GOES16-CGL-07-600x600.gif',
-            'ch08i': sat3 + '08/GOES16-CGL-08-600x600.gif',
-            'ch09i': sat3 + '09/600x600.jpg',
-            'ch10i': sat3 + '10/600x600.jpg',
-            'ch11i': sat3 + '11/600x600.jpg',
-            'ch12i': sat3 + '12/600x600.jpg',
-            'ch13i': sat3 + '13/GOES16-CGL-13-600x600.gif',
-            'ch14i': sat3 + '14/600x600.jpg',
-            'ch15i': sat3 + '15/600x600.jpg',
-            'ch16i': sat3 + '16/600x600.jpg',
-            'geoci': sat3 + 'GEOCOLOR/GOES16-CGL-GEOCOLOR-600x600.gif',
-            'airmi': sat3 + 'AirMass/GOES16-CGL-AirMass-600x600.gif',
-            'sandi': sat3 + 'Sandwich/GOES16-CGL-Sandwich-600x600.gif',
-            'dmici': sat3 + 'DayCloudPhase/600x600.jpg',
-            'nmici': sat3 + 'NightMicrophysics/600x600.jpg',
+
             'cint': 'https://www.nsstc.uah.edu/SATCAST/goes-east_fulldomain/UAH_SATCASTv3_CI_VIS.png'
         }
 
-        https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/CGL/09/600x600.jpg
 
-            spc_items = ['sbcp', 'mlcp', 'mucp', 'dcape', 'laps', 'lllr', 'lclh', 'lcls', 'lfch', 'lfrh',
-                'eshr', 'shr1', 'shr1_chg', 'shr3', 'shr6', 'shr6_chg', 'hodo', 'hail', 'sars1', 'sars2', 'lghl',
-                'dcp', 'mbcp', 'qlcs1', 'qlcs2', 'effh', 'srh5', 'srh1', 'srh3', 'llsr', 'mlsr', 'ulsr', 'alsr', 'scp',
-                'lscp', 'stor', 'stpc', 'stpc5', 'sigt1', 'sigt1', 'nstp', 'vtp3', 'sigh', 'cbsig', 'cpsh', 'vgp3',
-                'lcls', 'lr3c', '3cvr', '3cape_shr3', '925mb', '850mb', '850mb2', '700mb', '500mb', '300mb', 'tran',
-                'dlcp', 'tadv_925', 'tadv', '7tad', '9fnt', '8fnt', '7fnt', '857f', '75ft', '98ft', 'vadv', 'ageo',
-                'epvl', 'epvm', 'sfnt', '925f', '500mb_chg', 'nstp', 'cpsh', 'lr3c', 'pwtr', 'tran', 'prop', 'peff',
-                'tran_925', 'tran_925-850', 'bigsfc', 'pmsl', 'ttd', 'mcon', 'mxth', 'thea', 'thet', 'icon', 'trap',
-                'vtm', 'dvvr', 'def', 'sfnt', 'pchg', 'temp_chg', 'dwpt_chg', 'mixr_chg', 'thte_chg', '925mb', '850mb',
-                '700mb', '500mb', '300mb', 'tadv_925', 'tadv', '7tad', 'ddiv', 'padv', 'brn', 'desp', 'ehi1', 'ehi3',
-                'vgp3', 'crit', 'mlcape_eshr', 'comp', 'lcls', 'tdlr', 'mcsm', 'mbcp', 'sfir', 'fosb', 'lhan', 'mhan',
-                'hhan', 'lasi', 'trap_500', 'trap_250'
-            ]
+        spc_items = ['sbcp', 'mlcp', 'mucp', 'dcape', 'laps', 'lllr', 'lclh', 'lcls', 'lfch', 'lfrh',
+            'eshr', 'shr1', 'shr1_chg', 'shr3', 'shr6', 'shr6_chg', 'hodo', 'hail', 'sars1', 'sars2', 'lghl',
+            'dcp', 'mbcp', 'qlcs1', 'qlcs2', 'effh', 'srh5', 'srh1', 'srh3', 'llsr', 'mlsr', 'ulsr', 'alsr', 'scp',
+            'lscp', 'stor', 'stpc', 'stpc5', 'sigt1', 'sigt1', 'nstp', 'vtp3', 'sigh', 'cbsig', 'cpsh', 'vgp3',
+            'lcls', 'lr3c', '3cvr', '3cape_shr3', '925mb', '850mb', '850mb2', '700mb', '500mb', '300mb', 'tran',
+            'dlcp', 'tadv_925', 'tadv', '7tad', '9fnt', '8fnt', '7fnt', '857f', '75ft', '98ft', 'vadv', 'ageo',
+            'epvl', 'epvm', 'sfnt', '925f', '500mb_chg', 'nstp', 'cpsh', 'lr3c', 'pwtr', 'tran', 'prop', 'peff',
+            'tran_925', 'tran_925-850', 'bigsfc', 'pmsl', 'ttd', 'mcon', 'mxth', 'thea', 'thet', 'icon', 'trap',
+            'vtm', 'dvvr', 'def', 'sfnt', 'pchg', 'temp_chg', 'dwpt_chg', 'mixr_chg', 'thte_chg', '925mb', '850mb',
+            '700mb', '500mb', '300mb', 'tadv_925', 'tadv', '7tad', 'ddiv', 'padv', 'brn', 'desp', 'ehi1', 'ehi3',
+            'vgp3', 'crit', 'mlcape_eshr', 'comp', 'lcls', 'tdlr', 'mcsm', 'mbcp', 'sfir', 'fosb', 'lhan', 'mhan',
+            'hhan', 'lasi', 'trap_500', 'trap_250'
+        ]
 
 
         spc_items.forEach(s => {
@@ -689,12 +716,13 @@
             'epvm': "700 mb Frontogensis (solid red), 650-500 mb EPV (blue shading = stable; red/green shading = unstable), and Conditional Instability (solid black). Look for max 700 mb frontogenesis coincident with or just downstream from (-) EPV. Also consider 850 mb frontogenesis and frontal slope between the 2 levels. Frontogenesis and (-) EPV may extend or be located above 700 mb at times, especially in cool season.",
             'vadv': "700-400 mb Differential Vorticity Advection (DVA) and 500 mb Height (solid black) and Vorticity (shaded). (+) DVA = solid blue. (-) DVA = dashed red. (+) DVA promotes synoptic-scale (isentropic) lift, moisture and temperature advection and convergence, and destabilization.",
             'ageo': "300 mb Height (solid black), Isotachs (shaded), Ageostrophic Wind, and 700-500 mb Omega. Ascent = solid magenta. Descent = dashed red. Best locations for organized convection is anticyclonically-curved right entrance regions (QLCS/MCS) and exit regions of mid-to-upper jet streaks (supercells).",
-            'sbcp': '<p><font face="Arial, Helvetica, sans-serif" size="2"><b><font color="#990000">Surface-Based CAPE/CIN (J kg<sup>-1</sup>)</b></font></p><p><font face="Arial, Helvetica, sans-serif" size="2">SBCAPE (<u><b>S</b></u>urface-<u><b>B</b></u>ased <u><b>C</b></u>onvective<u><b>A</b></u>vailable <u><b>P</b></u>otential <u><b>E</b></u>nergy) is a measure of instability in the troposphere.  This value represents the total amount of potential energy available to a parcel of air originating at the surface and being lifted to its level of free convection (LFC). No parcel entrainment is considered. The CAPE and CIN calculations use the virtual temperature correction.</p><p>CIN (<u><b>C</b></u>onvective <u><b>IN</b></u>hibition) represents the "negative" area on a sounding that must be overcome before storm initiation can occur.</p></font>Surface-Based CAPE (contour), Surface-Based CIN (shaded), and Surface Wind. CAPE values can = 0 and still get elevated convection if elevated instability exists above frontal inversion or if upstream (warm sector) SBCAPE > 0. High values of CIN can cap convection despite high instability without sufficient forcing.',
+            'sbcp': '<p><font face="Arial, Helvetica, sans-serif" size="2"><b><font color="#990000">\
+                Surface-Based CAPE/CIN (J kg<sup>-1</sup>)</b></font></p><p><font face="Arial, Helvetica, sans-serif" size="2">SBCAPE (<u><b>S</b></u>urface-<u><b>B</b></u>ased <u><b>C</b></u>onvective<u><b>A</b></u>vailable <u><b>P</b></u>otential <u><b>E</b></u>nergy) is a measure of instability in the troposphere.  This value represents the total amount of potential energy available to a parcel of air originating at the surface and being lifted to its level of free convection (LFC). No parcel entrainment is considered. The CAPE and CIN calculations use the virtual temperature correction.</p><p>CIN (<u><b>C</b></u>onvective <u><b>IN</b></u>hibition) represents the "negative" area on a sounding that must be overcome before storm initiation can occur.</p></font>Surface-Based CAPE (contour), Surface-Based CIN (shaded), and Surface Wind. CAPE values can = 0 and still get elevated convection if elevated instability exists above frontal inversion or if upstream (warm sector) SBCAPE > 0. High values of CIN can cap convection despite high instability without sufficient forcing.',
             'mlcp': "Mixed-Layer CAPE (tan contour > 100 J/kg, red contour > 500 J/kg), Mixed-Layer CIN (shaded), and Surface Wind. More representative of updraft and storm intensity than surface-based, especially if low-level inversion present. Values: 0-1000 (weakly unstable); 1000-2500 (moderately unstable); 2500-3500 (very unstable); > 3500 (extremely unstable). High values of CIN can cap convection despite high instability without sufficient forcing.",
             'mucp': "Most Unstable CAPE (tan contour > 100 J/kg, red contour > 500 J/kg) and Lifted Parcel Level (AGL, shaded). Parcel lifted from most unstable level. Used to determine amount of elevated instability and elevated convection potential above frontal zone.",
-            'dcape': "Downdraft CAPE > 500 J/kg (solid contour). Indicates potential to mix down momentum aloft in downdraft. High values associated with steep low-level and mid-level lapse rates, and dry air aloft (above low-level moisture). DCAPE > 800 (1200) J/kg is high (very high).",
+            'dcape': '<div class="description><p><b><font color="#990000">Downdraft CAPE (J kg<sup>-1</sup><font></b></p><p>The DCAPE (<u><b>D</b></u>owndraft CAPE) can be used to estimate the potential strength of rain -             cooled downdrafts within deep convection and is similar to CAPE.Larger DCAPE values are associated with stronger downdrafts.Likewise DCIN(downdraft inhibition) is analogous to convective inhibition...hatching at 25 and 100 J kg < sup > -1 < /sup>) < / p > Downdraft CAPE > 500 J /kg(solid contour).Indicates potential to mix down momentum aloft in downdraft. High values associated with steep low - level and mid - level lapse rates and dry air aloft(above low - level moisture).DCAPE > 800(1200) J /kg is high / (very high). < /div>,(deg C/km). Values > 5 displayed. Steep low-level lapse rates essential to mix down higher momentum air aloft to surface in downdraft. Low-level inversion may keep higher winds elevated off surface.',
             'kind': "K Index (solid green > 28) and 700 mb Temperatures (dashed red). K > 30 = local heavy rain potential. K > 35 = greater threat. Lower K values in severe storm environment due to drier air at 700 mb.",
-            'lllr': "Lapse Rates (0-3 km) (deg C/km). Values > 5 displayed. Steep low-level lapse rates essential to mix down higher momentum air aloft to surface in downdraft. Low-level inversion may keep higher winds elevated off surface.",
+            'lllr': "Lapse Rates (0-3 km)",
             'lclh': "LCL Height (in meters AGL). Values > 2000 m shaded. Lower LCL = better chance for tornado touchdown. Want values &lt; 1500 m.",
             'lfch': "LFC Height (in meters AGL). Warmer, moister low-level air contributes to lower LFC, and thus more CAPE and stronger updraft.",
             'lfrh': "LCL to LFC mean RH (dashed black, shaded > 60 pct) and MUCAPE > 100 J/kg (red contour). High RH values in this layer promotes heavy rain potential and more efficient rainfall production.",
@@ -784,8 +812,10 @@
         sound_items = ['DTX', 'APX', 'GRB', 'ILX', 'DVN', 'MPX', 'OAX', 'TOP']
         sound_items.forEach(soo => {
             urls[soo] = sound + soundDate + soo + '.gif'
-            console.log(urls[soo])
+            //console.log(urls[soo])
         })
+
+
 
         function getImage(e) {
             reference_id = e.target.id
@@ -825,17 +855,60 @@
         const buttons = document.querySelectorAll("button");
         const dividers = document.querySelectorAll(".divider");
         const radios = document.querySelectorAll(".radio");
+        const sat_images = ['ch01i', 'ch02i', 'ch03i', 'ch04i', 'ch05i', 'ch06i', 'ch07i', 'ch08i', 'ch09i',
+            'ch10i', 'ch11i',
+            'ch12i', 'ch13i', 'ch14i', 'ch15i', 'ch16i'
+        ]
 
+        const sat_loops = ['ch02', 'ch07', 'ch08', 'ch13', 'ch14', 'geoc', 'airm', 'sand', 'ngtp']
+        const sat_loop_names = {
+            'ch02': '02',
+            'ch07': '07',
+            'ch08': '08',
+            'ch13': '13',
+            'ch14': '14',
+            'geoc': 'GEOCOLOR',
+            'airm': 'AirMass',
+            'sand': 'Sandwich',
+            'dayp': 'DayCloudPhase',
+            'nmic': 'NightMicrophysics'
+        }
+
+        const sat_sector = {
+            's11': 'pnw',
+            's12': 'psw',
+            's13': 'umv',
+            's14': 'sp',
+            's15': 'sp',
+            's16': 'cgl',
+            's16': 'ne',
+            's17': 'se',
+            's18': 'se',
+            's18': 'smv',
+        }
 
         function showSelected(e) {
 
             reference_id = e.target.id
             let m_sector = reference_id;
+            let sat_sector_name = sat_sector[m_sector];
+            //console.log(m_sector)
             spc_items.forEach(s => {
                 urls[s] = ma_base + m_sector + '/' + s + '/' + s + '.gif'
             });
-        };
+            sat_images.forEach(image => {
+                let channel = image.slice(2, -1);
+                //console.log(sat + sat_sector_name + '/' + channel + '/600x600.jpg');
+                urls[image] = sat + sat_sector_name + '/' + channel + '/600x600.jpg';
+            });
 
+            sat_loops.forEach(loop => {
+                let loop_name = sat_loop_names[loop];
+                //console.log(sat + sat_sector_name + '/' + sat_item_name + '/GOES16-' + sat_sector_name
+                //    .toUpperCase() + '-' + sat_item_name + '-600x600.gif');
+               urls[loop] = sat + sat_sector_name + '/' + loop_name + '/GOES16-' + sat_sector_name.toUpperCase() + '-' + loop_name + '-600x600.gif';
+            });
+        };
 
         for (const radio of radios) {
             radio.addEventListener('change', showSelected);
