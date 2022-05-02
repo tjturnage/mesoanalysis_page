@@ -107,9 +107,13 @@ please email thomas.turnage@noaa.gov for bug reports of suggestions
 <body>
     <div class="container stretch">
         <div class="justify-content-center text-center">
-            <span><b>Meso Sector:&nbsp;&nbsp;&nbsp;&nbsp;</b></span>
+            <span><b>Sector:&nbsp;&nbsp;&nbsp;&nbsp;</b></span>
             <div class="form-check form-check-inline">
-                <input class="form-check-input radio" type="radio" name="mesoSector" id="s16" value="s16" checked>
+                <input class="form-check-input radio" type="radio" name="mesoSector" id="s16gl" value="s16" checked>
+                <label class="form-check-label" for="greatlakes">GL</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input radio" type="radio" name="mesoSector" id="s16ne" value="s16">
                 <label class="form-check-label" for="greatlakes">NE</label>
             </div>
             <div class="form-check form-check-inline">
@@ -117,12 +121,16 @@ please email thomas.turnage@noaa.gov for bug reports of suggestions
                 <label class="form-check-label" for="greatlakes">Mid Atl</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input radio" type="radio" name="mesoSector" id="s18" value="s18">
+                <input class="form-check-input radio" type="radio" name="mesoSector" id="s18se" value="s18">
                 <label class="form-check-label" for="greatlakes">SE</label>
             </div>
             <div class="form-check form-check-inline">
+                <input class="form-check-input radio" type="radio" name="mesoSector" id="s18smv" value="s18">
+                <label class="form-check-label" for="greatlakes">South MS Val</label>
+            </div>
+            <div class="form-check form-check-inline">
                 <input class="form-check-input radio" type="radio" name="mesoSector" id="s13" value="s13">
-                <label class="form-check-label" for="greatlakes">N Plains</label>
+                <label class="form-check-label" for="greatlakes">North MS Val</label>
             </div>
             <div class="form-check form-check-inline">
                 <input class="form-check-input radio" type="radio" name="mesoSector" id="s14" value="s14">
@@ -133,13 +141,23 @@ please email thomas.turnage@noaa.gov for bug reports of suggestions
                 <label class="form-check-label" for="greatlakes">TX</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input radio" type="radio" name="mesoSector" id="s11" value="s11">
+                <input class="form-check-input radio" type="radio" name="mesoSector" id="s11nw" value="s11">
                 <label class="form-check-label" for="greatlakes">NW</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input radio" type="radio" name="mesoSector" id="s12" value="s12">
+                <input class="form-check-input radio" type="radio" name="mesoSector" id="s11nr" value="s11">
+                <label class="form-check-label" for="greatlakes">N Rock</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input radio" type="radio" name="mesoSector" id="s12sw" value="s12">
                 <label class="form-check-label" for="greatlakes">SW</label>
             </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input radio" type="radio" name="mesoSector" id="s12sr" value="s12">
+                <label class="form-check-label" for="greatlakes">S Rock</label>
+            </div>
+
+
         </div>
         <div class="justify-content-center text-center">
             <button type="button" class="btn btn-outline-danger" id="swody1">SWODY1</button>
@@ -1001,23 +1019,26 @@ please email thomas.turnage@noaa.gov for bug reports of suggestions
         }
 
         const sat_sector = {
-            's11': 'pnw',
-            's12': 'psw',
+            's11nw': 'pnw',
+            's11nr': 'nr',
+            's12sw': 'psw',
+            's12sr': 'sr',
             's13': 'umv',
             's14': 'sp',
             's15': 'sp',
-            's16': 'cgl',
-            's16': 'ne',
+            's16gl': 'cgl',
+            's16ne': 'ne',
             's17': 'se',
-            's18': 'se',
+            's18se': 'se',
+            's18smv': 'smv',
             //'s18': 'smv',
         }
 
         function showSelected(e) {
 
             reference_id = e.target.id
-            let m_sector = reference_id;
-            let sat_sector_name = sat_sector[m_sector];
+            let m_sector = reference_id.slice(0,3);
+            let sat_sector_name = sat_sector[reference_id];
             let sat_sector_name_upper = sat_sector_name.toUpperCase();
             //console.log(m_sector)
             spc_items.forEach(s => {
