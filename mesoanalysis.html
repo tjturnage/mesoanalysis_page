@@ -612,41 +612,60 @@ please email thomas.turnage@noaa.gov for bug reports of suggestions
             <div class="divider" id="section_satellite">
                 <div class="row">
                     <div class="col-sm-2 image us-loop" id="conus-ch02">CONUS Vis</div>
-                    <div class="col-sm-2 image us-loop" id="conus-ch07">CONUS Near IR</div>
-                    <div class="col-sm-2 image us-loop" id="conus-ch08">CONUS Upper WV</div>
                     <div class="col-sm-2 image us-loop" id="conus-ch13">CONUS Clean IR</div>
-                    <div class="col-sm-2 image us-loop" id="conus-glm">CONUS GLM</div>
+                    <div class="col-sm-2 image us-loop" id="conus-sand">CONUS Sandwich</div>
+                    <div class="col-sm-2 image us-loop" id="conus-ch08">CONUS Upper WV</div>
                     <div class="col-sm-2 image us-loop" id="conus-geoc">CONUS GeoColor</div>
                     <div class="col-sm-2 image us-loop" id="conus-airm">CONUS Airmass</div>
-                    <div class="col-sm-2 image us-loop" id="conus-sand">CONUS Sandwich</div>
-                    <div class="col-sm-2 image us-loop" id="conus-dayp">CONUS Day Phase</div>
-                    <div class="col-sm-2 image us-loop" id="conus-nmic">CONUS Night Micro</div>
-                    <div class="col-sm-2 image us-loop" id="conus-firt">CONUS Fire Temp</div>
-                    <div class="col-sm-2 image us-loop" id="cint">Conv Init (image)</div>
+
+
                     <div class="col-sm-2 image sector-loop" id="ch02">Sector Vis</div>
-                    <div class="col-sm-2 image sector-loop" id="ch07">Sector Near IR</div>
-                    <div class="col-sm-2 image sector-loop" id="ch08">Sector Upper WV</div>
                     <div class="col-sm-2 image sector-loop" id="ch13">Sector Clean IR</div>
-                    <div class="col-sm-2 image sector-loop" id="glm">Sector GLM</div>
+                    <div class="col-sm-2 image sector-loop" id="sand">Sector Sandwich</div>
+                    <div class="col-sm-2 image sector-loop" id="ch08">Sector Upper WV</div>
                     <div class="col-sm-2 image sector-loop" id="geoc">Sector GeoColor</div>
                     <div class="col-sm-2 image sector-loop" id="airm">Sector Airmass</div>
-                    <div class="col-sm-2 image sector-loop" id="sand">Sector Sandwich</div>
+
+
+                    <div class="col-sm-2 image" id="ch02i">CH02</div>
+                    <div class="col-sm-2 image" id="ch13i">CH13</div>
+                    <div class="col-sm-2 image us-loop" id="cint">Conv Init (image)</div>
+                    <div class="col-sm-2 image" id="ch08i">CH08</div>
+                    <div class="col-sm-2 image" id="ch09i">CH09</div>
+                    <div class="col-sm-2 image" id="ch10i">CH10</div>
+                    <div class="col-sm-2 image us-loop" id="conus-glm">CONUS GLM</div>
+                    <div class="col-sm-2 image us-loop" id="conus-ch07">CONUS Near IR</div>
+                    <div class="col-sm-2 image us-loop" id="conus-dayp">CONUS Day Phase</div>
+
+
+                    <div class="col-sm-2 image us-loop" id="conus-nmic">CONUS Night Micro</div>
+                    <div class="col-sm-2 image us-loop" id="conus-firt">CONUS Fire Temp</div>
+                    <div class="col-sm-2 image" id="ch14i">CH14</div>
+
+
+
+
+
+
+                    <div class="col-sm-2 image sector-loop" id="glm">Sector GLM</div>
+
+                    <div class="col-sm-2 image sector-loop" id="ch07">Sector Near IR</div>
+
                     <div class="col-sm-2 image sector-loop" id="dayp">Sector Day Phase</div>
 
                     <div class="col-sm-2 image" id="ch01i">CH01</div>
-                    <div class="col-sm-2 image" id="ch02i">CH02</div>
+
                     <div class="col-sm-2 image" id="ch03i">CH03</div>
                     <div class="col-sm-2 image" id="ch04i">CH04</div>
                     <div class="col-sm-2 image" id="ch05i">CH05</div>
                     <div class="col-sm-2 image" id="ch06i">CH06</div>
                     <div class="col-sm-2 image" id="ch07i">CH07</div>
-                    <div class="col-sm-2 image" id="ch08i">CH08</div>
-                    <div class="col-sm-2 image" id="ch09i">CH09</div>
-                    <div class="col-sm-2 image" id="ch10i">CH10</div>
+
+
                     <div class="col-sm-2 image" id="ch11i">CH11</div>
                     <div class="col-sm-2 image" id="ch12i">CH12</div>
-                    <div class="col-sm-2 image" id="ch13i">CH13</div>
-                    <div class="col-sm-2 image" id="ch14i">CH14</div>
+
+
                     <div class="col-sm-2 image" id="ch15i">CH15</div>
                     <div class="col-sm-2 image" id="ch16i">CH16</div>
                 </div>
@@ -848,7 +867,7 @@ please email thomas.turnage@noaa.gov for bug reports of suggestions
 
         var descriptions = {
 
-            'icon': '<div class="spc-prod">SPC Documentation <b><a href="view-source:https://www.spc.noaa.gov/exper/mesoanalysis/help/help_trap.html">HERE</a></b></p></div>',
+            'icon': '<div class="spc-prod">SPC Documentation <b><a href="view-source:https://www.spc.noaa.gov/exper/mesoanalysis/help/help_trap.html">HERE</a></b></div>',
             //'icon': '<div class="description"><p>SPC Documentation <b><a href="https://www.spc.noaa.gov/exper/mesoanalysis/help/help_icon.html" target="_blank">HERE</a></b></p></div>',
 
             'trap': '<div class="spc-prod">Fluid Trapping Parameter</div><div class="spc-info">In regions of strong vorticity (i.e., cyclones), air parcels tend to become trapped within the \
@@ -976,7 +995,7 @@ please email thomas.turnage@noaa.gov for bug reports of suggestions
             'lfrh': '<div class="spc-prod">LCL-LFC Relative Humidity (%)</div><div class="spc-info">This is the mean relative humidity in the layer between \
             the LCL(<u><b>L</b></u>ifting <u><b>C</b></u>ondensation <u><b>L</b></u>evel)and the LFC (<u><b>L</b></u>evel of <u><b>F</b></u>ree<u><b>C</b></u>onvection).  \
             Near saturation (RH=100%), from the LCL to the LFC, suggests that the LFC is near the LCL.  When this occurs, a parcel experiencing forced ascent above the \
-            LCL may not be diluted with dry environmental air prior to reaching the LFC.<p>The height difference between the LCL and the LFC is important when \
+            LCL may not be diluted with dry environmental air prior to reaching the LFC.<br>The height difference between the LCL and the LFC is important when \
             determining convection initiation.  The smaller the difference between the LCL and the LFC, the more likely deep convection becomes. The LCL-LFC difference is \
             similar to CIN (convective inhibition).</div>',
 
@@ -1022,7 +1041,7 @@ please email thomas.turnage@noaa.gov for bug reports of suggestions
             ... we continue to look upward in the sounding until a lifted parcel has a CAPE less than 100 Jkg<sup>-1</sup> OR a CIN less than -250 J kg<sup>-1</sup>. \
             Of the three SRH calculations displayed on the SPC mesoanalysis page, effective SRH is the most applicable across the widest range of storm environments, and \
             effective SRH discriminates as well as 0-1 km SRH between significant tornadic and nontornadic supercells.</div>\
-            <div class="spc-ref">More information is available <b><a href="https://www.spc.noaa.gov/publications/thompson/eff-srh.pdf">here</div>',
+            <div class="spc-ref">More information is available <b><a href="https://www.spc.noaa.gov/publications/thompson/eff-srh.pdf" target="_blank">here</div>',
 
             'srh5': '<div class="spc-prod">0-500 m Storm Relative Helicity (m<sup>2</sup> s<sup>-2</sup>)</div><div class="spc-info">SRH (<u><b>S</b></u>torm \
             <u><b>R</b></u>elative<u><b>H</b></u>elicity) in the lowest 500 m AGL has been found by Coffer et al. (2019), October issue of <em>Weather and \
@@ -1074,8 +1093,8 @@ please email thomas.turnage@noaa.gov for bug reports of suggestions
             effective storm-relative helicity (ESRH, based on Bunkers right supercell motion), most unstable parcel CAPE (muCAPE) and convective inhibition \
             (muCIN), and effective bulk wind difference (EBWD). Each ingredient is normalized to supercell "threshold" values, and larger values of SCP denote greater \
             "overlap" in the three supercell ingredients. Only positive values of SCP are displayed, which correspond to environments favoring right-moving (cyclonic) \
-            supercells. This index is formulated as follows:</p><p>SCP = (muCAPE / 1000 J kg<sup>-1</sup>) * (ESRH / 50 m<sup>2</sup> s<sup>-2</sup>) * \
-            (EBWD / 20 m s<sup>-1</sup>) * (-40 J kg<sup>-1</sup> / muCIN)</p><p>EBWD is divided by 20 m s<sup>-1</sup> in the range of 10-20 m s<sup>-1</sup>. EBWD \
+            supercells. This index is formulated as follows:<br>SCP = (muCAPE / 1000 J kg<sup>-1</sup>) * (ESRH / 50 m<sup>2</sup> s<sup>-2</sup>) * \
+            (EBWD / 20 m s<sup>-1</sup>) * (-40 J kg<sup>-1</sup> / muCIN)<br><br>EBWD is divided by 20 m s<sup>-1</sup> in the range of 10-20 m s<sup>-1</sup>. EBWD \
             less than 10 m s<sup>-1</sup>is set to zero, and EBWD greater than 20 m s<sup>-1</sup> is set to one. The muCIN term is based on work by Gropp and Davenport \
             (2018), August issue of <em>Weather and Forecasting</em>, and it is set to 1.0 when muCIN is greater than -40 kg<sup>-1</sup>.</div><div class="spc-ref">Additional \
             information can be found <a href="https://www.spc.noaa.gov/publications/thompson/stp_scp.pdf" target_"blank">here</a>.</div>',
@@ -1087,7 +1106,7 @@ please email thomas.turnage@noaa.gov for bug reports of suggestions
             The index is formulated as follows:<br><br> STP = (sbCAPE/1500 J kg<sup>-1</sup>) * ((2000-sbLCL)/1000 m) * (SRH1/150 m<sup>2</sup> s<sup>-2</sup>) * \
             (6BWD/20 m s<sup>-1</sup>)* ((200+sbCIN)/150 J kg<sup>-1</sup>) <br><br>The sbLCL term is set to 1.0 when sbLCL < 1000 m, and set to 0.0 when sbLCL > 2000 m; \
             the sbCIN term is set to 1.0 when sbCIN > -50 J kg<sup>-1</sup>, and set to 0.0 when sbCIN < -200; the 6BWD term is capped at a value of 1.5 for 6BWD > \
-            30 m s<sup>-1</sup>, and set to 0.0 when 6BWD < 12.5 m s<sup>-1</sup>.</p> <p> A majority of significant tornadoes (F2 or greater damage) have been \
+            30 m s<sup>-1</sup>, and set to 0.0 when 6BWD < 12.5 m s<sup>-1</sup>.<br><br> A majority of significant tornadoes (F2 or greater damage) have been \
             associated with STP values greater than 1, while most non-tornadic supercells have been associated with values less than 1 in a large sample of RAP \
             analysis proximity soundings.</div><div class="spc-ref">Additional information can be found <a href="https://www.spc.noaa.gov/publications/thompson/waf-env.pdf" target="_blank">here</a></div>',
 
@@ -1136,7 +1155,7 @@ please email thomas.turnage@noaa.gov for bug reports of suggestions
             Rapid Update Cycle (RUC) profiles.  Wea. Forecasting, 26, 729-743.</div>',
 
             'nstp': '<div class="spc-prod">Non-Supercell Tornado parameter (NST)</div><div class="spc-info">The non-supercell tornado parameter (NST) is the normalized \
-            product of the following terms:</p><p>(0-1 km lapse rate/9 C/km) * (0-3 km MLCAPE/100 J/kg) * ((225 - MLCIN/200) * ((18 - 0-6 km bulk wind \
+            product of the following terms:<br><br>(0-1 km lapse rate/9 C/km) * (0-3 km MLCAPE/100 J/kg) * ((225 - MLCIN/200) * ((18 - 0-6 km bulk wind \
             difference)/5 m/s) * (surface relative vorticity/8**10-5/s)<br><br>This normalized parameter is meant to highlight areas where steep \
             low-level lapse rates correspond with low-level instability, little convective inhibition, weak deep-layer vertical shear, and large \
             cyclonic surface vorticity.  Values > 1 suggest an enhanced potential for non-mesocyclone tornadoes.</div><div class="spc-ref">Additional Information \
@@ -1159,7 +1178,7 @@ please email thomas.turnage@noaa.gov for bug reports of suggestions
                 target="_blank">https://www.spc.noaa.gov/exper/mesoanalysis/help/help_sigh.html</a> for details.</div>',
 
             'sars1': '<div class="spc-prod">SARS Hail Size</div><div class="spc-info">The SARS method returns a maximum expected hail report by matching existing environmental \
-            conditions to historic severe hail cases. These forecast maximum sizes are conditional on severe hail of any size occurring.</p> <p> This graphic shows the \
+            conditions to historic severe hail cases. These forecast maximum sizes are conditional on severe hail of any size occurring.<br><br>This graphic shows the \
             "best guess" maximum hail report.</div> ',
 
             'sars2': '<div class="spc-prod">SARS Significant Hail Percentage and Conditional Matches</div><div class="spc-info">The SARS method returns a maximum \
@@ -1222,19 +1241,19 @@ please email thomas.turnage@noaa.gov for bug reports of suggestions
             precipitable water term -> <= 1.5 set to -5; > 1.5 set to 0.<br>\
             All six of the terms are summed to arrive at the final microburst composite value.<br>\
             3-4 = "slight chance" of a microburst<br>\
-            5-8 infers a "chance" of a microburst\
+            5-8 infers a "chance" of a microburst<br>\
             >= 9 infers that microbursts are "likely".<br>These values are conditional upon the existence of a storm. </div>',
 
             'desp': '<div class="spc-prod">Enhanced Stretching Potential</div><div class="spc-info">This non-dimensional composite parameter based on work by Jon Davies that identifies \
             areas where low-level buoyancy and steep low-level lapse rates are co-located, which may favor low-level vortex stretching and tornado potential.  ESP is formulated as \
-            follows: <p> ESP = (0-3 km MLCAPE / 50 J kg<sup>-1</sup>) * ((0-3 km lapse rate - 7.0) / 1.0 C km<sup>-1</sup>) <p> where ESP is set to zero when the 0-3 km lapse rate \
+            follows: <br><br> ESP = (0-3 km MLCAPE / 50 J kg<sup>-1</sup>) * ((0-3 km lapse rate - 7.0) / 1.0 C km<sup>-1</sup>) <br><br> where ESP is set to zero when the 0-3 km lapse rate \
             is < 7 C km<sup>-1</sup>, or when total MLCAPE < 250 J kg<sup>-1</sup>.</div><div class="spc-ref">Additional information <a href="http://nwafiles.nwas.org/ej/pdf/2005-EJ4.pdf" \
             target="_blank">HERE</a>.</div>',
 
             'ehi1': '<div class="spc-prod">Energy-Helicity Index (Sfc-1 km)</div><div class="spc-info">The basic premise behind the EHI (<u><b>E</b></u>nergy-<u><b>H</b></u>elicity \
             <u><b>I</b></u>ndex) is that storm rotation should be maximized when CAPE is large and SRH is large.  0-1-km EHI values greater than 1-2 have been associated with \
             significant tornadoes in supercells.</div><div class="spc-ref">References:<br> Rasmussen, E. N., 2003: Refined supercell and tornado forecast parameters. \
-            <i>Wea. Forecasting,</i>, <b>18</b>, 530-535. <p> Thompson, R. L., R. Edwards, J. A. Hart, K. L. Elmore, and P. Markowski, 2003:  Close proximity soundings \
+            <i>Wea. Forecasting,</i>, <b>18</b>, 530-535. <br><br> Thompson, R. L., R. Edwards, J. A. Hart, K. L. Elmore, and P. Markowski, 2003:  Close proximity soundings \
             within supercell environments obtained from the Rapid Updage Cycle.  <i>Wea. Forecasting,</i> <b>18</b>, 1243-1261.<br>Additional information \
             <a href="https://www.spc.noaa.gov/publications/thompson/ruc_waf.pdf" target="_blank">HERE</a></div>',
 
@@ -1253,7 +1272,7 @@ please email thomas.turnage@noaa.gov for bug reports of suggestions
  A critical angle near 90 degrees infers streamwise vorticity near the ground, which favors stronger cyclonic rotation and dynamically forced ascent closer to the ground in a \
  right-moving supercell (through the effects of tilting and stretching of horizontal vorticity).  Critical angles in the range of 45 to 135 degrees suggest near-surface \
  vorticity is more streamwise than crosswise, and values in this range are highlighted by the color fill.  Large SRH colocated with a critical angle close to \
- 90 degrees is most favorable for tornadic supercells.</div><div class="spc-ref">Additional information <a href="http://www.ejssm.org/ojs/index.php/ejssm/article/view/33/38">HERE</a>.</div>',
+ 90 degrees is most favorable for tornadic supercells.</div><div class="spc-ref">Additional information <a href="http://www.ejssm.org/ojs/index.php/ejssm/article/view/33/38" target="_blank">HERE</a>.</div>',
 
             'lclsrh': '100 mb Mean LCL Height (dashed green &lt; 1250 m, solid orange > 1500 m, shaded > 1750 m) and 0-1 km SRH (solid blue > 50 m2/s2). Dashed green LCLs more favorable for tornadoes.',
             'lr3c': '<div class="spc-prod">0-3 km Lapse Rate (> 7 deg C/km shaded) and 0-3 km MLCAPE (solid red).</div><div class="spc-info">Very useful for determining where \
@@ -1271,7 +1290,7 @@ please email thomas.turnage@noaa.gov for bug reports of suggestions
             'qlcs1': '<div class="spc-prod">0-3 km Bulk Shear (kt) and Theta-e Differential (C), with MUCAPE (J/kg)</div><div class="spc-info">This combination parameter plot attempts \
             to highlight areas potentially favorable for QLCS mesovortex generation.  The three plotted ingredients are 1) 0-3-km bulk shear vector (kt), 2) 0-3-km maximum \
             theta-e difference (C), and 3) MUCAPE (J/kg).  Areas with substantial buoyancy and line-normal bulk shear (30 kt or greater) favor deep upright convection over the gust \
-            front of a QLCS, while the theta-e difference infers the potential strength of the cold pool. </p> <p>Strong surges in the cold pool (often denoted by bowing segments of a \
+            front of a QLCS, while the theta-e difference infers the potential strength of the cold pool. <br><br>Strong surges in the cold pool (often denoted by bowing segments of a \
             QLCS), when coincident with substantial buoyancy and strong line-normal shear, can favor stretching of vorticity generated along the gust front, and subsequent \
             mesovortex formation.</div><div class="spc-ref">Additional information <a href="https://ams.confex.com/ams/26SLS/webprogram/Manuscript/Paper212008/SchaumannSLS2012_P142.pdf">HERE</a>.</div>',
 
@@ -1299,7 +1318,7 @@ please email thomas.turnage@noaa.gov for bug reports of suggestions
             The magnitude and direction of the propagation component is assumed to be equal and opposite to that of the low-level jet (850 mb). </div><div class="spc-info"> \
             Reference:<br> Corfidi, S. F., J. H. Merritt and J. M. Fritsch, 1996: Predicting the movement of mesoscale convective complexes. Wea. Forecasting,11, 41-46. </div> ',
 
-            'peff': '<div class="spc-prod">Precipitation Potential Placement</div><div class="spc-info">Precipitation Potential Placement is a derived parameter combining \
+            'peff': '<div class="spc-prod">Precipitation Potential Placement<div class="spc-info">Precipitation Potential Placement is a derived parameter combining \
             precipitable water and low-level mean RH to help better place where rainfall will occur. Research has been published in the National Weather Association Digest in \
             2003 and stems from research and operational use of this product originally developed at NESDIS and Rod Scofield for satellite rainfall estimates dating back to 1981. \
             Rainfall is usually maximized where the best low level convergence and instability overlay with the highest values for this parameter. The risk for heavy rainfall \
@@ -1310,30 +1329,98 @@ please email thomas.turnage@noaa.gov for bug reports of suggestions
 
             'tdlr': 'Surface Dewpoint (solid light green > 48 F, dark green > 60 F) and 700-500 mb Lapse Rate (solid red > 7 C/km).',
 
-            'ch02': 'Vis Loop - Ideal to identify small-scale features such as river fogs and fog/clear air boundaries, or overshooting tops or cumulus clouds.',
+            'ch02': '<div class="spc-prod">Visible (CH02)</div><div class="spc-info">Ideal to identify small-scale features such as \
+                river fog and fog/clear air boundaries, or overshooting tops or cumulus clouds.</div>',
 
-            'nrir': 'Short Wave IR (7) - can be used to identify fog and low clouds at night, identify fire hot spots, detect volcanic ash, estimate \
-            sea-surface temperatures, and discriminate between ice crystal sizes during the day. Low-level atmospheric vector winds can be estimated with \
-            this band, and the band can be used to study urban heat islands',
+            'nrir': '<div class="spc-prod">Short Wave IR (CH07)</div><div class="spc-info">This Near-IR band can be used to identify \
+                fog and low clouds at night, identify fire hot spots, detect volcanic ash, estimate sea-surface temperatures, and \
+                discriminate between ice crystal sizes during the day. Low-level atmospheric vector winds can be estimated with \
+                this band, and the band can be used to study urban heat islands</div>',
 
-            'ch13': 'Clean IR (13) - Infrared window band is less sensitive than other infrared window bands to water vapor absorption, and \
-            therefore improves atmospheric moisture corrections, aids in cloud and other atmospheric feature identification/classification, estimation \
-            of cloudtop brightness temperature and cloud particle size, and surface property characterization in derived products.',
+            'ch13': '<div class="spc-prod">Clean IR (CH13)</div><div class="spc-info">This infrared window band is less sensitive \
+                than other infrared window bands to water vapor absorption, and therefore improves atmospheric moisture corrections, \
+                aids in cloud and other atmospheric feature identification/classification, estimation of cloudtop brightness \
+                temperature and cloud particle size, and surface property characterization in derived products.</div>',
 
-            'geoc': "Geocolor RGB - Daytime- Identify smoke, blowing dust, smog, and anything that has a unique color property. Nighttime - Differentiate low liquid water clouds from higher ice clouds at night. Geo-Location: City lights aid georeferencing by helping determine whether clouds (such as fog) are affecting populated areas",
-            'airm': "AIRMASS RGB - Can see important boundaries between air masses, such as tropical and polar, at a glance; these are often invisible on single channel images. Helps detect the position of jet streams and areas of dry, descending stratospheric air with high PV; these appear in red.",
-            'sand': "Sandwich RGB - It combines two different image types, a high resolution visible band, and (most often) a colour-enhanced infrared window image. Such combination provides information on both cloud top ‘morphology’ and cloud top temperature. Mature thunderstorm cloud top features, such as overshooting tops, gravity waves, and above-anvil ice plumes are seen in solar channels due to the shadows these cast.",
-            'ch01i': "Vis Channel 1 -Will provide nearly continuous daytime observations of dust, haze, smoke and clouds. The 0.47 µm band is more sensitive to aerosols / dust / smoke",
-            'ch03i': "Veggie (3) - Can detect burn scars and thereby show land characteristics to determine fire and run-off potential. Vegetated land, in general, shows up brighter in this band than in visible bands. Landwater contrast is also large in this band.",
-            'ch04i': "Cirrus Band 4 - It will detect very thin cirrus clouds during the day",
-            'ch05i': "Snow & Ice (5) - Liquid water clouds are bright in this channel; ice clouds are darker. Thus you can infer cloud phase. Land/water contrast is great (lakes are readily apparent in the image) and shadows can be particularly striking. Fires can also be detected at night using this band",
-            'ch06i': "Near IR - Cloud Particle (6) - In conjunction with other bands, enables cloud particle size estimation. Cloud particle size changes can indicate cloud development. ",
-            'ch08i': "Upper Level Water Vapor (8) - Can be used for tracking middle-tropospheric winds,identifying jet streams, forecasting hurricane track and mid-latitude storm motion, monitoring severe weather potential, estimating mid-level moisture (for legacy vertical moisture profiles) and identifying regions where turbulence might exist. Brightness Temperatures show cooling because of absorption of energy at 6.9 µm by water vapor.",
-            'ch09i': "Mid Level Water Vapor (9) - Can be used for tracking middle-tropospheric winds,identifying jet streams, forecasting hurricane track and mid-latitude storm motion, monitoring severe weather potential, estimating mid-level moisture (for legacy vertical moisture profiles) and identifying regions where turbulence might exist. Brightness Temperatures show cooling because of absorption of energy at 6.9 µm by water vapor.",
-            'ch10i': "Low Level Water Vapor (10) - This band typically senses farthest down into the midtroposphere in cloud-free regions, to around 500-750 hPa. It is used to track lowertropospheric winds, identify jet streaks, monitor severe weather potential, estimate lower-level moisture (for legacy vertical moisture profiles), identify regions where the potential for turbulence exists, highlight volcanic plumes that are rich in sulphur dioxide (SO2) and track LakeEffect snow bands. ",
+            'geoc': '<div class="spc-prod">Geocolor RGB - Daytime</div><div class="spc-info">Identify smoke, blowing dust, \
+                smog, and anything that has a unique color property. Nighttime - Differentiate low liquid water clouds from \
+                higher ice clouds at night. Geo-Location: City lights aid georeferencing by helping determine whether clouds \
+                (such as fog) are affecting populated areas</div>',
+
+            'airm': '<div class="spc-prod">Airmass RGB</div><div class="spc-info">Can see important boundaries between air \
+                masses, such as tropical and polar, at a glance; these are often invisible on single channel images. Helps \
+                detect the position of jet streams and areas of dry, descending stratospheric air with high PV; these appear in red.</div>',
+
+            'sand': '<div class="spc-prod">Sandwich RGB</div><div class="spc-info">It combines two different image types, a high resolution visible band, and (most often) a \
+            color-enhanced infrared window image. Such combination provides information on both cloud top ‘morphology’ and cloud \
+            top temperature. Mature thunderstorm cloud top features, such as overshooting tops, gravity waves, and above-anvil ice \
+            plumes are seen in solar channels due to the shadows these cast.</div>',
+
+            'ch01i': '<div class="spc-prod">Visible (CH01)</div><div class="spc-info">Will provide nearly continuous daytime observations of \
+                dust, haze, smoke and clouds. The 0.47 µm band is more sensitive to aerosols / dust / smoke</div>',
+
+            'ch03i': '<div class="spc-prod">Veggie (CH03)</div><div class="spc-info">Can detect burn scars and thereby show land \
+                characteristics to determine fire and run-off potential. Vegetated land, in general, shows up brighter in this band \
+                than in visible bands. Landwater contrast is also large in this band.</div>',
+
+            'ch04i': '<div class="spc-prod">Cirrus Band (CH04)</div><div class="spc-info">It will detect very thin cirrus clouds during the day</div>',
+
+            'ch05i': '<div class="spc-prod">Snow & Ice (CH055)</div><div class="spc-info">Liquid water clouds are bright in this channel; \
+                ice clouds are darker. Thus you can infer cloud phase. Land/water contrast is great (lakes are readily apparent in the image) and \
+                shadows can be particularly striking. Fires can also be detected at night using this band</div>',
+
+            'ch06i': '<div class="spc-prod">Near IR - Cloud Particle (CH06)</div><div class="spc-info">In conjunction with other bands, enables \
+                cloud particle size estimation. Cloud particle size changes can indicate cloud development.</div>',
+
+            'ch08i': '<div class="spc-prod">Upper Level Water Vapor (CH08)</div><div class="spc-info">Can be used for tracking \
+                middle-tropospheric winds,identifying jet streams, forecasting hurricane track and mid-latitude storm motion, \
+                monitoring severe weather potential, estimating mid-level moisture (for legacy vertical moisture profiles) and identifying regions where turbulence might exist. Brightness \
+            Temperatures show cooling because of absorption of energy at 6.9 µm by water vapor.</div>',
+
+            'ch09i': '<div class="spc-prod">Mid Level Water Vapor (CH09)</div><div class="spc-info">Can be used for tracking \
+                middle-tropospheric winds,identifying jet streams, forecasting hurricane track and mid-latitude storm motion, \
+                monitoring severe weather potential, estimating mid-level moisture (for legacy vertical moisture profiles) and \
+                identifying regions where turbulence might exist. Brightness Temperatures show cooling because of absorption of \
+                energy at 6.9 µm by water vapor.</div>',
+
+            'ch10i': '<div class="spc-prod">Low Level Water Vapor (CH10)</div><div class="spc-info">This band typically senses farthest \
+                down into the midtroposphere in cloud-free regions, to around 500-750 hPa. It is used to track lower tropospheric winds, \
+                identify jet streaks, monitor severe weather potential, estimate lower-level moisture (for legacy vertical moisture \
+                profiles), identify regions where the potential for turbulence exists, highlight volcanic plumes that are rich in sulphur \
+                dioxide (SO2) and track Lake Effect snow bands.</div>',
+
             'sfir': 'No description',
-            'fosb': ' <html> <head> <title>Fosberg Index</title><br> <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> </head> <body bgcolor="#FFFFFF" text="#000000"> <p><font face="Arial, Helvetica, sans-serif" size="2"> <b><font color="#990000">Fosberg Index</b></font></p> <p><font face="Arial, Helvetica, sans-serif" size="2"> <p>Fosberg Index - The FWI (Fire Weather Index) is defined by a quantitative model that provides a nonlinear filter of meteorological data which results in a linear relationship between the combined meteorological variables of relative humidity and wind speed, and the behavior of wildfires. Thus the index deals with only the weather conditions, not the fuels. Several sets of conditions have been defined by Fosberg (Fosberg, 1978) to apply this to fire weather management. The upper limits have been set to give an index value of 100 if the moisture content is zero and the wind is 30 mph. Thus, the numbers range from 0 to 100 and if any number is larger than 100, it is set back to 100. The index can be used to measure changes in fire weather conditions. Over several years of use, Fosberg index values of 50 or greater generally appear significant on a national scale. The SPC fire weather verification scheme uses the Fosberg Index, but with a check for both temperature (60F) and adjective fire danger rating (3-High, 4-Very High, 5-Extreme). Fosberg index values are displayed in increments of 10 starting at 50 through 100 with the color pink indicating values of 50 or 60, dark orange indicating values of 70 or 80, while values of 90 and 100 are shown in bright orange. <p>The Fosberg Index, orginially called the Fire Weather Index (Fosberg, 1978), was created to meet management needs for timeliness of weather information and for a meaningful interpretation of the short time and close space weather impacts on fire management. It is a non-linear filter of meteorological data developed by first transforming temperature and relative humidity to equilibrium moisture content, then transforming the equilibrium moisture content to combustion efficiency. The index is approximated by F = D((Rate of Spread) (Energy Release)) ^0.46 </body> </html> ',
-            'lhan': ' <html> <head> <title>Haines Index</title><br> <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> </head> <body bgcolor="#FFFFFF" text="#000000"> <p><font face="Arial, Helvetica, sans-serif" size="2"> <b><font color="#990000">Haines Index</b></font></p> <p><font face="Arial, Helvetica, sans-serif" size="2"> <p>Haines Index - This is a fire weather index based on the stability and moisture content of the lower atmosphere that measures the potential for existing fires to become large fires (although this is not a predictor of fire starts). Orange will indicate Haines index values of 4 (low), dark orange will show Haines index values of 5 (moderate), and red will depict Haines index values of 6 (high). Values of 4 and above are plotted on each map even though the overall Haines index is from 2 to 6, with six being the highest potential for large fires (see table below). It is calculated by determining the sum the atmospheric stability index (term A) and the lower atmospheric dryness index (term B). The stability index is determined from measurements of the temperature difference between two atmospheric levels and the dryness index is determined from measurements of the dew-point depression. <p>Due to large variations in elevation across the United States, the index is calculated for three different pressure ranges: low elevation is 950-850mb; mid elevation is 850-700mb; and high elevation is 700-500mb. It is named after its developer, Donald Haines, a Forest Service research meteorologist, who did the initial work and published the scale in 1988. </body> </html> ',
+
+            'fosb': '<div class="spc-prod">Fosberg Index</div><div class="spc-info">The FWI (Fire Weather Index) is defined by a quantitative \
+                model that provides a nonlinear filter of meteorological data which results in a linear relationship between the combined \
+                meteorological variables of relative humidity and wind speed, and the behavior of wildfires. Thus the index deals with \
+                only the weather conditions, not the fuels. Several sets of conditions have been defined by Fosberg (Fosberg, 1978) \
+                to apply this to fire weather management. The upper limits have been set to give an index value of 100 if the moisture \
+                content is zero and the wind is 30 mph. Thus, the numbers range from 0 to 100 and if any number is larger than 100, \
+                it is set back to 100. The index can be used to measure changes in fire weather conditions. Over several years of use, \
+                Fosberg index values of 50 or greater generally appear significant on a national scale. The SPC fire weather \
+                verification scheme uses the Fosberg Index, but with a check for both temperature (60F) and adjective fire danger rating \
+                (3-High, 4-Very High, 5-Extreme). Fosberg index values are displayed in increments of 10 starting at 50 through \
+                100 with the color pink indicating values of 50 or 60, dark orange indicating values of 70 or 80, while values of \
+                90 and 100 are shown in bright orange. <br>The Fosberg Index, orginially called the Fire Weather Index (Fosberg, 1978), \
+                was created to meet management needs for timeliness of weather information and for a meaningful interpretation of the \
+                short time and close space weather impacts on fire management. It is a non-linear filter of meteorological data \
+                developed by first transforming temperature and relative humidity to equilibrium moisture content, then \
+                transforming the equilibrium moisture content to combustion efficiency. The index is approximated by \
+                F = D((Rate of Spread) (Energy Release)) ^0.46 </div>',
+
+            'lhan': '<div class="spc-prod">Haines Index</div><div class="spc-info">This is a fire weather index based on the stability \
+                and moisture content of the lower atmosphere that measures the potential for existing fires to become large fires \
+                (although this is not a predictor of fire starts). Orange will indicate Haines index values of 4 (low), dark orange \
+                will show Haines index values of 5 (moderate), and red will depict Haines index values of 6 (high). Values of 4 and \
+                above are plotted on each map even though the overall Haines index is from 2 to 6, with six being the highest potential \
+                for large fires (see table below). It is calculated by determining the sum the atmospheric stability index (term A) \
+                and the lower atmospheric dryness index (term B). The stability index is determined from measurements of the temperature \
+                difference between two atmospheric levels and the dryness index is determined from measurements of the dew-point depression.<br>\
+                Due to large variations in elevation across the United States, the index is calculated for three different pressure ranges: \
+                low elevation is 950-850mb; mid elevation is 850-700mb; and high elevation is 700-500mb. It is named after its developer, \
+                Donald Haines, a Forest Service research meteorologist, who did the initial work and published the scale in 1988.</div> ',
+
             'lasi': 'No description'
         }
 
@@ -1344,6 +1431,10 @@ please email thomas.turnage@noaa.gov for bug reports of suggestions
         descriptions['hhan'] = descriptions['lhan']
         descriptions['ch08'] = descriptions['ch08i']
         descriptions['conus-ch08'] = descriptions['ch08i']
+        descriptions['sector-ch08'] = descriptions['ch08i']
+        descriptions['ch13'] = descriptions['ch13i']
+        descriptions['conus-ch13'] = descriptions['ch13i']
+        descriptions['sector-ch13'] = descriptions['ch13i']
 
         function soundingDate() {
             // create a new timestamp 
