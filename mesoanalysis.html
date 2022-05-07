@@ -500,6 +500,18 @@ please email thomas.turnage@noaa.gov for bug reports or suggestions
                 </div>
             </div>
 
+            <div class="divider" id="section_ma-winter">
+                <div class="row">
+                    <div class="col-sm-2 image nr" id="ptyp">PType</div>
+                    <div class="col-sm-2 image nr" id="epvl">800-750mb EPVg</div>
+                    <div class="col-sm-2 image nr" id="epvm">650-500mb EPVg</div>
+                    <div class="col-sm-2 image nr" id="les1">LES 1</div>   
+                    <div class="col-sm-2 image nr" id="les2">LES 2</div>   
+                    <div class="col-sm-2 image nr" id="snsq">Snow Squall Parm</div>
+
+                </div>
+            </div>
+
             <div class="divider" id="section_ma-fire">
                 <div class="row">
                     <div class="col-sm-2 image nr" id="sfir">Sfc RH / T / Wind</div>
@@ -744,8 +756,6 @@ please email thomas.turnage@noaa.gov for bug reports or suggestions
         let ma_base = exper + 'mesoanalysis/'
         let ma = ma_base + ma_sector + '/'
 
-
-
         const wpc_qpf = 'http://www.wpc.ncep.noaa.gov/qpf/'
         const sat = 'https://cdn.star.nesdis.noaa.gov//GOES16/ABI/SECTOR/';
         const sat_conus = 'https://cdn.star.nesdis.noaa.gov//GOES16/ABI/CONUS/'
@@ -866,14 +876,13 @@ please email thomas.turnage@noaa.gov for bug reports or suggestions
             'stpc5', 'sigt1', 'sigt2', 'nstp', 'vtp3', 'sigh', 'cbsig', 'cpsh', 'vgp3',
             'lcls', 'lr3c', '3cvr', '3cape_shr3', '925mb', '850mb', '850mb2', '700mb', '500mb', '300mb', 'tran',
             'dlcp', 'tadv_925', 'tadv', '7tad', '9fnt', '8fnt', '7fnt', '857f', '75ft', '98ft', 'vadv', 'ageo',
-            'epvl', 'epvm', 'sfnt', '925f', '500mb_chg', 'nstp', 'cpsh', 'lr3c', 'pwtr', 'tran', 'prop', 'peff',
+            'sfnt', '925f', '500mb_chg', 'nstp', 'cpsh', 'lr3c', 'pwtr', 'tran', 'prop', 'peff',
             'tran_925', 'tran_925-850', 'bigsfc', 'pmsl', 'ttd', 'mcon', 'mxth', 'thea', 'thet', 'icon', 'trap',
             'vtm', 'dvvr', 'def', 'sfnt', 'pchg', 'temp_chg', 'dwpt_chg', 'mixr_chg', 'thte_chg', '925mb', '850mb',
             '700mb', '500mb', '300mb', 'tadv_925', 'tadv', '7tad', 'ddiv', 'padv', 'brn', 'desp', 'ehi1', 'ehi3',
             'vgp3', 'crit', 'mlcape_eshr', 'comp', 'lcls', 'tdlr', 'mcsm', 'mbcp', 'sfir', 'fosb', 'lhan', 'mhan',
             'hhan', 'lasi', 'trap_500', 'trap_250', 'sherbe', 'moshe', 'cwasp', 'tehi', 'tts', 'ptstpe', 'pstpe',
-            'pvstpe'
-        ]
+            'pvstpe', 'snsq', 'ptyp', 'epvl', 'epvm', 'les1', 'les2']
 
         spc_items.forEach(s => {
             urls[s] = ma + s + '/' + s + '.gif'
@@ -1148,12 +1157,15 @@ please email thomas.turnage@noaa.gov for bug reports or suggestions
 
             'tadv_925': '<div class="spc-prod"> </div><div class="spc-info"></div>',
 
-            '98ft': "925-850 mb Petterssen's Frontogenesis (solid purple), Height (solid black), Temperature (dashed red), and Wind. \
-            Note that label below graphic (925-700 mb) is wrong.",
+            '98ft': '<div class="spc-prod">925-850 mb Petterssen`s Frontogenesis</div><div class="spc-info">925-850 mb Petterssen`s \
+            Frontogenesis(solid purple), Height (solid black), Temperature (dashed red), and Wind. Note that label below graphic \
+            (925-700 mb) is wrong.',
 
-            '857f': "850-700 mb Petterssen's Frontogenesis (solid purple), Height (solid black), Temperature (dashed red), and Wind. \
-            Compare 850-700 frontogenesis axis to 700-500 axis to determine depth and slope of frontogenetical surface. If they are \
-            nearly superimposed, then steep mesoscale lifting is likely to promote banded precip and convection.",
+            '857f': '<div class="spc-prod">850-700 mb Petterssen`s Frontogenesis (solid purple), Height (solid black), \Temperature \
+            (dashed red), and Wind</div><div class="spc-info">. 850-700 mb Petterssen`s Frontogenesis (solid purple), Height (solid black), \
+            Temperature (dashed red), and Wind Compare 850-700 frontogenesis axis to 700-500 axis to determine depth and slope of \
+            frontogenetical surface. If they are nearly superimposed, then steep mesoscale lifting is likely to promote banded precip\
+            and convection.</div>',
 
             '75ft': "700-500 mb Petterssen's Frontogenesis (solid purple), Height (solid black), Temperature (dashed blue), and Wind. \
             Compare 700-500 frontogenesis axis to 850-700 axis to determine depth and slope of frontogenetical surface. If they are \
@@ -1169,13 +1181,26 @@ please email thomas.turnage@noaa.gov for bug reports or suggestions
             Also consider 850 mb frontogenesis and frontal slope between the 2 levels. Frontogenesis and (-) EPV may extend or be \
             located above 700 mb at times, especially in cool season.",
 
-            'ageo': "300 mb Height (solid black), Isotachs (shaded), Ageostrophic Wind, and 700-500 mb Omega. Ascent = solid magenta. \
-            Descent = dashed red. Best locations for organized convection is anticyclonically-curved right entrance regions (QLCS/MCS) \
-            and exit regions of mid-to-upper jet streaks (supercells).",
-
             'vadv': '<div class="spc-prod">700-400 mb Differential Vorticity Advection</div><div class="spc-info"> 700-400 mb Differential \
             Vorticity Advection (DVA) and 500 mb Height (solid black) and Vorticity (shaded). (+) DVA = solid blue. (-) DVA = dashed red. \
             (+) DVA promotes synoptic-scale (isentropic) lift, moisture and temperature advection and convergence, and destabilization.</div>',
+
+            'padv': '<div class="spc-prod">400-250 mb Potential Vorticity Advection</div><div class="spc-info">Identifies depressions in the \
+            tropopause by assessing PV in a fixed layer. Movement of these depressions induces vertical motion depending on the static stabilty \
+            of the atmosphere. Positive Potential Vorticity Advection is fairly well correlated with forcing for upward vertical motion.</div>',
+
+            'ddiv': '<div class="spc-prod">850-250mb Differential Divergence</div><div class="spc-info">Differential Divergence (fill) \
+            850 mb convergence (red contours) and 250 mb divergence (purple contours). Shows larger scale mass adjustments resulting in \
+            forced upward vertical motion. Large values result in rapid convective destabilization if low-level moisture is large.</div>',
+
+            'ageo': '<div class="spc-prod">300 mb Height, Isotachs, Ageostrophic Wind, 700-500 mb Omega</div><div class="spc-info">300 \
+            mb Height (solid black), Isotachs (shaded), Ageostrophic Wind, and 700-500 mb Omega. Ascent = solid magenta. Descent = dashed \
+            red. Best locations for organized convection is anticyclonically-curved right entrance regions (QLCS/MCS) and exit regions of \
+            mid-to-upper jet streaks (supercells).</div>',
+
+            '500mb_chg': '<div class="spc-prod">12hr 500 mb Height Change</div><div class="spc-info">12hr 500 mb Height change \
+            Shows areas where longer-term forcing for upward vertical motion has taken place, allowing for atmospheric destabilization.\
+            </div>',
 
             'kind': '<div class="spc-prod">K Index</div><div class="spc-info">(solid green > 28) and 700 mb Temperatures (dashed red). \
             K > 30 = local heavy rain potential. K > 35 = greater threat. Lower K values in severe storm environment due to drier air at \
@@ -1261,17 +1286,19 @@ please email thomas.turnage@noaa.gov for bug reports or suggestions
             the difference between the LFC and the LCL, the more likely deep convection becomes. The LFC-LCL difference is similar to CIN (convective \
             inhibition).</div>',
 
-            'lfrh': '<div class="spc-prod">LCL-LFC Relative Humidity (%)</div><div class="spc-info">This is the mean relative humidity in the layer between \
-the LCL(<u><b>L</b></u>ifting <u><b>C</b></u>ondensation <u><b>L</b></u>evel)and the LFC (<u><b>L</b></u>evel of <u><b>F</b></u>ree<u><b>C</b></u>onvection).  \
-Near saturation (RH=100%), from the LCL to the LFC, suggests that the LFC is near the LCL.  When this occurs, a parcel experiencing forced ascent above the \
-LCL may not be diluted with dry environmental air prior to reaching the LFC. The height difference between the LCL and the LFC is important when \
-determining convection initiation.  The smaller the difference between the LCL and the LFC, the more likely deep convection becomes. The LCL-LFC difference is \
-similar to CIN (convective inhibition).</div>',
+            'lfrh': '<div class="spc-prod">LCL-LFC Relative Humidity (%)</div><div class="spc-info">This is the mean relative humidity in the \
+            layer between the LCL(<u><b>L</b></u>ifting <u><b>C</b></u>ondensation <u><b>L</b></u>evel)and the LFC (<u><b>L</b></u>evel of \
+            <u><b>F</b></u>ree<u><b>C</b></u>onvection). Near saturation (RH=100%), from the LCL to the LFC, suggests that the LFC is near the \
+            LCL.  When this occurs, a parcel experiencing forced ascent above the LCL may not be diluted with dry environmental air prior to \
+            reaching the LFC. The height difference between the LCL and the LFC is important when determining convection initiation. The smaller \
+            the difference between the LCL and the LFC, the more likely deep convection becomes. The LCL-LFC difference is similar to CIN \
+            (convective inhibition).</div>',
 
-            'skewt': '<div class="spc-prod">0-9 km AGL skew-T diagram </div><div class="spc-info">Display depicts the vertical profiles of temperature (red) and \
-dew point temperature (green), in the form of a standard skew-T/logP diagram for the lowest 9 km above ground level. The 0 C and -20 C isotherms \
-(dashed black and brown diagonal lines, respectively) are plotted for reference.  The dashed black curve denotes the "most unstable" lifted parcel trace \
-(only when MUCAPE >= 100 J kg<sup>-1</sup>), and the shaded area (light red) shows lifted parcel buoyancy.</div>',
+            'skewt': '<div class="spc-prod">0-9 km AGL skew-T diagram </div><div class="spc-info">Display depicts the vertical profiles of \
+            temperature (red) and dew point temperature (green), in the form of a standard skew-T/logP diagram for the lowest 9 km above ground \
+            level. The 0 C and -20 C isotherms (dashed black and brown diagonal lines, respectively) are plotted for reference. The dashed \
+            black curve denotes the "most unstable" lifted parcel trace (only when MUCAPE >= 100 J kg<sup>-1</sup>), and the shaded area \
+            (light red) shows lifted parcel buoyancy.</div>',
 
             'eshr': '<div class="spc-prod">Effective Bulk Wind Difference (kts)</div><div class="spc-info">The magnitude of the vector wind difference from the \
 effective inflow base upward to 50% of the equilibrium level height for the most unstable parcel in the lowest 300 mb. This parameter is similar to \
@@ -1571,6 +1598,9 @@ the gust front of a QLCS, while the theta-e difference infers the potential stre
 of a QLCS), when coincident with substantial buoyancy and strong line-normal shear, can favor stretching of vorticity generated along the gust front, and subsequent \
 mesovortex formation.</div><div class="spc-info">Additional information <a href="https://ams.confex.com/ams/26SLS/webprogram/Manuscript/Paper212008/SchaumannSLS2012_P142.pdf">HERE</a>.</div>',
 
+            'pwtr': '<div class="spc-prod">Precipitable Water (inches)</div><div class="spc-info">Precipitable Water (inches). Values > 1 inch shaded green. Consider \
+            values and anomalies for the time of year.</div>',
+
             'tran': '<div class="spc-prod">850 mb Moisture Transport</div><div class="spc-info">The 850 mb moisture transport is the product of the wind speed \
 (m s<sup>-1</sup>) and the mixing ratio (g g<sup>-1</sup>) at 850 mb.  Values are scaled by factor of 100, such that a 40 kt (~20 m s<sup>-1</sup>) \
 wind speed and a 12 g kg<sup>-1</sup> mixing ratio (0.012 g g<sup>-1</sup>) results in a moisture transport of 24 m s<sup>-1</sup> (the first pink \
@@ -1661,8 +1691,9 @@ For more information, see: http://www.srh.noaa.gov/ffc/research/finalPP2.htm </d
     values (rounded integer %), with color coding related to the climatology of the sample. For example, brown denotes values lower than the sample \
     climatology, and yellow is near climatological EF4+ frequency. Red, magenta, and dark purple values are all increasingly larger than the \
     climatological EF4+ frequency. The source data for the EF4+ tornado probabilities is shown by the red curve shown in \
-    <a href="https://www.spc.noaa.gov/publications/smith/fig18_stp_probs_14-15only_ef0+_ef2+_ef4+_adjusted.png" target="_blank">this plot</a>. Please \
-    see <a href="https://www.spc.noaa.gov/publications/smith/vrot-env.pdf" target="_blank">this paper</a> for additional details.</div>',
+    <a href="https://www.spc.noaa.gov/publications/smith/fig18_stp_probs_14-15only_ef0+_ef2+_ef4+_adjusted.png" target="_blank">this plot</a>. \
+    </div><div class="spc-ref">Please see <a href="https://www.spc.noaa.gov/publications/smith/vrot-env.pdf" target="_blank">this paper</a> \
+    for additional details.</div>',
 
             'pvstpe': '<div class="spc-prod">Conditional probability of EF4+ tornadoes</div><div class="spc-info">The conditional probability of EF4+ tornadoes \
     given a right-moving supercell, based on the grid-point value of effective-layer STP. The probabilities are derived from a mutually exclusive \
@@ -1675,13 +1706,12 @@ For more information, see: http://www.srh.noaa.gov/ffc/research/finalPP2.htm </d
 
             'tdlr': 'Surface Dewpoint (solid light green > 48 F, dark green > 60 F) and 700-500 mb Lapse Rate (solid red > 7 C/km).',
 
-            'ch02': '<div class="spc-prod">Visible (CH02)</div><div class="spc-info">Ideal to identify small-scale features such as \
-    river fog and fog/clear air boundaries, or overshooting tops or cumulus clouds.</div>',
+            'ch02': '<div class="spc-prod">Visible (CH02)</div><div class="spc-info">Ideal to identify small-scale features such as river fog \
+            and fog/clear air boundaries, or overshooting tops or cumulus clouds.</div>',
 
-            'nrir': '<div class="spc-prod">Short Wave IR (CH07)</div><div class="spc-info">This Near-IR band can be used to identify \
-    fog and low clouds at night, identify fire hot spots, detect volcanic ash, estimate sea-surface temperatures, and \
-    discriminate between ice crystal sizes during the day. Low-level atmospheric vector winds can be estimated with \
-    this band, and the band can be used to study urban heat islands</div>',
+            'nrir': '<div class="spc-prod">Short Wave IR (CH07)</div><div class="spc-info">This Near-IR band can be used to identify fog and low \
+            clouds at night, identify fire hot spots, detect volcanic ash, estimate sea-surface temperatures, and discriminate between ice crystal \
+            sizes during the day. Low-level atmospheric vector winds can be estimated with this band, and the band can be used to study urban heat islands</div>',
 
             'ch13': '<div class="spc-prod">Clean IR (CH13)</div><div class="spc-info">This infrared window band is less sensitive \
     than other infrared window bands to water vapor absorption, and therefore improves atmospheric moisture corrections, \
@@ -1768,7 +1798,23 @@ Temperatures show cooling because of absorption of energy at 6.9 µm by water va
     low elevation is 950-850mb; mid elevation is 850-700mb; and high elevation is 700-500mb. It is named after its developer, \
     Donald Haines, a Forest Service research meteorologist, who did the initial work and published the scale in 1988.</div> ',
 
-            'lasi': 'No description'
+            'lasi': 'No description',
+        
+            'snsq': '<div class="spc-prod">Snow Squall Parameter</div><div class="spc-info">A non-dimensional composite parameter \
+            that combines 0-2 km AGL relative humidity,  0-2 km AGL potential instability (theta-e decreases with height), \
+            and 0-2 km AGL mean wind speed (m/s). The intent of the parameter is to identify areas with low-level potential \
+            instability, sufficient moisture, and strong winds to support snow squall development.  Surface potential temperatures \
+            (theta) and MSL pressure are also plotted to identify strong baroclinic zones which often provide the focused low-level \
+            ascent in cases of narrow snow bands. The index is formulated as follows: <br><br>\
+            Snow Squall = ((0-2km mean RH - 60%) / 15%) * (( 4 - 2km_delta_theta-e) / 4) * (0-2km mean wind / 9 m s<sup>-1</sup>)<br><br>\
+            The 2km_delta_theta-e term is the change in theta-e (K) from the surface to 2km AGL, where negative values represent \
+            potential instability.  Areas with 0-2 km RH < 60% are filtered out in the color fill plots.<br><br>\
+            <div class="spc-ref">Additional information can be found <a href="http://www.squallwx.com/snowsqualls">here</a> \
+            (PowerPoint presentation).</div>',
+            //'snsq': '<div class="spc-prod"> <div class="spc-info"> </div><div class="spc-ref"> </div> ',
+            //'snsq': '<div class="spc-prod"> <div class="spc-info"> </div><div class="spc-ref"> </div> ',
+            //'snsq': '<div class="spc-prod"> <div class="spc-info"> </div><div class="spc-ref"> </div> ',
+            //'snsq': '<div class="spc-prod"> <div class="spc-info"> </div><div class="spc-ref"> </div> ',
         }
 
         descriptions['tran_925-850'] = descriptions['tran_925']
