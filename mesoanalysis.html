@@ -1,10 +1,14 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <!--
 -----------------------------------------------------------------------------
-05/06/2022 - Version 1.01
+05/08/2022 - Version 1.03
+Added a radar button with sector loops
+Looks like satellite loops are being improperly created at 
 
+05/06/2022 - Version 1.01
 Clicking on a product will display information about it and keep it there.
 Before this, product information would automatically display on hover
 
@@ -205,21 +209,22 @@ please email thomas.turnage@noaa.gov for bug reports or suggestions
 
         </div>
         <div class="justify-content-center text-center">
-            <button type="button" class="btn btn-outline-danger" id="swody1">SWODY1</button>
-            <button type="button" class="btn btn-outline-danger" id="swody2">SWODY2</button>
+            <button type="button" class="btn btn-outline-danger" id="swody1">DY1</button>
+            <button type="button" class="btn btn-outline-danger" id="swody2">DY2</button>
             <button type="button" class="btn btn-outline-danger" id="spc_watch">Watches</button>
-            <button type="button" class="btn btn-outline-danger" id="surface">Surface</button>
+            <button type="button" class="btn btn-outline-danger" id="surface">Sfc</button>
             <button type="button" class="btn btn-outline-danger" id="upper">Upper</button>
             <button type="button" class="btn btn-outline-danger" id="ma-stability">Thermo</button>
             <button type="button" class="btn btn-outline-danger" id="ma-shear">Shear</button>
-            <button type="button" class="btn btn-outline-danger" id="ma-composite">Composite</button>
-            <button type="button" class="btn btn-outline-danger" id="ma-multiparm">Multi Parm</button>
+            <button type="button" class="btn btn-outline-danger" id="ma-composite">Comp</button>
+            <button type="button" class="btn btn-outline-danger" id="ma-multiparm">Multi</button>
             <!-- <button type="button" class="btn btn-primary" id="swody3">swody3</button> -->
             <button type="button" class="btn btn-outline-success" id="wpc">Precip</button>
             <button type="button" class="btn btn-outline-success" id="ma-fire">Fire</button>
             <button type="button" class="btn btn-outline-success" id="ma-winter">Winter</button>
             <button type="button" class="btn btn-outline-info" id="sounding">RAOB</button>
-            <button type="button" class="btn btn-outline-info" id="satellite">Satellite</button>
+            <button type="button" class="btn btn-outline-info" id="radar">Radar</button>
+            <button type="button" class="btn btn-outline-info" id="satellite">Sat</button>
             <button type="button" class="btn btn-outline-secondary" id="links">Links</button>
         </div>
 
@@ -636,6 +641,22 @@ please email thomas.turnage@noaa.gov for bug reports or suggestions
                 </div>
             </div>
 
+            <div class="divider" id="section_radar">
+                <div class="row">
+                    <div class="col-sm-2 image sector-radar-loop nr" id="rl-conus">CONUS</div>
+                    <div class="col-sm-2 image sector-radar-loop nr" id="rl-se">Southeast US</div>
+                    <div class="col-sm-2 image sector-radar-loop nr" id="rl-nw">Northwest US</div>
+                    <div class="col-sm-2 image sector-radar-loop nr" id="rl-sr">Southern Rockies</div>
+                    <div class="col-sm-2 image sector-radar-loop nr" id="rl-nr">Northern Rockies</div>
+                    <div class="col-sm-2 image sector-radar-loop nr" id="rl-umv">Upper MS Valley</div>
+                    <div class="col-sm-2 image sector-radar-loop nr" id="rl-smv">Southern MS Valley</div>
+                    <div class="col-sm-2 image sector-radar-loop nr" id="rl-sp">Southern Plains</div>
+                    <div class="col-sm-2 image sector-radar-loop nr" id="rl-cgl">Central Great Lakes</div>
+                    <div class="col-sm-2 image sector-radar-loop nr" id="rl-ne">Northeast US</div>
+                </div>
+            </div>
+
+
             <div class="divider" id="section_satellite">
                 <div class="row">
                     <div class="col-sm-2 image us-loop" id="conus-ch02">CONUS Vis</div>
@@ -755,7 +776,7 @@ please email thomas.turnage@noaa.gov for bug reports or suggestions
     <div class="container-fluid">
         <div class="d-flex justify-content-center text-left description box">
             <div class="row">
-                <div id="describe">
+                <div id="describe">Click product for description
                 </div>
             </div>
         </div>
@@ -960,11 +981,25 @@ please email thomas.turnage@noaa.gov for bug reports or suggestions
         const buttons = document.querySelectorAll("button");
         const dividers = document.querySelectorAll(".divider");
         const radios = document.querySelectorAll(".radio");
+        const radar_loops = ['rl-conus', 'rl-nw', 'rl-nr', 'rl-sr', 'rl-umv', 'rl-sp', 'rl-cgl', 'rl-ne', 'rl-se', 'rl-smv']
         const sat_loops = ['ch02', 'ch07', 'ch08', 'ch13', 'ch14', 'geoc', 'airm', 'sand', 'nmic', 'dayp', 'firt']
         const sat_images = ['ch01i', 'ch02i', 'ch03i', 'ch04i', 'ch05i', 'ch06i', 'ch07i', 'ch08i', 'ch09i', 'ch10i',
             'ch11i', 'ch12i', 'ch13i', 'ch14i', 'ch15i', 'ch16i'
         ]
 
+        const radar_loop_names = {
+            'rl-conus': 'CONUS-LARGE',
+            'rl-nw': 'PACNORTHWEST',
+            'rl-nr': 'NORTHROCKIES',
+            'rl-sr': 'SOUTHROCKIES',
+            'rl-umv': 'UPPERMISSVLY',
+            'rl-sp': 'SOUTHPLAINS',
+            'rl-cgl': 'CENTGRLAKES',
+            'rl-ne': 'NORTHEAST',
+            'rl-se': 'SOUTHEAST',
+            'rl-smv': 'SOUTHMISSVLY',
+            //'s18': 'smv',
+        }
 
         const sat_loop_names = {
             'ch02': '02',
@@ -1046,10 +1081,12 @@ please email thomas.turnage@noaa.gov for bug reports or suggestions
             let new_reference_id = "section_" + b.target.id
             //console.log(new_reference_id);
             document.getElementById(new_reference_id).style.display = 'block';
-            if ((b.target.id === "links") || (b.target.id === "sounding") || (b.target.id === "swody1") || (b.target.id === "swody2") || (b.target.id === "spc_watch") ) {
+            if ((b.target.id === "links") || (b.target.id === "sounding") || (b.target.id === "swody1") || (b.target.id === "swody2") || (b.target.id === "spc_watch") || (b.target.id === "radar") ) {
                 document.getElementById('instructions').style.display = 'none';
+                document.getElementById('describe').innerHTML = 'No descriptions are available for this category.';      
             } else {
-                document.getElementById('instructions').style.display = 'block';           
+                document.getElementById('instructions').style.display = 'block';
+                document.getElementById('describe').innerHTML = 'Click products for descriptions.';          
             }
         };
 
@@ -1078,6 +1115,14 @@ please email thomas.turnage@noaa.gov for bug reports or suggestions
                 '//EXTENT3/GOES16-' + sat_sector_name_upper + '-EXTENT3-600x600.gif';
 
         };
+
+
+        radar_loops.forEach(rl => {
+                let rl_name = radar_loop_names[rl];
+                urls[rl] = 'https://radar.weather.gov/ridge/lite/' + rl_name + '_loop.gif';
+                console.log(urls[rl]);
+            });
+
 
         for (const radio of radios) {
             radio.addEventListener('change', showSelected);
