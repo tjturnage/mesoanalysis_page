@@ -4,13 +4,8 @@
 
 <!--
 -----------------------------------------------------------------------------
-05/08/2022 - Version 1.03
-Added a radar button with sector loops
-Looks like satellite loops are being improperly created at 
-
-05/06/2022 - Version 1.01
-Clicking on a product will display information about it and keep it there.
-Before this, product information would automatically display on hover
+05/10/2022 - Version 1.04
+Added SPC sector 20 (Midwest)
 
 please email thomas.turnage@noaa.gov for bug reports or suggestions
 -----------------------------------------------------------------------------
@@ -187,11 +182,15 @@ please email thomas.turnage@noaa.gov for bug reports or suggestions
             </div>
             <div class="form-check form-check-inline">
                 <input class="form-check-input radio" type="radio" name="mesoSector" id="s13" value="s13">
-                <label class="form-check-label" for="greatlakes">North MS Val</label>
+                <label class="form-check-label" for="greatlakes">N Plains</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input radio" type="radio" name="mesoSector" id="s20" value="s20">
+                <label class="form-check-label" for="greatlakes">Midwest</label>
             </div>
             <div class="form-check form-check-inline">
                 <input class="form-check-input radio" type="radio" name="mesoSector" id="s14" value="s14">
-                <label class="form-check-label" for="greatlakes">Midwest</label>
+                <label class="form-check-label" for="greatlakes">C Plains</label>
             </div>
             <div class="form-check form-check-inline">
                 <input class="form-check-input radio" type="radio" name="mesoSector" id="s15" value="s15">
@@ -1032,6 +1031,7 @@ please email thomas.turnage@noaa.gov for bug reports or suggestions
             's12sw': 'psw',
             's12sr': 'sr',
             's13': 'umv',
+            's20': 'umv',
             's14': 'sp',
             's15': 'sp',
             's16gl': 'cgl',
@@ -1039,6 +1039,7 @@ please email thomas.turnage@noaa.gov for bug reports or suggestions
             's17': 'se',
             's18se': 'se',
             's18smv': 'smv',
+
             //'s18': 'smv',
         }
 
@@ -1956,11 +1957,6 @@ please email thomas.turnage@noaa.gov for bug reports or suggestions
             profiles), identify regions where the potential for turbulence exists, highlight volcanic plumes that are rich in sulphur \
             dioxide (SO2) and track Lake Effect snow bands.</div>',
 
-
-            //'snsq': '<div class="spc-prod"> <div class="spc-info"> </div><div class="spc-ref"> </div> ',
-            //'snsq': '<div class="spc-prod"> <div class="spc-info"> </div><div class="spc-ref"> </div> ',
-            //'snsq': '<div class="spc-prod"> <div class="spc-info"> </div><div class="spc-ref"> </div> ',
-            //'snsq': '<div class="spc-prod"> <div class="spc-info"> </div><div class="spc-ref"> </div> ',
         }
 
         descriptions['trap_500'] = descriptions['trap']
