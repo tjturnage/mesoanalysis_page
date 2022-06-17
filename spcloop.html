@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="favorite styled"
+    type="button">Run script</button>
+</button>
+</body>
+<script>
+    buttons = document.querySelectorAll('button');
+        buttons.forEach(btn => {
+            btn.addEventListener('click', b => {
+
+                dateInfo();
+        })});
+
+
+function dateInfo() {
+    let hours = {}
+    // create a new timestamp 
+    var now = new Date();
+    console.log(now)
+    var year = now.getUTCFullYear().toString().slice(-2)
+    var month = now.getUTCMonth() + 1;
+    monstr = month.toString();
+    if (monstr.length == 1) {
+        monstr = '0' + monstr;
+    }
+    var date = now.getUTCDate().toString();
+    if (date.length == 1) {
+        date = '0' + date
+    }
+    var hour = now.getUTCHours();
+    //hour = 22
+    let hourInfo = [1,2,3,4,5,6];
+    hourInfo.forEach(h => {
+            newhour = hour + h;
+            if(newhour > 23) {
+                newhour = newhour - 24; 
+            }
+            hr_str = newhour.toString()
+            if(hr_str.length == 1){
+                hr_str = '0' + hr_str;
+            }
+            let final = 'https://www.spc.noaa.gov/exper/mesoanalysis/fcst/s16/effh_' + hr_str + '.gif'
+            console.log(final);
+            //hours[h] = ma + s + '/' + s + '.gif'
+        });
+
+// https://www.spc.noaa.gov/exper/mesoanalysis/fcst/s16/mlcp_01.gif
+    //let dateString = year + monstr + date + hr + '_OBS/';
+    //return dateString;
+    return;
+}
+
+</script>
+</html>
+
+
