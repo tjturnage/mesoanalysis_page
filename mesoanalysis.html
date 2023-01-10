@@ -3,7 +3,8 @@
 
 <!--
 -----------------------------------------------------------------------------
-05/10/2022 - Version 1.04
+12/12/2022 - Version 1.04
+Added SPC sector 21 (Western Great Lakes)
 Added SPC sector 20 (Midwest)
 
 please email thomas.turnage@noaa.gov for bug reports or suggestions
@@ -37,7 +38,6 @@ please email thomas.turnage@noaa.gov for bug reports or suggestions
             padding: 0.05rem;
             border-radius: 5px;
             min-height: 1.8rem;
-
         }
 
         .time {
@@ -174,7 +174,11 @@ please email thomas.turnage@noaa.gov for bug reports or suggestions
         <div class="justify-content-center text-center">
             <span><b>Sector:&nbsp;&nbsp;&nbsp;&nbsp;</b></span>
             <div class="form-check form-check-inline">
-                <input class="form-check-input radio" type="radio" name="mesoSector" id="s16gl" value="s16" checked>
+                <input class="form-check-input radio" type="radio" name="mesoSector" id="s21gl" value="s21" checked>
+                <label class="form-check-label" for="greatlakes">Wrn GL</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input radio" type="radio" name="mesoSector" id="s16gl" value="s16">
                 <label class="form-check-label" for="greatlakes">GL</label>
             </div>
             <div class="form-check form-check-inline">
@@ -828,7 +832,7 @@ please email thomas.turnage@noaa.gov for bug reports or suggestions
         const day1prob = spc_out + 'day1probotlk_'
         const day2prob = spc_out + 'day2probotlk_'
 
-        let ma_sector = 's16'
+        let ma_sector = 's21'
         const exper = 'http://www.spc.noaa.gov/exper/'
         let ma_base = exper + 'mesoanalysis/'
         let ma = ma_base + ma_sector + '/'
@@ -1062,7 +1066,7 @@ please email thomas.turnage@noaa.gov for bug reports or suggestions
             's17': 'se',
             's18se': 'se',
             's18smv': 'smv',
-
+            's21gl': 'cgl',
             //'s18': 'smv',
         }
 
